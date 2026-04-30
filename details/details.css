@@ -105,18 +105,35 @@ nav {
 .main-content ul {
     list-style: none;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .main-content li {
-    margin-bottom: 0.8rem;
-    color: var(--text-dim);
-    display: flex;
-    gap: 0.8rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 0;
 }
 
-.main-content li::before {
+.main-content li strong {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 700;
+}
+
+.main-content li strong::before {
     content: "✦";
     color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+.main-content li span {
+    color: var(--text-dim);
 }
 
 .sidebar-box {
