@@ -107,13 +107,13 @@ nav {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .main-content li {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 2rem;
+    grid-template-columns: 170px 1fr;
+    gap: 1.5rem;
     align-items: start;
     margin-bottom: 0;
 }
