@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Enmel's Browser Extension Portfolio
 
 A premium, modern landing page showcasing a collection of high-quality browser extensions designed to enhance productivity, focus, and browsing experience.
@@ -37,3 +38,7 @@ If you like my work, consider supporting me on [Patreon](https://patreon.com).
 
 ---
 Built with ❤️ by Enmel.
+=======
+# portfolio
+🚀 A premium portfolio showcasing modern browser extensions for productivity, focus, and tab management. Built with glassmorphism aesthetics and hosted on GitHub Pages.
+>>>>>>> 8ef52cf50c2537b08a07c07870072a5ba796bcef
