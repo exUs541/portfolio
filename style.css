@@ -88,14 +88,30 @@ nav .container {
 }
 
 .nav-links a {
+    color: var(--text-color);
     text-decoration: none;
-    color: var(--text-dim);
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a i {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2px;
 }
 
 .nav-links a:hover {
-    color: var(--text-color);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.nav-links .btn-primary {
+    padding: 0.8rem;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
 }
 
 /* Hero Section */
