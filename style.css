@@ -312,6 +312,45 @@ nav .container {
     line-height: 1.8;
 }
 
+/* Feedback Hub */
+.feedback {
+    padding: 60px 0;
+}
+
+.feedback-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.feedback-card {
+    padding: 3rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+}
+
+.feedback-card i {
+    width: 48px;
+    height: 48px;
+    color: var(--accent-color);
+}
+
+.feedback-card h3 {
+    font-size: 1.8rem;
+}
+
+.feedback-card p {
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
 .social-box {
     padding: 4rem;
     text-align: center;
