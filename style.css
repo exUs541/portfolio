@@ -70,6 +70,9 @@ nav .container {
     font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: -1px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: inline-block;
 }
 
 .logo span {
@@ -293,7 +296,7 @@ nav .container {
 .about-box {
     padding: 4rem;
     text-align: center;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -445,6 +448,8 @@ nav .container {
     padding: 4rem;
     text-align: center;
     border-radius: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .social-box h2 {
