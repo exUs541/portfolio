@@ -314,41 +314,53 @@ nav .container {
 
 /* Feedback Hub */
 .feedback {
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
 .feedback-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
 }
 
 .feedback-card {
     padding: 3rem;
-    text-align: left;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 1.5rem;
-    transition: transform 0.3s ease;
-}
-
-.feedback-card:hover {
-    transform: translateY(-5px);
+    position: relative;
+    overflow: hidden;
 }
 
 .feedback-card i {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     color: var(--accent-color);
+    margin-bottom: 1rem;
 }
 
 .feedback-card h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .feedback-card p {
     color: var(--text-dim);
+    font-size: 1.1rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.feedback-card .btn-glow, 
+.feedback-card .btn-secondary {
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .feedback-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .social-box {
