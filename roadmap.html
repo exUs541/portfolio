@@ -10,114 +10,41 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Roadmap Specific Styles */
-        .timeline-container {
-            padding: 100px 0;
-            text-align: center;
-        }
-        .timeline {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50px;
-            right: 50px;
-            height: 2px;
-            background: var(--glass-border);
-            z-index: 1;
-        }
-        .timeline-node {
-            position: relative;
-            z-index: 2;
-            background: var(--bg-color);
-            border: 2px solid var(--accent-color);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            box-shadow: 0 0 15px var(--accent-glow);
-        }
-        .timeline-content {
-            position: absolute;
-            top: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-        }
+        .timeline-container { padding: 100px 0; text-align: center; }
+        .timeline { display: flex; justify-content: space-between; align-items: center; position: relative; max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        .timeline::before { content: ''; position: absolute; top: 50%; left: 50px; right: 50px; height: 2px; background: var(--glass-border); z-index: 1; }
+        .timeline-node { position: relative; z-index: 2; background: var(--bg-color); border: 2px solid var(--accent-color); width: 20px; height: 20px; border-radius: 50%; box-shadow: 0 0 15px var(--accent-glow); }
+        .timeline-content { position: absolute; top: 40px; left: 50%; transform: translateX(-50%); width: 200px; }
         .timeline-content h4 { font-size: 1.2rem; color: var(--accent-color); margin-bottom: 5px; }
         .timeline-content p { font-size: 0.9rem; color: var(--text-dim); }
 
-        .filter-bar {
-            margin-bottom: 40px;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .filter-btn {
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            border: 1px solid var(--glass-border);
-            background: var(--glass-bg);
-            color: var(--text-dim);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .filter-btn.active {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            border-color: var(--accent-color);
-            font-weight: 600;
-        }
+        .controls-bar { margin-bottom: 40px; display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
+        .filter-group, .sort-group { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; align-items: center; }
+        .label { font-size: 0.9rem; color: var(--text-dim); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        .project-list {
-            display: grid;
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .project-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem;
-            border-radius: 20px;
-        }
+        .filter-btn, .sort-select { padding: 0.6rem 1.2rem; border-radius: 50px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
+        .filter-btn.active { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); font-weight: 600; }
+        .sort-select { color: var(--text-color); outline: none; }
+        .sort-select option { background: var(--bg-color); }
+
+        .project-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .project-card { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-radius: 20px; }
+        .project-info { flex: 1; }
         .project-info h3 { margin-bottom: 0.5rem; }
-        .vote-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .vote-btn {
-            background: none;
-            border: 1px solid var(--glass-border);
-            color: var(--text-color);
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-        .vote-btn:hover:not(:disabled) {
-            border-color: var(--accent-color);
-            background: rgba(0, 242, 255, 0.1);
-        }
-        .vote-btn.voted {
-            background: var(--accent-color);
-            color: var(--bg-color);
-            border-color: var(--accent-color);
-        }
-        .vote-count { font-weight: 700; font-size: 1.2rem; }
+        
+        .vote-controls { display: flex; align-items: center; gap: 1rem; margin-left: 2rem; }
+        .vote-btn-group { display: flex; flex-direction: column; gap: 0.3rem; align-items: center; }
+        .vote-arrow { background: none; border: 1px solid var(--glass-border); color: var(--text-dim); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .vote-arrow:hover:not(:disabled) { border-color: var(--accent-color); color: var(--accent-color); }
+        .vote-arrow.active-up { background: #00ff88; color: #050508; border-color: #00ff88; }
+        .vote-arrow.active-down { background: #ff4444; color: #fff; border-color: #ff4444; }
+        .vote-score { font-weight: 800; font-size: 1.4rem; min-width: 40px; text-align: center; }
+
+        .status-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; display: inline-block; }
+        .status-planned { background: rgba(0, 242, 255, 0.1); color: #00f2ff; }
+        .status-progress { background: rgba(255, 170, 0, 0.1); color: #ffaa00; }
+        .status-released { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
+        .status-backlog { background: rgba(255, 255, 255, 0.1); color: #ccc; }
     </style>
 </head>
 <body>
@@ -126,9 +53,9 @@
     <nav>
         <div class="container">
             <a href="index.html" class="logo">exus<span>541</span></a>
-                                                <div class="nav-links">
+            <div class="nav-links">
                 <a href="index.html#extensions"><i data-lucide="puzzle"></i> <span>Extensions</span></a>
-                <a href="roadmap.html"><i data-lucide="map"></i> <span>Roadmap</span></a>
+                <a href="roadmap.html" class="active"><i data-lucide="map"></i> <span>Roadmap</span></a>
                 <a href="index.html#feedback"><i data-lucide="message-square"></i> <span>Feedback</span></a>
                 <a href="index.html#about"><i data-lucide="info"></i> <span>About</span></a>
                 <a href="index.html#socials"><i data-lucide="share-2"></i> <span>Socials</span></a>
@@ -140,45 +67,36 @@
     <main class="container">
         <section class="timeline-container">
             <h1 class="reveal">Project <span>Journey</span></h1>
-            <p>From the first line of code to the future of browsing.</p>
-
+            <p>Tracking the evolution and future of exus541 tools.</p>
             <div class="timeline">
-                <div class="timeline-node" style="left:0">
-                    <div class="timeline-content">
-                        <h4>Past</h4>
-                        <p>Foundation & First Extensions (v1.0)</p>
-                    </div>
-                </div>
-                <div class="timeline-node" style="left:50%">
-                    <div class="timeline-content">
-                        <h4>Present</h4>
-                        <p>Store Launch & Community Hub</p>
-                    </div>
-                </div>
-                <div class="timeline-node" style="left:100%">
-                    <div class="timeline-content">
-                        <h4>Future</h4>
-                        <p>Cross-Platform & Pro Features</p>
-                    </div>
-                </div>
+                <div class="timeline-node" style="left:0"><div class="timeline-content"><h4>Past</h4><p>Foundation & v1.0</p></div></div>
+                <div class="timeline-node" style="left:50%"><div class="timeline-content"><h4>Present</h4><p>Community & Growth</p></div></div>
+                <div class="timeline-node" style="left:100%"><div class="timeline-content"><h4>Future</h4><p>Innovation & Pro Suite</p></div></div>
             </div>
         </section>
 
         <section class="projects-section">
-            <div class="section-header">
-                <h2>Project Explorer</h2>
-                <p>Vote for the features you want to see next.</p>
-            </div>
-
-            <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="extension">Extensions</button>
-                <button class="filter-btn" data-filter="web">Web Tools</button>
-                <button class="filter-btn" data-filter="planned">Planned</button>
+            <div class="controls-bar">
+                <div class="filter-group">
+                    <span class="label">Filter by:</span>
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="backlog">Backlog</button>
+                    <button class="filter-btn" data-filter="planned">Planned</button>
+                    <button class="filter-btn" data-filter="progress">In Progress</button>
+                    <button class="filter-btn" data-filter="released">Umgesetzt</button>
+                </div>
+                <div class="sort-group">
+                    <span class="label">Sort by:</span>
+                    <select class="sort-select" id="sortSelect">
+                        <option value="votes">Top Upvotes</option>
+                        <option value="az">Name (A-Z)</option>
+                        <option value="status">Status Priority</option>
+                    </select>
+                </div>
             </div>
 
             <div class="project-list" id="projectList">
-                <!-- Projects will be injected by JS -->
+                <!-- Projects injected by JS -->
             </div>
         </section>
     </main>
@@ -191,34 +109,49 @@
 
     <script>
         const projects = [
-            { id: 1, title: "Cloud Sync Engine", desc: "Sync your WebNote and SiteBlocker rules across browsers.", category: "planned", votes: 142 },
-            { id: 2, title: "TabMaster Pro", desc: "Advanced tab group management and automated workflows.", category: "extension", votes: 89 },
-            { id: 3, title: "Firefox Support", desc: "Porting all extensions to the Firefox browser.", category: "planned", votes: 215 },
-            { id: 4, title: "Global Settings Hub", desc: "One dashboard to control all exus541 tools.", category: "web", votes: 67 },
-            { id: 5, title: "Mobile Companion", desc: "A mobile app to manage your browser tools on the go.", category: "planned", votes: 45 }
+            { id: 1, title: "Cloud Sync Engine", desc: "Sync your WebNote and SiteBlocker rules across browsers.", status: "planned", votes: 0 },
+            { id: 2, title: "TabMaster Pro", desc: "Advanced tab group management and automated workflows.", status: "progress", votes: 0 },
+            { id: 3, title: "Firefox Support", desc: "Porting all extensions to the Firefox browser.", status: "planned", votes: 0 },
+            { id: 4, title: "Global Settings Hub", desc: "One dashboard to control all exus541 tools.", status: "backlog", votes: 0 },
+            { id: 5, title: "Official Web Store Launch", desc: "All core extensions are now available on Chrome.", status: "released", votes: 0 },
+            { id: 6, title: "Feedback Hub", desc: "Integrated community feedback system.", status: "released", votes: 0 }
         ];
 
-        function renderProjects(filter = 'all') {
+        const statusOrder = { "progress": 0, "planned": 1, "backlog": 2, "released": 3 };
+
+        function renderProjects() {
             const list = document.getElementById('projectList');
+            const filter = document.querySelector('.filter-btn.active').dataset.filter;
+            const sort = document.getElementById('sortSelect').value;
+            
             list.innerHTML = '';
             
-            const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+            let filtered = filter === 'all' ? [...projects] : projects.filter(p => p.status === filter);
             
-            filtered.sort((a, b) => b.votes - a.votes).forEach(p => {
-                const isVoted = localStorage.getItem(`voted_${p.id}`);
+            if (sort === 'votes') filtered.sort((a, b) => b.votes - a.votes);
+            else if (sort === 'az') filtered.sort((a, b) => a.title.localeCompare(b.title));
+            else if (sort === 'status') filtered.sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
+
+            filtered.forEach(p => {
+                const userVote = localStorage.getItem(`vote_${p.id}`); // 'up', 'down', or null
                 const card = document.createElement('div');
                 card.className = 'project-card glass';
                 card.innerHTML = `
                     <div class="project-info">
-                        <span class="roadmap-tag">${p.category}</span>
+                        <span class="status-tag status-${p.status}">${p.status === 'released' ? 'Umgesetzt' : p.status}</span>
                         <h3>${p.title}</h3>
                         <p>${p.desc}</p>
                     </div>
-                    <div class="vote-section">
-                        <span class="vote-count">${p.votes}</span>
-                        <button class="vote-btn ${isVoted ? 'voted' : ''}" onclick="toggleVote(${p.id})" ${isVoted ? 'disabled' : ''}>
-                            <i data-lucide="thumbs-up"></i> ${isVoted ? 'Voted' : 'Vote'}
-                        </button>
+                    <div class="vote-controls">
+                        <div class="vote-score">${p.votes}</div>
+                        <div class="vote-btn-group">
+                            <button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote">
+                                <i data-lucide="chevron-up"></i>
+                            </button>
+                            <button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote">
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                        </div>
                     </div>
                 `;
                 list.appendChild(card);
@@ -226,22 +159,35 @@
             lucide.createIcons();
         }
 
-        function toggleVote(id) {
-            if (localStorage.getItem(`voted_${id}`)) return;
-            
+        function handleVote(id, type) {
             const project = projects.find(p => p.id === id);
-            project.votes++;
-            localStorage.setItem(`voted_${id}`, 'true');
-            renderProjects(document.querySelector('.filter-btn.active').dataset.filter);
+            const currentVote = localStorage.getItem(`vote_${id}`);
+
+            if (currentVote === type) {
+                // Remove vote
+                project.votes += (type === 'up' ? -1 : 1);
+                localStorage.removeItem(`vote_${id}`);
+            } else {
+                // If had other vote, remove it first
+                if (currentVote) {
+                    project.votes += (currentVote === 'up' ? -1 : 1);
+                }
+                // Add new vote
+                project.votes += (type === 'up' ? 1 : -1);
+                localStorage.setItem(`vote_${id}`, type);
+            }
+            renderProjects();
         }
 
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelector('.filter-btn.active').classList.remove('active');
                 e.target.classList.add('active');
-                renderProjects(e.target.dataset.filter);
+                renderProjects();
             });
         });
+
+        document.getElementById('sortSelect').addEventListener('change', renderProjects);
 
         renderProjects();
     </script>
