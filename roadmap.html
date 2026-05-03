@@ -21,7 +21,6 @@
         .timeline-content li { margin-bottom: 5px; display: flex; align-items: flex-start; gap: 8px; }
         .timeline-content li i { color: var(--accent-color); width: 14px; margin-top: 3px; }
         .timeline-content .date-badge { font-size: 0.7rem; font-weight: 800; background: rgba(0, 242, 255, 0.1); color: var(--accent-color); padding: 1px 6px; border-radius: 4px; margin-right: 5px; }
-
         .today-label { color: #fff !important; font-weight: 800 !important; font-size: 1.3rem !important; margin-bottom: 10px !important; }
         .today-date { font-family: 'Outfit', sans-serif; font-weight: 400; color: #fff; }
 
@@ -35,11 +34,22 @@
         .custom-options { position: absolute; top: calc(100% + 10px); left: 0; right: 0; background: var(--bg-color); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; display: none; z-index: 100; backdrop-filter: blur(20px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .custom-option { padding: 0.8rem 1.2rem; cursor: pointer; transition: all 0.2s ease; color: var(--text-dim); font-size: 0.9rem; }
         .custom-option:hover { background: rgba(0, 242, 255, 0.1); color: var(--accent-color); }
+        
+        /* Fixed Project Layout */
         .project-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
         .project-card { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-radius: 20px; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease; }
         .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
-        .vote-controls { display: flex; align-items: center; gap: 1rem; margin-left: 2rem; cursor: default; }
-        .vote-score { font-weight: 800; font-size: 1.4rem; min-width: 40px; text-align: center; }
+        .project-info { flex: 1; }
+        .project-info h3 { margin-bottom: 0.5rem; }
+
+        /* Classic Vertical Voting */
+        .vote-controls { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-left: 2rem; cursor: default; }
+        .vote-arrow { background: none; border: 1px solid var(--glass-border); color: var(--text-dim); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .vote-arrow:hover:not(:disabled) { border-color: var(--accent-color); color: var(--accent-color); }
+        .vote-arrow.active-up { background: #00ff88; color: #050508; border-color: #00ff88; }
+        .vote-arrow.active-down { background: #ff4444; color: #fff; border-color: #ff4444; }
+        .vote-score { font-weight: 800; font-size: 1.4rem; min-width: 40px; text-align: center; color: var(--text-color); }
+
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 1000; }
         .modal-content { background: var(--bg-color); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
         .status-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; display: inline-block; margin-right: 8px; }
@@ -73,62 +83,16 @@
             <h1 class="reveal">Project <span>Journey</span></h1>
             <p>Tracking the evolution of the exus541 tool suite.</p>
             <div class="timeline">
-                <div class="timeline-node">
-                    <div class="timeline-content">
-                        <h4>Store Releases</h4>
-                        <ul>
-                            <li><i data-lucide="check-circle-2"></i> <span class="date-badge">MAR 2026</span> YT Filter</li>
-                            <li><i data-lucide="check-circle-2"></i> <span class="date-badge">APR 2026</span> SiteBlocker</li>
-                            <li><i data-lucide="check-circle-2"></i> <span class="date-badge">APR 2026</span> WebNote</li>
-                            <li><i data-lucide="check-circle-2"></i> <span class="date-badge">MAY 2026</span> TabMaster</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-node node-today">
-                    <div class="timeline-content" style="border-color: #fff;">
-                        <h4 class="today-label">TODAY</h4>
-                        <div class="today-date" id="currentDate">-- -- ----</div>
-                        <p style="margin: 10px 0 5px 0; font-size: 0.8rem; color: #fff; font-weight: 600;">ACTIVE WORK ON:</p>
-                        <ul>
-                            <li><i data-lucide="code-2"></i> TabMaster Pro Features</li>
-                            <li><i data-lucide="code-2"></i> Cloud Sync System</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-node">
-                    <div class="timeline-content">
-                        <h4>Upcoming Focus</h4>
-                        <ul>
-                            <li><i data-lucide="arrow-right-circle"></i> Firefox Store Listing</li>
-                            <li><i data-lucide="arrow-right-circle"></i> Unified Settings Dashboard</li>
-                            <li><i data-lucide="arrow-right-circle"></i> Privacy Policy V2</li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="timeline-node"><div class="timeline-content"><h4>Store Releases</h4><ul><li><i data-lucide="check-circle-2"></i> <span class="date-badge">MAR 2026</span> YT Filter</li><li><i data-lucide="check-circle-2"></i> <span class="date-badge">APR 2026</span> SiteBlocker</li><li><i data-lucide="check-circle-2"></i> <span class="date-badge">APR 2026</span> WebNote</li><li><i data-lucide="check-circle-2"></i> <span class="date-badge">MAY 2026</span> TabMaster</li></ul></div></div>
+                <div class="timeline-node node-today"><div class="timeline-content" style="border-color: #fff;"><h4 class="today-label">TODAY</h4><div class="today-date" id="currentDate">-- -- ----</div><p style="margin: 10px 0 5px 0; font-size: 0.8rem; color: #fff; font-weight: 600;">ACTIVE WORK ON:</p><ul><li><i data-lucide="code-2"></i> TabMaster Pro Features</li><li><i data-lucide="code-2"></i> Cloud Sync System</li></ul></div></div>
+                <div class="timeline-node"><div class="timeline-content"><h4>Upcoming Focus</h4><ul><li><i data-lucide="arrow-right-circle"></i> Firefox Store Listing</li><li><i data-lucide="arrow-right-circle"></i> Unified Settings Dashboard</li><li><i data-lucide="arrow-right-circle"></i> Privacy Policy V2</li></ul></div></div>
             </div>
         </section>
 
         <section class="projects-section" style="margin-top: 250px;">
             <div class="controls-bar">
-                <div class="filter-group">
-                    <span class="label">Filter:</span>
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="backlog">Backlog</button>
-                    <button class="filter-btn" data-filter="planned">Planned</button>
-                    <button class="filter-btn" data-filter="progress">In Progress</button>
-                    <button class="filter-btn" data-filter="completed">Completed</button>
-                </div>
-                <div class="sort-group">
-                    <span class="label">Sort By:</span>
-                    <div class="custom-select-wrapper">
-                        <div class="custom-select" id="customSelect"><span id="selectedSort">Top Upvotes</span><i data-lucide="chevron-down"></i></div>
-                        <div class="custom-options" id="customOptions">
-                            <div class="custom-option selected" data-value="votes">Top Upvotes</div>
-                            <div class="custom-option" data-value="az">Name (A-Z)</div>
-                            <div class="custom-option" data-value="status">Status Priority</div>
-                        </div>
-                    </div>
-                </div>
+                <div class="filter-group"><span class="label">Filter:</span><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="backlog">Backlog</button><button class="filter-btn" data-filter="planned">Planned</button><button class="filter-btn" data-filter="progress">In Progress</button><button class="filter-btn" data-filter="completed">Completed</button></div>
+                <div class="sort-group"><span class="label">Sort By:</span><div class="custom-select-wrapper"><div class="custom-select" id="customSelect"><span id="selectedSort">Top Upvotes</span><i data-lucide="chevron-down"></i></div><div class="custom-options" id="customOptions"><div class="custom-option selected" data-value="votes">Top Upvotes</div><div class="custom-option" data-value="az">Name (A-Z)</div><div class="custom-option" data-value="status">Status Priority</div></div></div></div>
             </div>
             <div class="project-list" id="projectList"></div>
         </section>
@@ -165,7 +129,25 @@
             filtered.forEach(p => {
                 const userVote = localStorage.getItem(`vote_${p.id}`);
                 const card = document.createElement('div'); card.className = 'project-card glass'; card.onclick = () => openModal(p.id);
-                card.innerHTML = `<div class="project-info"><div><span class="status-tag status-${p.status}">${p.status}</span><span class="scope-tag">${p.scope}</span></div><h3>${p.title}</h3><p>${p.desc}</p></div><div class="vote-controls" onclick="event.stopPropagation()"><div class="vote-score">${p.votes}</div><div class="vote-btn-group"><button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote"><i data-lucide="chevron-up"></i></button><button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote"><i data-lucide="chevron-down"></i></button></div></div>`;
+                card.innerHTML = `
+                    <div class="project-info">
+                        <div>
+                            <span class="status-tag status-${p.status}">${p.status}</span>
+                            <span class="scope-tag">${p.scope}</span>
+                        </div>
+                        <h3>${p.title}</h3>
+                        <p>${p.desc}</p>
+                    </div>
+                    <div class="vote-controls" onclick="event.stopPropagation()">
+                        <button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote">
+                            <i data-lucide="chevron-up"></i>
+                        </button>
+                        <div class="vote-score">${p.votes}</div>
+                        <button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote">
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                    </div>
+                `;
                 list.appendChild(card);
             });
             lucide.createIcons();
