@@ -583,3 +583,12 @@ footer p {
     .hero { padding-top: 150px; }
     .grid { grid-template-columns: 1fr; }
 }
+
+/* Technical Core Section */
+.tech-core { padding: 100px 0; background: rgba(255,255,255,0.02); }
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.tech-item { padding: 2.5rem; text-align: center; border-radius: 25px; transition: transform 0.3s ease; border: 1px solid var(--glass-border); background: var(--glass-bg); }
+.tech-item:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+.tech-icon { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1.5rem; display: flex; justify-content: center; }
+.tech-item h3 { font-size: 1.2rem; margin-bottom: 1rem; color: #fff; }
+.tech-item p { font-size: 0.9rem; line-height: 1.6; color: var(--text-dim); }
