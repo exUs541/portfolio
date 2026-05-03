@@ -11,56 +11,15 @@
     <style>
         /* Roadmap Specific Styles */
         .timeline-container { padding: 150px 0 80px 0; text-align: center; }
-        
-        .timeline { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            position: relative; 
-            max-width: 1100px; 
-            margin: 80px auto; 
-            padding: 0 40px; 
-        }
-        .timeline::before { 
-            content: ''; 
-            position: absolute; 
-            top: 50%; 
-            left: 60px; 
-            right: 60px; 
-            height: 2px; 
-            background: linear-gradient(90deg, var(--glass-border) 0%, var(--accent-color) 50%, var(--glass-border) 100%); 
-            z-index: 1; 
-        }
-        
-        .timeline-node { 
-            position: relative; 
-            z-index: 2; 
-            background: var(--bg-color); 
-            border: 2px solid var(--accent-color); 
-            width: 24px; 
-            height: 24px; 
-            border-radius: 50%; 
-            box-shadow: 0 0 20px var(--accent-glow); 
-        }
+        .timeline { display: flex; justify-content: space-between; align-items: center; position: relative; max-width: 1100px; margin: 80px auto; padding: 0 40px; }
+        .timeline::before { content: ''; position: absolute; top: 50%; left: 60px; right: 60px; height: 2px; background: linear-gradient(90deg, var(--glass-border) 0%, var(--accent-color) 50%, var(--glass-border) 100%); z-index: 1; }
+        .timeline-node { position: relative; z-index: 2; background: var(--bg-color); border: 2px solid var(--accent-color); width: 24px; height: 24px; border-radius: 50%; box-shadow: 0 0 20px var(--accent-glow); }
         .node-today { border-color: #fff; box-shadow: 0 0 25px rgba(255,255,255,0.5); width: 28px; height: 28px; }
-
-        .timeline-content { 
-            position: absolute; 
-            top: 45px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            width: 250px; 
-            background: rgba(255,255,255,0.03);
-            padding: 1.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(5px);
-        }
+        .timeline-content { position: absolute; top: 45px; left: 50%; transform: translateX(-50%); width: 250px; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border); backdrop-filter: blur(5px); }
         .timeline-content h4 { font-size: 1.1rem; color: var(--accent-color); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
         .timeline-content ul { list-style: none; padding: 0; margin: 0; text-align: left; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
         .timeline-content li { margin-bottom: 5px; display: flex; align-items: flex-start; gap: 8px; }
         .timeline-content li i { color: var(--accent-color); width: 14px; margin-top: 3px; }
-
         .today-label { color: #fff !important; font-weight: 800 !important; font-size: 1.3rem !important; margin-bottom: 10px !important; }
         .today-date { font-family: 'Outfit', sans-serif; font-weight: 400; color: #fff; }
 
@@ -72,26 +31,29 @@
         .project-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
         .project-card { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-radius: 20px; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease; }
         .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
+        .project-info { flex: 1; }
+        .project-info h3 { margin-bottom: 0.5rem; }
+        
         .vote-controls { display: flex; align-items: center; gap: 1rem; margin-left: 2rem; cursor: default; }
         .vote-btn-group { display: flex; flex-direction: column; gap: 0.3rem; align-items: center; }
         .vote-arrow { background: none; border: 1px solid var(--glass-border); color: var(--text-dim); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
         .vote-arrow.active-up { background: #00ff88; color: #050508; border-color: #00ff88; }
         .vote-arrow.active-down { background: #ff4444; color: #fff; border-color: #ff4444; }
         .vote-score { font-weight: 800; font-size: 1.4rem; min-width: 40px; text-align: center; }
+
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 1000; }
         .modal-content { background: var(--bg-color); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
         .close-modal { position: absolute; top: 20px; right: 20px; cursor: pointer; color: var(--text-dim); }
-        .status-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; display: inline-block; }
+
+        .status-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; display: inline-block; margin-right: 8px; }
         .status-planned { background: rgba(0, 242, 255, 0.1); color: #00f2ff; }
         .status-progress { background: rgba(255, 170, 0, 0.1); color: #ffaa00; }
         .status-released { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
         .status-backlog { background: rgba(255, 255, 255, 0.1); color: #ccc; }
 
-        @media (max-width: 992px) {
-            .timeline { flex-direction: column; gap: 200px; margin-bottom: 300px; }
-            .timeline::before { display: none; }
-            .timeline-content { width: 300px; }
-        }
+        .scope-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; background: rgba(112, 0, 255, 0.15); color: #7000ff; border: 1px solid rgba(112, 0, 255, 0.3); }
+
+        @media (max-width: 992px) { .timeline { flex-direction: column; gap: 200px; margin-bottom: 300px; } .timeline::before { display: none; } .timeline-content { width: 300px; } }
     </style>
 </head>
 <body>
@@ -115,37 +77,9 @@
             <h1 class="reveal">Project <span>Journey</span></h1>
             <p>A transparent history of releases and a look into the future.</p>
             <div class="timeline">
-                <!-- PAST -->
-                <div class="timeline-node">
-                    <div class="timeline-content">
-                        <h4>Completed Milestones</h4>
-                        <ul>
-                            <li><i data-lucide="check-circle-2"></i> SiteBlocker Initial Release</li>
-                            <li><i data-lucide="check-circle-2"></i> WebNote Research Tools</li>
-                            <li><i data-lucide="zap"></i> YT Filter v4.3 Engine Update</li>
-                            <li><i data-lucide="globe"></i> Portfolio Hub Launch</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- TODAY -->
-                <div class="timeline-node node-today">
-                    <div class="timeline-content" style="border-color: #fff;">
-                        <h4 class="today-label">TODAY</h4>
-                        <div class="today-date" id="currentDate">-- -- ----</div>
-                        <p style="margin-top: 10px; font-style: italic;">Active Development...</p>
-                    </div>
-                </div>
-                <!-- FUTURE -->
-                <div class="timeline-node">
-                    <div class="timeline-content">
-                        <h4>Upcoming Features</h4>
-                        <ul>
-                            <li><i data-lucide="arrow-right-circle"></i> Cloud Sync Architecture</li>
-                            <li><i data-lucide="arrow-right-circle"></i> TabMaster Pro Suite</li>
-                            <li><i data-lucide="arrow-right-circle"></i> Firefox Browser Support</li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="timeline-node"><div class="timeline-content"><h4>Completed</h4><ul><li><i data-lucide="check-circle-2"></i> SiteBlocker Release</li><li><i data-lucide="check-circle-2"></i> WebNote Release</li><li><i data-lucide="zap"></i> YT Filter v4.3 Update</li><li><i data-lucide="globe"></i> Portfolio Hub Launch</li></ul></div></div>
+                <div class="timeline-node node-today"><div class="timeline-content" style="border-color: #fff;"><h4 class="today-label">TODAY</h4><div class="today-date" id="currentDate">-- -- ----</div><p style="margin-top: 10px; font-style: italic;">Active Development...</p></div></div>
+                <div class="timeline-node"><div class="timeline-content"><h4>Upcoming</h4><ul><li><i data-lucide="arrow-right-circle"></i> Cloud Sync Engine</li><li><i data-lucide="arrow-right-circle"></i> TabMaster Pro Suite</li><li><i data-lucide="arrow-right-circle"></i> Cross-Browser Support</li></ul></div></div>
             </div>
         </section>
 
@@ -186,19 +120,18 @@
     </footer>
 
     <script>
-        // Set dynamic date
         const dateElement = document.getElementById('currentDate');
         const now = new Date();
         const options = { day: 'numeric', month: 'long', year: 'numeric' };
         dateElement.innerText = now.toLocaleDateString('en-US', options);
 
         const projects = [
-            { id: 1, title: "Cloud Sync Engine", desc: "Sync your rules across browsers.", fullDesc: "The Cloud Sync Engine will allow users to securely sync their configurations, blocklists, and notes across multiple browsers and devices. It uses a lightweight, encrypted synchronization protocol to ensure your data stays private while being available wherever you work.", status: "planned", votes: 0 },
-            { id: 2, title: "TabMaster Pro", desc: "Advanced tab group management.", fullDesc: "TabMaster Pro takes workspace organization to the next level. Features include automated tab grouping based on AI patterns, persistent sessions that survive browser restarts, and a 'Zen Mode' that hides all but your active project tabs.", status: "progress", votes: 0 },
-            { id: 3, title: "Firefox Support", desc: "Porting all extensions to Firefox.", fullDesc: "We are committed to the open web. This initiative involves rewriting the core logic of all our extensions to be fully compatible with Firefox's Manifest V3 implementation, ensuring a seamless experience for Firefox users.", status: "planned", votes: 0 },
-            { id: 4, title: "Global Settings Hub", desc: "One dashboard for all tools.", fullDesc: "Instead of managing each extension individually, the Global Settings Hub provides a central dashboard where you can configure all exus541 tools from a single interface. This includes global shortcuts, theme settings, and update notifications.", status: "backlog", votes: 0 },
-            { id: 5, title: "Web Store Launch", desc: "Extensions now live on Chrome.", fullDesc: "All core browser extensions have successfully passed the Google Web Store review and are now available for public installation. This milestone ensures automated updates and verified security for all our users.", status: "released", votes: 0 },
-            { id: 6, title: "Feedback Hub", desc: "Integrated community feedback system.", fullDesc: "A dedicated system for users to report bugs, suggest features, and vote on the development roadmap. This ensures that our development focus is always aligned with the needs of the community.", status: "released", votes: 0 }
+            { id: 1, scope: "System", title: "Cloud Sync Engine", desc: "Sync your rules across browsers.", fullDesc: "Cross-extension synchronization system to keep your blocklists, notes, and tab rules consistent on all devices.", status: "planned", votes: 0 },
+            { id: 2, scope: "TabMaster", title: "TabMaster Pro", desc: "Advanced tab group management.", fullDesc: "Power-user features including AI-based grouping, session persistence, and workspace-specific rules.", status: "progress", votes: 0 },
+            { id: 3, scope: "System", title: "Firefox Support", desc: "Porting all extensions to Firefox.", fullDesc: "Making the entire suite of tools available on the Firefox Add-on Store with full Manifest V3 compatibility.", status: "backlog", votes: 0 },
+            { id: 4, scope: "System", title: "Global Settings Hub", desc: "One dashboard for all tools.", fullDesc: "Centralized management interface for all installed exus541 extensions.", status: "backlog", votes: 0 },
+            { id: 5, scope: "Launch", title: "Web Store Launch", desc: "Extensions live on Chrome.", fullDesc: "Official release of the core toolset on the Chrome Web Store.", status: "released", votes: 0 },
+            { id: 6, scope: "System", title: "Feedback Hub", desc: "Integrated community feedback system.", fullDesc: "A platform for users to directly influence development and report issues.", status: "released", votes: 0 }
         ];
 
         const statusOrder = { "progress": 0, "planned": 1, "backlog": 2, "released": 3 };
@@ -217,7 +150,7 @@
                 const card = document.createElement('div');
                 card.className = 'project-card glass';
                 card.onclick = () => openModal(p.id);
-                card.innerHTML = `<div class="project-info"><span class="status-tag status-${p.status}">${p.status === 'released' ? 'Umgesetzt' : p.status}</span><h3>${p.title}</h3><p>${p.desc}</p></div><div class="vote-controls" onclick="event.stopPropagation()"><div class="vote-score">${p.votes}</div><div class="vote-btn-group"><button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote"><i data-lucide="chevron-up"></i></button><button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote"><i data-lucide="chevron-down"></i></button></div></div>`;
+                card.innerHTML = `<div class="project-info"><div><span class="status-tag status-${p.status}">${p.status === 'released' ? 'Umgesetzt' : p.status}</span><span class="scope-tag">${p.scope}</span></div><h3>${p.title}</h3><p>${p.desc}</p></div><div class="vote-controls" onclick="event.stopPropagation()"><div class="vote-score">${p.votes}</div><div class="vote-btn-group"><button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote"><i data-lucide="chevron-up"></i></button><button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote"><i data-lucide="chevron-down"></i></button></div></div>`;
                 list.appendChild(card);
             });
             lucide.createIcons();
@@ -226,20 +159,13 @@
         function openModal(id) {
             const p = projects.find(item => item.id === id);
             const body = document.getElementById('modalBody');
-            body.innerHTML = `<div class="modal-header"><span class="status-tag status-${p.status}">${p.status === 'released' ? 'Umgesetzt' : p.status}</span><h2>${p.title}</h2></div><div class="modal-body"><p>${p.fullDesc}</p></div>`;
+            body.innerHTML = `<div class="modal-header"><span class="status-tag status-${p.status}">${p.status === 'released' ? 'Umgesetzt' : p.status}</span><span class="scope-tag">${p.scope}</span><h2>${p.title}</h2></div><div class="modal-body"><p>${p.fullDesc}</p></div>`;
             document.getElementById('modalOverlay').style.display = 'flex';
             lucide.createIcons();
         }
 
         function closeModal() { document.getElementById('modalOverlay').style.display = 'none'; }
-
-        function handleVote(id, type) {
-            const project = projects.find(p => p.id === id);
-            const currentVote = localStorage.getItem(`vote_${id}`);
-            if (currentVote === type) { project.votes += (type === 'up' ? -1 : 1); localStorage.removeItem(`vote_${id}`); } else { if (currentVote) project.votes += (currentVote === 'up' ? -1 : 1); project.votes += (type === 'up' ? 1 : -1); localStorage.setItem(`vote_${id}`, type); }
-            renderProjects();
-        }
-
+        function handleVote(id, type) { const p = projects.find(x => x.id === id); const cur = localStorage.getItem(`vote_${id}`); if (cur === type) { p.votes += (type === 'up' ? -1 : 1); localStorage.removeItem(`vote_${id}`); } else { if (cur) p.votes += (cur === 'up' ? -1 : 1); p.votes += (type === 'up' ? 1 : -1); localStorage.setItem(`vote_${id}`, type); } renderProjects(); }
         document.querySelectorAll('.filter-btn').forEach(btn => { btn.addEventListener('click', (e) => { document.querySelector('.filter-btn.active').classList.remove('active'); e.target.classList.add('active'); renderProjects(); }); });
         document.getElementById('sortSelect').addEventListener('change', renderProjects);
         renderProjects();
