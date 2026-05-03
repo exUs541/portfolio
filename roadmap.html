@@ -23,25 +23,21 @@
         .today-label { color: #fff !important; font-weight: 800 !important; font-size: 1.3rem !important; margin-bottom: 10px !important; }
         .today-date { font-family: 'Outfit', sans-serif; font-weight: 400; color: #fff; }
 
-        /* Controls bar */
         .controls-bar { margin-bottom: 50px; display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap; background: var(--glass-bg); padding: 1rem 2rem; border-radius: 50px; border: 1px solid var(--glass-border); max-width: fit-content; margin-left: auto; margin-right: auto; }
         .filter-group, .sort-group { display: flex; gap: 0.8rem; align-items: center; }
         .label { font-size: 0.8rem; color: var(--text-dim); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .filter-btn { padding: 0.5rem 1.2rem; border-radius: 50px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem; }
         .filter-btn.active { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); font-weight: 600; }
 
-        /* Custom Dropdown */
         .custom-select-wrapper { position: relative; user-select: none; width: 180px; }
         .custom-select { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 50px; cursor: pointer; color: var(--text-color); font-size: 0.9rem; transition: all 0.3s ease; }
         .custom-select:hover { border-color: var(--accent-color); }
-        .custom-select i { width: 16px; transition: transform 0.3s ease; }
         .custom-select.open i { transform: rotate(180deg); }
         .custom-options { position: absolute; top: calc(100% + 10px); left: 0; right: 0; background: var(--bg-color); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; display: none; z-index: 100; backdrop-filter: blur(20px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .custom-option { padding: 0.8rem 1.2rem; cursor: pointer; transition: all 0.2s ease; color: var(--text-dim); font-size: 0.9rem; }
         .custom-option:hover { background: rgba(0, 242, 255, 0.1); color: var(--accent-color); }
         .custom-option.selected { color: var(--accent-color); font-weight: 600; }
 
-        /* Projects */
         .project-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
         .project-card { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-radius: 20px; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease; }
         .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
@@ -95,7 +91,7 @@
 
         <section class="projects-section" style="margin-top: 250px;">
             <div class="controls-bar">
-                <div class="filter-group">
+                <div class="filter-group" id="filterGroup">
                     <span class="label">Filter:</span>
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="backlog">Backlog</button>
@@ -152,15 +148,21 @@
 
         const statusOrder = { "progress": 0, "planned": 1, "backlog": 2, "completed": 3 };
         let currentSort = 'votes';
+        let activeFilters = ['all'];
 
         function renderProjects() {
             const list = document.getElementById('projectList');
-            const filter = document.querySelector('.filter-btn.active').dataset.filter;
             list.innerHTML = '';
-            let filtered = filter === 'all' ? [...projects] : projects.filter(p => p.status === filter);
+            
+            let filtered = projects.filter(p => {
+                if (activeFilters.includes('all')) return true;
+                return activeFilters.includes(p.status);
+            });
+            
             if (currentSort === 'votes') filtered.sort((a, b) => b.votes - a.votes);
             else if (currentSort === 'az') filtered.sort((a, b) => a.title.localeCompare(b.title));
             else if (currentSort === 'status') filtered.sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
+            
             filtered.forEach(p => {
                 const userVote = localStorage.getItem(`vote_${p.id}`);
                 const card = document.createElement('div');
@@ -172,45 +174,49 @@
             lucide.createIcons();
         }
 
+        // Multi-Filter Logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                
+                if (filter === 'all') {
+                    activeFilters = ['all'];
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                } else {
+                    // Remove 'all' if present
+                    activeFilters = activeFilters.filter(f => f !== 'all');
+                    document.querySelector('.filter-btn[data-filter="all"]').classList.remove('active');
+                    
+                    if (activeFilters.includes(filter)) {
+                        activeFilters = activeFilters.filter(f => f !== filter);
+                        this.classList.remove('active');
+                    } else {
+                        activeFilters.push(filter);
+                        this.classList.add('active');
+                    }
+                    
+                    // If no filters left, reset to 'all'
+                    if (activeFilters.length === 0) {
+                        activeFilters = ['all'];
+                        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+                    }
+                }
+                renderProjects();
+            });
+        });
+
         // Custom Dropdown Logic
         const customSelect = document.getElementById('customSelect');
         const customOptions = document.getElementById('customOptions');
         const selectedSortText = document.getElementById('selectedSort');
+        customSelect.addEventListener('click', (e) => { e.stopPropagation(); customSelect.classList.toggle('open'); customOptions.style.display = customSelect.classList.contains('open') ? 'block' : 'none'; });
+        document.querySelectorAll('.custom-option').forEach(option => { option.addEventListener('click', function() { currentSort = this.dataset.value; selectedSortText.innerText = this.innerText; document.querySelector('.custom-option.selected').classList.remove('selected'); this.classList.add('selected'); renderProjects(); customSelect.classList.remove('open'); customOptions.style.display = 'none'; }); });
+        document.addEventListener('click', () => { customSelect.classList.remove('open'); customOptions.style.display = 'none'; });
 
-        customSelect.addEventListener('click', (e) => {
-            e.stopPropagation();
-            customSelect.classList.toggle('open');
-            customOptions.style.display = customSelect.classList.contains('open') ? 'block' : 'none';
-        });
-
-        document.querySelectorAll('.custom-option').forEach(option => {
-            option.addEventListener('click', function() {
-                currentSort = this.dataset.value;
-                selectedSortText.innerText = this.innerText;
-                document.querySelector('.custom-option.selected').classList.remove('selected');
-                this.classList.add('selected');
-                renderProjects();
-                customSelect.classList.remove('open');
-                customOptions.style.display = 'none';
-            });
-        });
-
-        document.addEventListener('click', () => {
-            customSelect.classList.remove('open');
-            customOptions.style.display = 'none';
-        });
-
-        function openModal(id) {
-            const p = projects.find(item => item.id === id);
-            const body = document.getElementById('modalBody');
-            body.innerHTML = `<div class="modal-header"><span class="status-tag status-${p.status}">${p.status}</span><span class="scope-tag">${p.scope}</span><h2>${p.title}</h2></div><div class="modal-body"><p>${p.fullDesc}</p></div>`;
-            document.getElementById('modalOverlay').style.display = 'flex';
-            lucide.createIcons();
-        }
-
+        function openModal(id) { const p = projects.find(item => item.id === id); const body = document.getElementById('modalBody'); body.innerHTML = `<div class="modal-header"><span class="status-tag status-${p.status}">${p.status}</span><span class="scope-tag">${p.scope}</span><h2>${p.title}</h2></div><div class="modal-body"><p>${p.fullDesc}</p></div>`; document.getElementById('modalOverlay').style.display = 'flex'; lucide.createIcons(); }
         function closeModal() { document.getElementById('modalOverlay').style.display = 'none'; }
         function handleVote(id, type) { const p = projects.find(x => x.id === id); const cur = localStorage.getItem(`vote_${id}`); if (cur === type) { p.votes += (type === 'up' ? -1 : 1); localStorage.removeItem(`vote_${id}`); } else { if (cur) p.votes += (cur === 'up' ? -1 : 1); p.votes += (type === 'up' ? 1 : -1); localStorage.setItem(`vote_${id}`, type); } renderProjects(); }
-        document.querySelectorAll('.filter-btn').forEach(btn => { btn.addEventListener('click', (e) => { document.querySelector('.filter-btn.active').classList.remove('active'); e.target.classList.add('active'); renderProjects(); }); });
         renderProjects();
     </script>
 </body>
