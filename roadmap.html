@@ -18,21 +18,43 @@
         .timeline-content h4 { font-size: 1.2rem; color: var(--accent-color); margin-bottom: 5px; }
         .timeline-content p { font-size: 0.9rem; color: var(--text-dim); }
 
-        .controls-bar { margin-bottom: 40px; display: flex; flex-direction: column; gap: 1.5rem; align-items: center; }
-        .filter-group, .sort-group { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; align-items: center; }
-        .label { font-size: 0.9rem; color: var(--text-dim); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .controls-bar { 
+            margin-bottom: 50px; 
+            display: flex; 
+            gap: 2rem; 
+            justify-content: center; 
+            align-items: center; 
+            flex-wrap: wrap;
+            background: var(--glass-bg);
+            padding: 1.5rem;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .filter-group, .sort-group { display: flex; gap: 0.8rem; align-items: center; }
+        .label { font-size: 0.8rem; color: var(--text-dim); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        .filter-btn, .sort-select { padding: 0.6rem 1.2rem; border-radius: 50px; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
+        .filter-btn, .sort-select { padding: 0.5rem 1rem; border-radius: 50px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem; }
         .filter-btn.active { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); font-weight: 600; }
-        .sort-select { color: var(--text-color); outline: none; }
-        .sort-select option { background: var(--bg-color); }
-
+        
         .project-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-        .project-card { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-radius: 20px; }
+        .project-card { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 2rem; 
+            border-radius: 20px; 
+            cursor: pointer;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
         .project-info { flex: 1; }
         .project-info h3 { margin-bottom: 0.5rem; }
         
-        .vote-controls { display: flex; align-items: center; gap: 1rem; margin-left: 2rem; }
+        /* Voting */
+        .vote-controls { display: flex; align-items: center; gap: 1rem; margin-left: 2rem; cursor: default; }
         .vote-btn-group { display: flex; flex-direction: column; gap: 0.3rem; align-items: center; }
         .vote-arrow { background: none; border: 1px solid var(--glass-border); color: var(--text-dim); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
         .vote-arrow:hover:not(:disabled) { border-color: var(--accent-color); color: var(--accent-color); }
@@ -40,11 +62,31 @@
         .vote-arrow.active-down { background: #ff4444; color: #fff; border-color: #ff4444; }
         .vote-score { font-weight: 800; font-size: 1.4rem; min-width: 40px; text-align: center; }
 
+        /* Modal */
+        .modal-overlay { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
+            display: none; justify-content: center; align-items: center; z-index: 1000;
+        }
+        .modal-content { 
+            background: var(--bg-color); border: 1px solid var(--glass-border); 
+            padding: 3rem; border-radius: 30px; max-width: 600px; width: 90%;
+            position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        .close-modal { position: absolute; top: 20px; right: 20px; cursor: pointer; color: var(--text-dim); }
+        .modal-header { margin-bottom: 2rem; }
+        .modal-header h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .modal-body p { line-height: 1.8; color: var(--text-dim); font-size: 1.1rem; }
+
         .status-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; display: inline-block; }
         .status-planned { background: rgba(0, 242, 255, 0.1); color: #00f2ff; }
         .status-progress { background: rgba(255, 170, 0, 0.1); color: #ffaa00; }
         .status-released { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
         .status-backlog { background: rgba(255, 255, 255, 0.1); color: #ccc; }
+
+        @media (max-width: 768px) {
+            .controls-bar { border-radius: 20px; flex-direction: column; gap: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -67,7 +109,7 @@
     <main class="container">
         <section class="timeline-container">
             <h1 class="reveal">Project <span>Journey</span></h1>
-            <p>Tracking the evolution and future of exus541 tools.</p>
+            <p>Transparency in development. Explore what's next for exus541 tools.</p>
             <div class="timeline">
                 <div class="timeline-node" style="left:0"><div class="timeline-content"><h4>Past</h4><p>Foundation & v1.0</p></div></div>
                 <div class="timeline-node" style="left:50%"><div class="timeline-content"><h4>Present</h4><p>Community & Growth</p></div></div>
@@ -78,7 +120,7 @@
         <section class="projects-section">
             <div class="controls-bar">
                 <div class="filter-group">
-                    <span class="label">Filter by:</span>
+                    <span class="label">Filter:</span>
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="backlog">Backlog</button>
                     <button class="filter-btn" data-filter="planned">Planned</button>
@@ -86,7 +128,7 @@
                     <button class="filter-btn" data-filter="released">Umgesetzt</button>
                 </div>
                 <div class="sort-group">
-                    <span class="label">Sort by:</span>
+                    <span class="label">Sort By:</span>
                     <select class="sort-select" id="sortSelect">
                         <option value="votes">Top Upvotes</option>
                         <option value="az">Name (A-Z)</option>
@@ -101,6 +143,16 @@
         </section>
     </main>
 
+    <!-- Modal for Project Details -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal-content glass" onclick="event.stopPropagation()">
+            <div class="close-modal" onclick="closeModal()"><i data-lucide="x"></i></div>
+            <div id="modalBody">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
+    </div>
+
     <footer style="margin-top: 100px;">
         <div class="container">
             <p>&copy; 2026 exus541. Built with ❤️</p>
@@ -109,12 +161,12 @@
 
     <script>
         const projects = [
-            { id: 1, title: "Cloud Sync Engine", desc: "Sync your WebNote and SiteBlocker rules across browsers.", status: "planned", votes: 0 },
-            { id: 2, title: "TabMaster Pro", desc: "Advanced tab group management and automated workflows.", status: "progress", votes: 0 },
-            { id: 3, title: "Firefox Support", desc: "Porting all extensions to the Firefox browser.", status: "planned", votes: 0 },
-            { id: 4, title: "Global Settings Hub", desc: "One dashboard to control all exus541 tools.", status: "backlog", votes: 0 },
-            { id: 5, title: "Official Web Store Launch", desc: "All core extensions are now available on Chrome.", status: "released", votes: 0 },
-            { id: 6, title: "Feedback Hub", desc: "Integrated community feedback system.", status: "released", votes: 0 }
+            { id: 1, title: "Cloud Sync Engine", desc: "Sync your rules across browsers.", fullDesc: "The Cloud Sync Engine will allow users to securely sync their configurations, blocklists, and notes across multiple browsers and devices. It uses a lightweight, encrypted synchronization protocol to ensure your data stays private while being available wherever you work.", status: "planned", votes: 0 },
+            { id: 2, title: "TabMaster Pro", desc: "Advanced tab group management.", fullDesc: "TabMaster Pro takes workspace organization to the next level. Features include automated tab grouping based on AI patterns, persistent sessions that survive browser restarts, and a 'Zen Mode' that hides all but your active project tabs.", status: "progress", votes: 0 },
+            { id: 3, title: "Firefox Support", desc: "Porting all extensions to Firefox.", fullDesc: "We are committed to the open web. This initiative involves rewriting the core logic of all our extensions to be fully compatible with Firefox's Manifest V3 implementation, ensuring a seamless experience for Firefox users.", status: "planned", votes: 0 },
+            { id: 4, title: "Global Settings Hub", desc: "One dashboard for all tools.", fullDesc: "Instead of managing each extension individually, the Global Settings Hub provides a central dashboard where you can configure all exus541 tools from a single interface. This includes global shortcuts, theme settings, and update notifications.", status: "backlog", votes: 0 },
+            { id: 5, title: "Web Store Launch", desc: "Extensions now live on Chrome.", fullDesc: "All core browser extensions have successfully passed the Google Web Store review and are now available for public installation. This milestone ensures automated updates and verified security for all our users.", status: "released", votes: 0 },
+            { id: 6, title: "Feedback Hub", desc: "Integrated community feedback system.", fullDesc: "A dedicated system for users to report bugs, suggest features, and vote on the development roadmap. This ensures that our development focus is always aligned with the needs of the community.", status: "released", votes: 0 }
         ];
 
         const statusOrder = { "progress": 0, "planned": 1, "backlog": 2, "released": 3 };
@@ -125,7 +177,6 @@
             const sort = document.getElementById('sortSelect').value;
             
             list.innerHTML = '';
-            
             let filtered = filter === 'all' ? [...projects] : projects.filter(p => p.status === filter);
             
             if (sort === 'votes') filtered.sort((a, b) => b.votes - a.votes);
@@ -133,16 +184,17 @@
             else if (sort === 'status') filtered.sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
 
             filtered.forEach(p => {
-                const userVote = localStorage.getItem(`vote_${p.id}`); // 'up', 'down', or null
+                const userVote = localStorage.getItem(`vote_${p.id}`);
                 const card = document.createElement('div');
                 card.className = 'project-card glass';
+                card.onclick = () => openModal(p.id);
                 card.innerHTML = `
                     <div class="project-info">
                         <span class="status-tag status-${p.status}">${p.status === 'released' ? 'Umgesetzt' : p.status}</span>
                         <h3>${p.title}</h3>
                         <p>${p.desc}</p>
                     </div>
-                    <div class="vote-controls">
+                    <div class="vote-controls" onclick="event.stopPropagation()">
                         <div class="vote-score">${p.votes}</div>
                         <div class="vote-btn-group">
                             <button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote">
@@ -159,20 +211,34 @@
             lucide.createIcons();
         }
 
+        function openModal(id) {
+            const p = projects.find(item => item.id === id);
+            const body = document.getElementById('modalBody');
+            body.innerHTML = `
+                <div class="modal-header">
+                    <span class="status-tag status-${p.status}">${p.status === 'released' ? 'Umgesetzt' : p.status}</span>
+                    <h2>${p.title}</h2>
+                </div>
+                <div class="modal-body">
+                    <p>${p.fullDesc}</p>
+                </div>
+            `;
+            document.getElementById('modalOverlay').style.display = 'flex';
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
         function handleVote(id, type) {
             const project = projects.find(p => p.id === id);
             const currentVote = localStorage.getItem(`vote_${id}`);
-
             if (currentVote === type) {
-                // Remove vote
                 project.votes += (type === 'up' ? -1 : 1);
                 localStorage.removeItem(`vote_${id}`);
             } else {
-                // If had other vote, remove it first
-                if (currentVote) {
-                    project.votes += (currentVote === 'up' ? -1 : 1);
-                }
-                // Add new vote
+                if (currentVote) project.votes += (currentVote === 'up' ? -1 : 1);
                 project.votes += (type === 'up' ? 1 : -1);
                 localStorage.setItem(`vote_${id}`, type);
             }
@@ -188,7 +254,6 @@
         });
 
         document.getElementById('sortSelect').addEventListener('change', renderProjects);
-
         renderProjects();
     </script>
 </body>
