@@ -21,35 +21,30 @@
         .timeline-content li { margin-bottom: 5px; display: flex; align-items: flex-start; gap: 8px; }
         .timeline-content li i { color: var(--accent-color); width: 14px; margin-top: 3px; }
         .timeline-content .date-badge { font-size: 0.7rem; font-weight: 800; background: rgba(0, 242, 255, 0.1); color: var(--accent-color); padding: 1px 6px; border-radius: 4px; margin-right: 5px; }
+        .today-label { color: #fff !important; font-weight: 800 !important; font-size: 1.3rem !important; margin-bottom: 10px !important; }
+        .today-date { font-family: 'Outfit', sans-serif; font-weight: 400; color: #fff; }
 
-        /* Multi-Level Filter Bar */
         .controls-section { margin-bottom: 50px; max-width: 1000px; margin-left: auto; margin-right: auto; background: var(--glass-bg); padding: 2rem; border-radius: 30px; border: 1px solid var(--glass-border); display: flex; flex-direction: column; gap: 1.5rem; }
         .filter-row { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; justify-content: center; }
         .filter-group { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
         .label { font-size: 0.75rem; color: var(--text-dim); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; min-width: 70px; }
-        
-        .filter-btn { padding: 0.4rem 1rem; border-radius: 50px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-size: 0.85rem; }
+        .filter-btn { padding: 0.4rem 1.2rem; border-radius: 50px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-size: 0.85rem; }
         .filter-btn.active { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); font-weight: 700; }
-
         .custom-select-wrapper { position: relative; user-select: none; width: 180px; }
         .custom-select { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0.4rem 1.2rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 50px; cursor: pointer; color: var(--text-color); font-size: 0.85rem; transition: all 0.3s ease; }
         .custom-options { position: absolute; top: calc(100% + 10px); left: 0; right: 0; background: var(--bg-color); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; display: none; z-index: 100; backdrop-filter: blur(20px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .custom-option { padding: 0.8rem 1.2rem; cursor: pointer; transition: all 0.2s ease; color: var(--text-dim); font-size: 0.85rem; }
         .custom-option:hover { background: rgba(0, 242, 255, 0.1); color: var(--accent-color); }
-        
-        /* Project Cards */
         .project-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
         .project-card { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-radius: 20px; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease; }
         .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
         .project-info { flex: 1; }
         .project-info h3 { margin-bottom: 0.5rem; font-size: 1.4rem; }
-        
         .vote-controls { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-left: 2rem; cursor: default; }
         .vote-arrow { background: none; border: 1px solid var(--glass-border); color: var(--text-dim); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
         .vote-arrow.active-up { background: #00ff88; color: #050508; border-color: #00ff88; }
         .vote-arrow.active-down { background: #ff4444; color: #fff; border-color: #ff4444; }
         .vote-score { font-weight: 800; font-size: 1.4rem; min-width: 40px; text-align: center; color: var(--text-color); }
-
         .tag-row { display: flex; gap: 8px; margin-bottom: 1rem; }
         .status-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
         .status-planned { background: rgba(0, 242, 255, 0.1); color: #00f2ff; }
@@ -57,13 +52,10 @@
         .status-published { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
         .status-backlog { background: rgba(255, 255, 255, 0.1); color: #ccc; }
         .status-cancelled { background: rgba(255, 68, 68, 0.1); color: #ff4444; }
-        
         .type-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; background: rgba(112, 0, 255, 0.15); color: #7000ff; border: 1px solid rgba(112, 0, 255, 0.3); }
-
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 1000; }
         .modal-content { background: var(--bg-color); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
         .close-modal { position: absolute; top: 20px; right: 20px; cursor: pointer; color: var(--text-dim); }
-
         @media (max-width: 992px) { .timeline { flex-direction: column; gap: 200px; margin-bottom: 300px; } .timeline::before { display: none; } .timeline-content { width: 300px; } }
     </style>
 </head>
@@ -108,17 +100,6 @@
                         <button class="filter-btn" data-filter="cancelled">Cancelled</button>
                     </div>
                 </div>
-                <!-- Type Filters -->
-                <div class="filter-row">
-                    <span class="label">Type:</span>
-                    <div class="filter-group" id="typeFilters">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="extension">Extension</button>
-                        <button class="filter-btn" data-filter="application">Application</button>
-                        <button class="filter-btn" data-filter="system">System</button>
-                        <button class="filter-btn" data-filter="website">Website</button>
-                    </div>
-                </div>
                 <!-- Sorting -->
                 <div class="filter-row" style="margin-top: 0.5rem; border-top: 1px solid var(--glass-border); padding-top: 1.5rem;">
                     <span class="label">Sort By:</span>
@@ -132,7 +113,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="project-list" id="projectList"></div>
         </section>
     </main>
@@ -159,39 +139,17 @@
         const statusOrder = { "progress": 0, "planned": 1, "backlog": 2, "published": 3, "cancelled": 4 };
         let currentSort = 'votes';
         let activeStatuses = ['all'];
-        let activeTypes = ['all'];
 
         function renderProjects() {
             const list = document.getElementById('projectList'); list.innerHTML = '';
-            
-            let filtered = projects.filter(p => {
-                const statusMatch = activeStatuses.includes('all') || activeStatuses.includes(p.status);
-                const typeMatch = activeTypes.includes('all') || activeTypes.includes(p.type);
-                return statusMatch && typeMatch;
-            });
-            
+            let filtered = projects.filter(p => activeStatuses.includes('all') || activeStatuses.includes(p.status));
             if (currentSort === 'votes') filtered.sort((a, b) => b.votes - a.votes);
             else if (currentSort === 'az') filtered.sort((a, b) => a.title.localeCompare(b.title));
             else if (currentSort === 'status') filtered.sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
-            
             filtered.forEach(p => {
                 const userVote = localStorage.getItem(`vote_${p.id}`);
                 const card = document.createElement('div'); card.className = 'project-card glass'; card.onclick = () => openModal(p.id);
-                card.innerHTML = `
-                    <div class="project-info">
-                        <div class="tag-row">
-                            <span class="status-tag status-${p.status}">${p.status}</span>
-                            <span class="type-tag">${p.type}</span>
-                        </div>
-                        <h3>${p.title}</h3>
-                        <p>${p.desc}</p>
-                    </div>
-                    <div class="vote-controls" onclick="event.stopPropagation()">
-                        <button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote"><i data-lucide="chevron-up"></i></button>
-                        <div class="vote-score">${p.votes}</div>
-                        <button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote"><i data-lucide="chevron-down"></i></button>
-                    </div>
-                `;
+                card.innerHTML = `<div class="project-info"><div class="tag-row"><span class="status-tag status-${p.status}">${p.status}</span><span class="type-tag">${p.type}</span></div><h3>${p.title}</h3><p>${p.desc}</p></div><div class="vote-controls" onclick="event.stopPropagation()"><button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote"><i data-lucide="chevron-up"></i></button><div class="vote-score">${p.votes}</div><button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote"><i data-lucide="chevron-down"></i></button></div>`;
                 list.appendChild(card);
             });
             lucide.createIcons();
@@ -208,14 +166,8 @@
                     } else {
                         const allBtn = document.querySelector(`#${containerId} .filter-btn[data-filter="all"]`);
                         if (activeArray.includes('all')) { activeArray.length = 0; allBtn.classList.remove('active'); }
-                        
-                        if (activeArray.includes(filter)) {
-                            const idx = activeArray.indexOf(filter); activeArray.splice(idx, 1);
-                            this.classList.remove('active');
-                        } else {
-                            activeArray.push(filter);
-                            this.classList.add('active');
-                        }
+                        if (activeArray.includes(filter)) { const idx = activeArray.indexOf(filter); activeArray.splice(idx, 1); this.classList.remove('active'); }
+                        else { activeArray.push(filter); this.classList.add('active'); }
                         if (activeArray.length === 0) { activeArray.push('all'); allBtn.classList.add('active'); }
                     }
                     renderProjects();
@@ -224,8 +176,6 @@
         }
 
         setupFilters('statusFilters', activeStatuses);
-        setupFilters('typeFilters', activeTypes);
-
         const customSelect = document.getElementById('customSelect'); const customOptions = document.getElementById('customOptions'); const selectedSortText = document.getElementById('selectedSort');
         customSelect.addEventListener('click', (e) => { e.stopPropagation(); customSelect.classList.toggle('open'); customOptions.style.display = customSelect.classList.contains('open') ? 'block' : 'none'; });
         document.querySelectorAll('.custom-option').forEach(option => { option.addEventListener('click', function() { currentSort = this.dataset.value; selectedSortText.innerText = this.innerText; document.querySelector('.custom-option.selected').classList.remove('selected'); this.classList.add('selected'); renderProjects(); customSelect.classList.remove('open'); customOptions.style.display = 'none'; }); });
