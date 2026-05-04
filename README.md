@@ -29,7 +29,7 @@ A premium, modern landing page showcasing a collection of high-quality browser e
 ## 🚀 Deployment
 
 This site is hosted via **GitHub Pages**. You can view the live version at:
-`https://<your-username>.github.io/<repo-name>/`
+`https://exus541.github.io/portfolio/`
 
 ## 🤝 Support
 
