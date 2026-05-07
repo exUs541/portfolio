@@ -1,4 +1,4 @@
-# 🚀 exus541's Browser Extension Portfolio
+# 🚀 Portfolio / Website
 
 A premium, modern landing page showcasing a collection of high-quality browser extensions designed to enhance productivity, focus, and browsing experience.
 
