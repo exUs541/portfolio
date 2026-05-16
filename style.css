@@ -378,6 +378,14 @@ nav .container {
     gap: 1.5rem;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 30px;
+}
+
+.feedback-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 242, 255, 0.05);
 }
 
 .feedback-card i {
@@ -385,6 +393,11 @@ nav .container {
     height: 40px;
     color: var(--accent-color);
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.feedback-card:hover i {
+    transform: scale(1.2) rotate(10deg);
 }
 
 .feedback-card h3 {
