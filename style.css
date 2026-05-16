@@ -412,9 +412,20 @@ nav .container {
     margin-bottom: 1rem;
 }
 
-.feedback-card .btn-glow, 
 .feedback-card .btn-secondary {
     margin-top: auto;
+    transition: all 0.3s ease;
+}
+
+.feedback-card:hover .btn-secondary {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
 }
 
 /* Roadmap Section */
