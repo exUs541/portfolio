@@ -2,7 +2,66 @@
   "timeline": {
     "releases": [],
     "activeWork": [],
-    "upcoming": []
+    "upcoming": [
+      "Firefox Porting (All Tools)",
+      "Global Settings Sync",
+      "Mobile Friendly Dashboard"
+    ]
   },
-  "projects": []
+  "projects": [
+    {
+      "id": 1,
+      "type": "extension",
+      "title": "[SiteBlocker] Focus Timer",
+      "desc": "Integrated Pomodoro timer to automate blocking sessions.",
+      "fullDesc": "A built-in Pomodoro timer that automatically activates your site-blocking lists during deep work sessions and deactivates them during breaks.",
+      "status": "planned",
+      "votes": 12
+    },
+    {
+      "id": 2,
+      "type": "extension",
+      "title": "[TabMaster] Smart Grouping",
+      "desc": "AI-powered automatic tab group organization.",
+      "fullDesc": "Automatically group your tabs by domain or topic using a lightweight local classification engine. Keeps your tab bar clean without manual effort.",
+      "status": "progress",
+      "votes": 25
+    },
+    {
+      "id": 3,
+      "type": "extension",
+      "title": "[WebNote] Markdown Engine",
+      "desc": "Rich text formatting for your website notes.",
+      "fullDesc": "Upgrade the simple text notes to a full Markdown experience. Support for bold, italics, lists, and even code snippets directly on any webpage.",
+      "status": "planned",
+      "votes": 8
+    },
+    {
+      "id": 4,
+      "type": "extension",
+      "title": "[YT Filter] Context Menu Block",
+      "desc": "Block channels directly from the YouTube feed.",
+      "fullDesc": "Add a 'Block this Channel' option to the YouTube right-click menu, allowing users to instantly filter content without leaving the home page.",
+      "status": "backlog",
+      "votes": 19
+    },
+    {
+      "id": 5,
+      "type": "extension",
+      "title": "[Signavio] Attribute Quick-Search",
+      "desc": "Instantly find BPMN attributes in the editor.",
+      "fullDesc": "A productivity booster for SAP Signavio Process Manager that adds a real-time search bar to the attribute panel, saving minutes of scrolling per model.",
+      "status": "progress",
+      "votes": 15
+    },
+    {
+      "id": 6,
+      "type": "application",
+      "title": "[Portfolio] Global Dark Theme V2",
+      "desc": "Multiple curated dark modes for the suite.",
+      "fullDesc": "Introduce a theme switcher for the portfolio and extensions, offering 'OLED Black', 'Deep Sea', and 'Cyberpunk' aesthetics.",
+      "status": "backlog",
+      "votes": 5
+    }
+  ]
 }
