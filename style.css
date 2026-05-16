@@ -418,10 +418,10 @@ nav .container {
 }
 
 .feedback-card:hover .btn-secondary {
-    background: var(--accent-color);
-    color: var(--bg-color);
-    border-color: var(--accent-color);
-    box-shadow: 0 0 15px var(--accent-glow);
+    background: var(--primary-gradient);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(112, 0, 255, 0.4);
 }
 
 .btn-secondary:hover {
