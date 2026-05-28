@@ -4,5 +4,42 @@
     "activeWork": [],
     "upcoming": []
   },
-  "projects": []
+  "projects": [
+    {
+      "id": "item_sapsignavio_1",
+      "type": "extension",
+      "title": "[SAP Signavio] Fix Groups view numbers",
+      "desc": "Show user and group numbers in the 'Gruppen' (Groups) view when enabled in User Management.",
+      "fullDesc": "Currently, the numbers for users and groups are only displayed in the main User Management view. When switching to the Groups view, the counts disappear even if enabled. This fix ensures the counts remain visible.",
+      "status": "backlog",
+      "votes": 0
+    },
+    {
+      "id": "item_sapsignavio_2",
+      "type": "extension",
+      "title": "[SAP Signavio] Restrict number display to specific URL",
+      "desc": "Only show numbers when the URL begins with https://editor.signavio.com/g/statics/users.",
+      "fullDesc": "To prevent unnecessary checks and potential UI clutter on other pages, restrict the display of user and group numbers to URLs that begin with: https://editor.signavio.com/g/statics/users",
+      "status": "backlog",
+      "votes": 0
+    },
+    {
+      "id": "item_webnote_1",
+      "type": "extension",
+      "title": "[WebNote] Collapse state on refresh & Dashboard improvements",
+      "desc": "Keep notes in bubble mode on refresh, add bubble opacity slider, hide option, and improve dashboard.",
+      "fullDesc": "1. Bug fix: Prevent minimized notes (bubbles) from auto-expanding to full notes on page refresh.\n2. Feature: Add opacity/transparency options for note bubbles.\n3. Feature: Option to hide specific notes on a page.\n4. Feature: In the dashboard, make URLs clickable links and allow editing notes directly.",
+      "status": "backlog",
+      "votes": 0
+    },
+    {
+      "id": "item_sac_1",
+      "type": "extension",
+      "title": "[SAC Extension] Custom colors for folder icons",
+      "desc": "Allow users to color code 'Folder' icons in SAP Analytics Cloud, visible only to themselves.",
+      "fullDesc": "For the SAP Analytics Cloud (SAC) Extension: Implement a feature allowing users to assign colors to folder icons for better visual organization. The colored icons should be saved locally in browser storage so they are only visible to the user who colored them.",
+      "status": "backlog",
+      "votes": 0
+    }
+  ]
 }

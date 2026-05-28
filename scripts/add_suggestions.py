@@ -6,11 +6,24 @@ GITHUB_TOKEN = os.environ.get('PROJECT_TOKEN')
 PROJECT_ID = "PVT_kwDOBrO40M4Ait8y" # Your Project ID
 
 suggestions = [
-    {"title": "[SiteBlocker] Analytics Dashboard", "body": "See how much time you've saved by blocking distracting sites."},
-    {"title": "[TabMaster] Session Manager", "body": "Save and restore entire sets of tabs with one click."},
-    {"title": "[WebNote] Cloud Backup", "body": "Sync your website notes across all your devices."},
-    {"title": "[YT Filter] Keyword Blocking", "body": "Automatically hide videos that contain specific words in their title."}
+    {
+        "title": "[SAP Signavio] Fix Groups view numbers",
+        "body": "When 'show users and group numbers' is enabled in User Management, the numbers disappear when switching to the 'Gruppen' (Groups) view. Pls fix."
+    },
+    {
+        "title": "[SAP Signavio] Restrict number display to specific URL",
+        "body": "Only show user and group numbers if the URL begins with: https://editor.signavio.com/g/statics/users"
+    },
+    {
+        "title": "[WebNote] Collapse state on refresh & Dashboard improvements",
+        "body": "1. Bug fix: Prevent minimized notes (bubbles) from auto-expanding to full notes on page refresh.\\n2. Feature: Add opacity/transparency options for note bubbles.\\n3. Feature: Option to hide specific notes on a page.\\n4. Feature: In the dashboard, make URLs clickable links and allow editing notes directly."
+    },
+    {
+        "title": "[SAC Extension] Custom colors for folder icons",
+        "body": "For the SAP Analytics Cloud (SAC) Extension: Implement a feature allowing users to assign colors to folder icons for better visual organization. The colored icons should be saved locally in browser storage so they are only visible to the user who colored them."
+    }
 ]
+
 
 def add_item(title, body):
     query = """
