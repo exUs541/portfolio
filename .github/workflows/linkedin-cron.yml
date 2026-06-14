@@ -1,0 +1,55 @@
+name: Scheduled LinkedIn Posting
+
+on:
+  schedule:
+    # Dienstag, Mittwoch, Donnerstag um 08:00 UTC (9:00/10:00 Uhr deutsche Zeit)
+    - cron: '0 8 * * 2-4'
+    # Dienstag, Mittwoch, Donnerstag um 14:00 UTC (15:00/16:00 Uhr deutsche Zeit)
+    - cron: '0 14 * * 2-4'
+  workflow_dispatch: # Ermöglicht manuelles Auslösen über das GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Portfolio Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          pip install google-generativeai requests playwright
+          playwright install chromium
+
+      - name: Generate Weekly Bugfix Summary (Only Wednesday 14:00 UTC)
+        if: |
+          github.event_name == 'workflow_dispatch' ||
+          (github.event_name == 'schedule' && github.event.schedule == '0 14 * * 2-4' && github.event.schedule != '0 8 * * 2-4' && github.event.schedule == '0 14 * * 3')
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MODE: weekly
+        run: |
+          python scripts/generate_linkedin_posts.py
+
+      - name: Publish Pending LinkedIn Posts
+        env:
+          LINKEDIN_COOKIE: ${{ secrets.LINKEDIN_COOKIE }}
+          LINKEDIN_COMPANY_ID: ${{ secrets.LINKEDIN_COMPANY_ID }}
+        run: |
+          python scripts/publish_linkedin_actions.py
+
+      - name: Commit Archived Posts
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "auto: archive published LinkedIn posts"
+          git push
