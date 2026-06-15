@@ -6,7 +6,7 @@ urls = {
     "webnote": "https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni",
     "tabmaster": "https://chromewebstore.google.com/detail/rename-tabs-change-tab-ic/mojpahfolammhpfnfdnghcnnpbaelnko",
     "ytfilter": "https://chromewebstore.google.com/detail/mbdjpeppmemcbheedochgdejjoenijem/",
-    "sapsignavio": "https://chromewebstore.google.com/detail/sap-signavio-quick-switch/nnhnllclbckmcllglfomfllnkjolbcln"
+    "sapsignavio": "https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae"
 }
 
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
