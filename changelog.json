@@ -9,6 +9,16 @@
       ],
       "timestamp": "2026-06-16T14:18:21.141947Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.4.7",
+      "commits": [
+        "6bbb9d2 Auto-commit: Update extension to latest version for Web Store release\nf9710b8 Auto-commit: Update extension to latest version for Web Store release\n878503b Auto-commit: Update extension to latest version for Web Store release\nc38b857 Auto-commit: Update extension to latest version for Web Store release\n84b7609 ci: pin chrome-webstore-upload-cli to 3.2.0\n"
+      ],
+      "timestamp": "2026-06-17T15:40:56.969105Z",
+      "posted": false
     }
   ]
 }
