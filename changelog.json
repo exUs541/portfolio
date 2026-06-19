@@ -59,6 +59,16 @@
       ],
       "timestamp": "2026-06-19T18:56:11.016527Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.5.2",
+      "commits": [
+        "97acabd Delete SAP_Signavio_Enhancements_v1.4.0.zip\n9e2773c Delete SAP_Signavio_Enhancements_v1.4.1.zip\n9e8c0b3 Delete SAP_Signavio_Enhancements_v1.4.2.zip\n254dacf Delete SAP_Signavio_Enhancements_v1.4.3.zip\na5731da fix: Make quick switch click listener synchronous to resolve double navigation when opening in new tab\n"
+      ],
+      "timestamp": "2026-06-19T18:56:33.637797Z",
+      "posted": false
     }
   ]
 }
