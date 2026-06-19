@@ -49,6 +49,16 @@
       ],
       "timestamp": "2026-06-18T14:10:39.766748Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.5.2",
+      "commits": [
+        "254dacf Delete SAP_Signavio_Enhancements_v1.4.3.zip\na5731da fix: Make quick switch click listener synchronous to resolve double navigation when opening in new tab\n0795574 fix: Ensure popover menus are captured and route to the correct hub repository path\n94dfd19 feat: Intercept click events on existing Process Modeler and Repository tabs for quick switch context retention\n6bbb9d2 Auto-commit: Update extension to latest version for Web Store release\n"
+      ],
+      "timestamp": "2026-06-19T18:56:11.016527Z",
+      "posted": false
     }
   ]
 }
