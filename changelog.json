@@ -69,6 +69,16 @@
       ],
       "timestamp": "2026-06-19T18:56:33.637797Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.5.2",
+      "commits": [
+        "b3518c0 chore: remove ZIP files from repository and add to .gitignore\n97acabd Delete SAP_Signavio_Enhancements_v1.4.0.zip\n9e2773c Delete SAP_Signavio_Enhancements_v1.4.1.zip\n9e8c0b3 Delete SAP_Signavio_Enhancements_v1.4.2.zip\n254dacf Delete SAP_Signavio_Enhancements_v1.4.3.zip\n"
+      ],
+      "timestamp": "2026-06-20T14:44:13.308812Z",
+      "posted": false
     }
   ]
 }
