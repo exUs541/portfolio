@@ -28,10 +28,20 @@ jobs:
           pip install google-generativeai requests playwright
           playwright install chromium
 
+      - name: Check Day of Week
+        id: day_check
+        run: |
+          if [ "$(date +%u)" = "3" ]; then
+            echo "is_wednesday=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_wednesday=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
       - name: Generate Weekly Bugfix Summary (Only Wednesday 14:00 UTC)
         if: |
           github.event_name == 'workflow_dispatch' ||
-          (github.event_name == 'schedule' && github.event.schedule == '0 14 * * 2-4' && github.event.schedule != '0 8 * * 2-4' && github.event.schedule == '0 14 * * 3')
+          (github.event_name == 'schedule' && github.event.schedule == '0 14 * * 2-4' && steps.day_check.outputs.is_wednesday == 'true')
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MODE: weekly
