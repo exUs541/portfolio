@@ -8,7 +8,7 @@
         "f9710b8 Auto-commit: Update extension to latest version for Web Store release\n878503b Auto-commit: Update extension to latest version for Web Store release\nc38b857 Auto-commit: Update extension to latest version for Web Store release\n84b7609 ci: pin chrome-webstore-upload-cli to 3.2.0\n45fc94a ci: add Chrome Web Store release workflow\n"
       ],
       "timestamp": "2026-06-16T14:18:21.141947Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -18,7 +18,7 @@
         "6bbb9d2 Auto-commit: Update extension to latest version for Web Store release\nf9710b8 Auto-commit: Update extension to latest version for Web Store release\n878503b Auto-commit: Update extension to latest version for Web Store release\nc38b857 Auto-commit: Update extension to latest version for Web Store release\n84b7609 ci: pin chrome-webstore-upload-cli to 3.2.0\n"
       ],
       "timestamp": "2026-06-17T15:40:56.969105Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -28,7 +28,7 @@
         "94dfd19 feat: Intercept click events on existing Process Modeler and Repository tabs for quick switch context retention\n6bbb9d2 Auto-commit: Update extension to latest version for Web Store release\nf9710b8 Auto-commit: Update extension to latest version for Web Store release\n878503b Auto-commit: Update extension to latest version for Web Store release\nc38b857 Auto-commit: Update extension to latest version for Web Store release\n"
       ],
       "timestamp": "2026-06-18T14:01:42.196566Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -38,7 +38,7 @@
         "0795574 fix: Ensure popover menus are captured and route to the correct hub repository path\n94dfd19 feat: Intercept click events on existing Process Modeler and Repository tabs for quick switch context retention\n6bbb9d2 Auto-commit: Update extension to latest version for Web Store release\nf9710b8 Auto-commit: Update extension to latest version for Web Store release\n878503b Auto-commit: Update extension to latest version for Web Store release\n"
       ],
       "timestamp": "2026-06-18T14:06:04.660859Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -48,7 +48,7 @@
         "a5731da fix: Make quick switch click listener synchronous to resolve double navigation when opening in new tab\n0795574 fix: Ensure popover menus are captured and route to the correct hub repository path\n94dfd19 feat: Intercept click events on existing Process Modeler and Repository tabs for quick switch context retention\n6bbb9d2 Auto-commit: Update extension to latest version for Web Store release\nf9710b8 Auto-commit: Update extension to latest version for Web Store release\n"
       ],
       "timestamp": "2026-06-18T14:10:39.766748Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -58,7 +58,7 @@
         "254dacf Delete SAP_Signavio_Enhancements_v1.4.3.zip\na5731da fix: Make quick switch click listener synchronous to resolve double navigation when opening in new tab\n0795574 fix: Ensure popover menus are captured and route to the correct hub repository path\n94dfd19 feat: Intercept click events on existing Process Modeler and Repository tabs for quick switch context retention\n6bbb9d2 Auto-commit: Update extension to latest version for Web Store release\n"
       ],
       "timestamp": "2026-06-19T18:56:11.016527Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -68,7 +68,7 @@
         "97acabd Delete SAP_Signavio_Enhancements_v1.4.0.zip\n9e2773c Delete SAP_Signavio_Enhancements_v1.4.1.zip\n9e8c0b3 Delete SAP_Signavio_Enhancements_v1.4.2.zip\n254dacf Delete SAP_Signavio_Enhancements_v1.4.3.zip\na5731da fix: Make quick switch click listener synchronous to resolve double navigation when opening in new tab\n"
       ],
       "timestamp": "2026-06-19T18:56:33.637797Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -78,7 +78,7 @@
         "b3518c0 chore: remove ZIP files from repository and add to .gitignore\n97acabd Delete SAP_Signavio_Enhancements_v1.4.0.zip\n9e2773c Delete SAP_Signavio_Enhancements_v1.4.1.zip\n9e8c0b3 Delete SAP_Signavio_Enhancements_v1.4.2.zip\n254dacf Delete SAP_Signavio_Enhancements_v1.4.3.zip\n"
       ],
       "timestamp": "2026-06-20T14:44:13.308812Z",
-      "posted": false
+      "posted": true
     }
   ]
 }

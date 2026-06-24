@@ -1,0 +1,37 @@
+Here's a professional and engaging LinkedIn weekly update post for eXus541:
+
+---
+
+**Weekly Tech Refresh: Boosting Your Browser Productivity with eXus541! 🚀**
+
+At eXus541, we're relentlessly committed to refining your digital experience, delivering tools that streamline your workflow and empower your daily tasks. This week, we're thrilled to unveil a host of updates across our browser extensions, packed with features and fixes designed to make your work smoother and more intuitive.
+
+We believe in a developer-centric approach that translates into premium, local-first solutions focused on unparalleled UX and customization. Let's dive into the latest improvements:
+
+---
+
+### **SAP Signavio Quick Switch**
+
+The **SAP Signavio Quick Switch** extension has received a significant wave of updates, bringing enhanced precision and a more seamless experience to your Signavio navigation. We've pushed several versions (v1.4.6 through v1.5.2) to deliver these crucial improvements:
+
+*   ✨ **Enhanced Context Retention:** Experience a more fluid workflow! The extension now intelligently intercepts click events on existing Process Modeler and Repository tabs, ensuring your context is retained for quicker, more intuitive switching. Say goodbye to losing your place!
+*   ✅ **Precise Navigation Fix:** We've ironed out an issue to ensure popover menus are accurately captured, guaranteeing you're routed to the correct hub repository path every single time. Your navigation is now more reliable.
+*   ⚡️ **Smoother Tab Handling:** Addressed a bug that caused double navigation when opening items in new tabs. Your quick switches are now more reliable and predictable, eliminating jarring redirects.
+*   🛠️ **Under-the-Hood Optimizations:** Various build process and repository cleanups have been performed to ensure a leaner, more efficient extension delivery.
+
+---
+
+These updates reflect our dedication to performance, stability, and, most importantly, your user experience. We're constantly striving to deliver tools that not only meet but exceed your expectations for productivity and ease of use.
+
+**Don't miss out on these latest enhancements!** Update your extensions today or give them a try to revolutionize your daily workflow.
+
+📥 **SAP Signavio Quick Switch Chrome Web Store:** [https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae](https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae)
+
+---
+
+Stay tuned for more innovative updates from **eXus541** as we continue to build a more productive and enjoyable digital world!
+
+🌐 **Explore our Portfolio:** [https://exus541.github.io/portfolio/](https://exus541.github.io/portfolio/)
+☕ **Support Future Innovations:** [https://www.patreon.com/cw/exUs541](https://www.patreon.com/cw/exUs541)
+
+\#eXus541 #BrowserExtensions #SAPSignavio #Productivity #TechUpdate #DeveloperTools #UserExperience #WeeklyDigest #ChromeExtensions #Innovation
