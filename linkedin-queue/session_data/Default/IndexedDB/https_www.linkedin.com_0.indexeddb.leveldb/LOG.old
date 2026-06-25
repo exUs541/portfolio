@@ -1,2 +1,3 @@
-2026/06/24-16:13:24.177 95a Creating DB /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb since it was missing.
-2026/06/24-16:13:24.178 95a Reusing MANIFEST /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/25-10:46:03.103 963 Reusing MANIFEST /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/25-10:46:03.103 963 Recovering log #3
+2026/06/25-10:46:03.103 963 Reusing old log /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/000003.log 
