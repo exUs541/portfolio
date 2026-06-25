@@ -1,2 +1,3 @@
-2026/06/24-16:13:14.511 95a Creating DB /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/Session Storage since it was missing.
-2026/06/24-16:13:14.512 95a Reusing MANIFEST /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/Session Storage/MANIFEST-000001
+2026/06/25-10:45:47.197 96b Reusing MANIFEST /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/Session Storage/MANIFEST-000001
+2026/06/25-10:45:47.198 96b Recovering log #3
+2026/06/25-10:45:47.198 96b Reusing old log /home/runner/work/portfolio/portfolio/linkedin-queue/session_data/Default/Session Storage/000003.log 
