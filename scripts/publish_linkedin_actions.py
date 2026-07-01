@@ -66,8 +66,8 @@ def publish_post(text, images, cookie_val, company_id):
             time.sleep(5)
             page.screenshot(path="debug_01_loaded.png")
             
-            if "login" in page.url or "checkpoint" in page.url:
-                print("FEHLER: Nicht eingeloggt! Das li_at Cookie ist vermutlich abgelaufen.")
+            if any(term in page.url.lower() for term in ["login", "checkpoint", "signup", "join"]):
+                print("FEHLER: Nicht eingeloggt! Das li_at Cookie ist abgelaufen oder ungültig.")
                 browser.close()
                 return False
 
