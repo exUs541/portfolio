@@ -2,11 +2,9 @@ name: Scheduled LinkedIn Posting
 
 on:
   schedule:
-    # Dienstag, Mittwoch, Donnerstag um 08:00 UTC (9:00/10:00 Uhr deutsche Zeit)
-    - cron: '0 8 * * 2-4'
-    # Dienstag, Mittwoch, Donnerstag um 14:00 UTC (15:00/16:00 Uhr deutsche Zeit)
-    - cron: '0 14 * * 2-4'
-  workflow_dispatch: # Ermöglicht manuelles Auslösen über das GitHub UI
+    # Mittwoch um 10:00 UTC (12:00 Uhr deutsche Zeit)
+    - cron: '0 10 * * 3'
+  workflow_dispatch: # Ermoeglicht manuelles Ausloesen ueber das GitHub UI
 
 permissions:
   contents: write
@@ -25,33 +23,19 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install google-generativeai requests playwright
-          playwright install chromium
+          pip install google-generativeai requests
 
-      - name: Check Day of Week
-        id: day_check
-        run: |
-          if [ "$(date +%u)" = "3" ]; then
-            echo "is_wednesday=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_wednesday=false" >> $GITHUB_OUTPUT
-          fi
-        shell: bash
-
-      - name: Generate Weekly Bugfix Summary (Only Wednesday 14:00 UTC)
-        if: |
-          github.event_name == 'workflow_dispatch' ||
-          (github.event_name == 'schedule' && github.event.schedule == '0 14 * * 2-4' && steps.day_check.outputs.is_wednesday == 'true')
+      - name: Generate Weekly Summary Post
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MODE: weekly
         run: |
           python scripts/generate_linkedin_posts.py
 
-      - name: Publish Pending LinkedIn Posts
+      - name: Publish Pending LinkedIn Posts (via API)
         env:
-          LINKEDIN_COOKIE: ${{ secrets.LINKEDIN_COOKIE }}
-          LINKEDIN_COMPANY_ID: ${{ secrets.LINKEDIN_COMPANY_ID }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_MEMBER_ID: ${{ secrets.LINKEDIN_MEMBER_ID }}
         run: |
           python scripts/publish_linkedin_actions.py
 
