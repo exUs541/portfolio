@@ -79,6 +79,16 @@
       ],
       "timestamp": "2026-06-20T14:44:13.308812Z",
       "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.6.0",
+      "commits": [
+        "34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states"
+      ],
+      "timestamp": "2026-07-01T20:50:29.287779Z",
+      "posted": false
     }
   ]
 }
