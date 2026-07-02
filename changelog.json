@@ -99,6 +99,16 @@
       ],
       "timestamp": "2026-07-01T21:55:07.813104Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.0",
+      "commits": [
+        "4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n5d9db50 Refactor minimap draggable logic, replace quick switch eye icon with toggle switch, and reorganize popup settings into collapsible sections\n37198b0 feat: Make the minimap draggable and anchored to the bottom-right corner by default\n"
+      ],
+      "timestamp": "2026-07-02T05:13:18.038842Z",
+      "posted": false
     }
   ]
 }
