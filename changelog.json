@@ -129,6 +129,16 @@
       ],
       "timestamp": "2026-07-02T14:39:38.674829Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.3.1",
+      "commits": [
+        "a25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n"
+      ],
+      "timestamp": "2026-07-02T15:27:37.407202Z",
+      "posted": false
     }
   ]
 }
