@@ -88,7 +88,7 @@
         "34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states"
       ],
       "timestamp": "2026-07-01T20:50:29.287779Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -98,7 +98,7 @@
         "c567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n5d9db50 Refactor minimap draggable logic, replace quick switch eye icon with toggle switch, and reorganize popup settings into collapsible sections\n37198b0 feat: Make the minimap draggable and anchored to the bottom-right corner by default\nb3518c0 chore: remove ZIP files from repository and add to .gitignore\n"
       ],
       "timestamp": "2026-07-01T21:55:07.813104Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -108,7 +108,7 @@
         "4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n5d9db50 Refactor minimap draggable logic, replace quick switch eye icon with toggle switch, and reorganize popup settings into collapsible sections\n37198b0 feat: Make the minimap draggable and anchored to the bottom-right corner by default\n"
       ],
       "timestamp": "2026-07-02T05:13:18.038842Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -118,7 +118,7 @@
         "e7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n5d9db50 Refactor minimap draggable logic, replace quick switch eye icon with toggle switch, and reorganize popup settings into collapsible sections\n"
       ],
       "timestamp": "2026-07-02T12:16:26.180310Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -128,7 +128,7 @@
         "4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n"
       ],
       "timestamp": "2026-07-02T14:39:38.674829Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -138,7 +138,7 @@
         "a25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n"
       ],
       "timestamp": "2026-07-02T15:27:37.407202Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -148,7 +148,7 @@
         "6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\n"
       ],
       "timestamp": "2026-07-02T15:46:32.133643Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -158,7 +158,7 @@
         "b730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n"
       ],
       "timestamp": "2026-07-07T14:20:28.352038Z",
-      "posted": false
+      "posted": true
     }
   ]
 }
