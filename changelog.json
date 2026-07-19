@@ -169,6 +169,16 @@
       ],
       "timestamp": "2026-07-17T18:01:37.738304Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.6",
+      "commits": [
+        "153546e Bump version to 1.7.6, rename to SAP Signavio Enhancement Suite, remove Eye Care, correct Overlay Translation path prefix and prioritize DOM language checks, fix regex bracket escaping, and optimize fetch CSP bypass\n7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n"
+      ],
+      "timestamp": "2026-07-19T15:28:27.944858Z",
+      "posted": false
     }
   ]
 }
