@@ -189,6 +189,16 @@
       ],
       "timestamp": "2026-07-21T16:53:54.942485Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.7",
+      "commits": [
+        "a084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\nb13b8c3 ci: Update chrome-webstore-upload-cli step to use environment variables\n705ca2d ci: Require valid Chrome Web Store secrets and fail explicitly if token is expired\n"
+      ],
+      "timestamp": "2026-07-21T17:18:55.347841Z",
+      "posted": false
     }
   ]
 }
