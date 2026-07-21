@@ -179,6 +179,16 @@
       ],
       "timestamp": "2026-07-19T15:28:27.944858Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.7",
+      "commits": [
+        "f18a605 ci: Gracefully handle missing or expired Chrome Web Store API secrets\nae10530 feat: Add Dynamic Navigation Trail and Diagrammhierarchie dropdown override v1.7.7\n153546e Bump version to 1.7.6, rename to SAP Signavio Enhancement Suite, remove Eye Care, correct Overlay Translation path prefix and prioritize DOM language checks, fix regex bracket escaping, and optimize fetch CSP bypass\n7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n"
+      ],
+      "timestamp": "2026-07-21T16:53:54.942485Z",
+      "posted": false
     }
   ]
 }
