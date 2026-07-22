@@ -168,7 +168,7 @@
         "7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\n"
       ],
       "timestamp": "2026-07-17T18:01:37.738304Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -178,7 +178,7 @@
         "153546e Bump version to 1.7.6, rename to SAP Signavio Enhancement Suite, remove Eye Care, correct Overlay Translation path prefix and prioritize DOM language checks, fix regex bracket escaping, and optimize fetch CSP bypass\n7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n"
       ],
       "timestamp": "2026-07-19T15:28:27.944858Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -188,7 +188,7 @@
         "f18a605 ci: Gracefully handle missing or expired Chrome Web Store API secrets\nae10530 feat: Add Dynamic Navigation Trail and Diagrammhierarchie dropdown override v1.7.7\n153546e Bump version to 1.7.6, rename to SAP Signavio Enhancement Suite, remove Eye Care, correct Overlay Translation path prefix and prioritize DOM language checks, fix regex bracket escaping, and optimize fetch CSP bypass\n7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n"
       ],
       "timestamp": "2026-07-21T16:53:54.942485Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -198,7 +198,7 @@
         "a084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\nb13b8c3 ci: Update chrome-webstore-upload-cli step to use environment variables\n705ca2d ci: Require valid Chrome Web Store secrets and fail explicitly if token is expired\n"
       ],
       "timestamp": "2026-07-21T17:18:55.347841Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -208,7 +208,7 @@
         "0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\nb13b8c3 ci: Update chrome-webstore-upload-cli step to use environment variables\n"
       ],
       "timestamp": "2026-07-22T06:54:27.493700Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -218,7 +218,7 @@
         "3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\n"
       ],
       "timestamp": "2026-07-22T06:57:23.880723Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -228,7 +228,7 @@
         "45b1900 v1.8.0: Fit-to-Page top-left diagram alignment and universal multi-item attribute sorting\n3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n"
       ],
       "timestamp": "2026-07-22T08:23:09.494561Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -238,7 +238,7 @@
         "a37f3c6 v1.8.0: Exclude structured tables (Glossary, Links) from A-Z sorting button\n45b1900 v1.8.0: Fit-to-Page top-left diagram alignment and universal multi-item attribute sorting\n3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n"
       ],
       "timestamp": "2026-07-22T08:24:54.758580Z",
-      "posted": false
+      "posted": true
     }
   ]
 }
