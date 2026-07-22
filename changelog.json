@@ -239,6 +239,16 @@
       ],
       "timestamp": "2026-07-22T08:24:54.758580Z",
       "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.0",
+      "commits": [
+        "79ed9be UI: Replace native browser file input with custom styled 100% English Choose File button and No file chosen label\n268bb8d Fix: Add getActiveModalWindow z-index & visibility filtering to ensure exact window closing on row 2 and 3\n7e3dcd3 Fix: Add 1000ms polling for x-window modal opening and force hide fallback in checkAndHandleModal\n91f4e7c Fix: Upgrade modal close triggers (multi-element click, ExtJS cmp close, tool-close fallback) to guarantee Wie? closes on subsequent rows\n20e0826 Fix: Replace endWith check with exact substring prefix in typeString and fix Wer? Tab count\n"
+      ],
+      "timestamp": "2026-07-22T16:27:55.029187Z",
+      "posted": false
     }
   ]
 }
