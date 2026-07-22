@@ -229,6 +229,16 @@
       ],
       "timestamp": "2026-07-22T08:23:09.494561Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.0",
+      "commits": [
+        "a37f3c6 v1.8.0: Exclude structured tables (Glossary, Links) from A-Z sorting button\n45b1900 v1.8.0: Fit-to-Page top-left diagram alignment and universal multi-item attribute sorting\n3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n"
+      ],
+      "timestamp": "2026-07-22T08:24:54.758580Z",
+      "posted": false
     }
   ]
 }
