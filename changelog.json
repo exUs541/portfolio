@@ -209,6 +209,16 @@
       ],
       "timestamp": "2026-07-22T06:54:27.493700Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.9",
+      "commits": [
+        "3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\n"
+      ],
+      "timestamp": "2026-07-22T06:57:23.880723Z",
+      "posted": false
     }
   ]
 }
