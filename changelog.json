@@ -199,6 +199,16 @@
       ],
       "timestamp": "2026-07-21T17:18:55.347841Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.8",
+      "commits": [
+        "0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\nb13b8c3 ci: Update chrome-webstore-upload-cli step to use environment variables\n"
+      ],
+      "timestamp": "2026-07-22T06:54:27.493700Z",
+      "posted": false
     }
   ]
 }
