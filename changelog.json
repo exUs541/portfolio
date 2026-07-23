@@ -259,6 +259,16 @@
       ],
       "timestamp": "2026-07-23T07:28:58.150689Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.1",
+      "commits": [
+        "e417918 Fix: Adjust version numbering to v1.8.1 (+0.0.1 micro-increment step)\n5ade18a Release v1.9.0: Add Top Revision Comment setting & precision placement\n03e38e9 Fix: Move entire Sections_spacing wrapper div instead of inner element - simple sibling reorder\n7f0c017 Fix: Add findTopContainerAndAnchor to locate parent module container and insert Revisionskommentar above 1st card\n4233032 Fix: Replace classList.value with safe className string search to prevent TypeError in processRevisionCommentPosition\n"
+      ],
+      "timestamp": "2026-07-23T07:36:52.331999Z",
+      "posted": false
     }
   ]
 }
