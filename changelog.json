@@ -269,6 +269,16 @@
       ],
       "timestamp": "2026-07-23T07:36:52.331999Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.2",
+      "commits": [
+        "5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n39fa3c7 Fix: Expand model title DOM selectors and add progressive retries to automatically replace generic fallback titles with real model names\nc3598e8 Refactor: Fix Navigation Trail duplicate entries, level 1 reset detection, and sub-view query parameter tracking\ndffc458 Refactor: Make category collapse 100% position-index based for zero language dependencies across all global languages\n"
+      ],
+      "timestamp": "2026-07-23T14:40:44.089344Z",
+      "posted": false
     }
   ]
 }
