@@ -309,6 +309,16 @@
       ],
       "timestamp": "2026-07-29T07:37:17.081190Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.2",
+      "commits": [
+        "2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\n"
+      ],
+      "timestamp": "2026-07-29T07:39:09.340197Z",
+      "posted": false
     }
   ]
 }
