@@ -248,7 +248,7 @@
         "79ed9be UI: Replace native browser file input with custom styled 100% English Choose File button and No file chosen label\n268bb8d Fix: Add getActiveModalWindow z-index & visibility filtering to ensure exact window closing on row 2 and 3\n7e3dcd3 Fix: Add 1000ms polling for x-window modal opening and force hide fallback in checkAndHandleModal\n91f4e7c Fix: Upgrade modal close triggers (multi-element click, ExtJS cmp close, tool-close fallback) to guarantee Wie? closes on subsequent rows\n20e0826 Fix: Replace endWith check with exact substring prefix in typeString and fix Wer? Tab count\n"
       ],
       "timestamp": "2026-07-22T16:27:55.029187Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -258,7 +258,7 @@
         "5ade18a Release v1.9.0: Add Top Revision Comment setting & precision placement\n03e38e9 Fix: Move entire Sections_spacing wrapper div instead of inner element - simple sibling reorder\n7f0c017 Fix: Add findTopContainerAndAnchor to locate parent module container and insert Revisionskommentar above 1st card\n4233032 Fix: Replace classList.value with safe className string search to prevent TypeError in processRevisionCommentPosition\n98cc966 Feat: Add Top Revision Comment setting to display revision comments at top of diagram view\n"
       ],
       "timestamp": "2026-07-23T07:28:58.150689Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -268,7 +268,7 @@
         "e417918 Fix: Adjust version numbering to v1.8.1 (+0.0.1 micro-increment step)\n5ade18a Release v1.9.0: Add Top Revision Comment setting & precision placement\n03e38e9 Fix: Move entire Sections_spacing wrapper div instead of inner element - simple sibling reorder\n7f0c017 Fix: Add findTopContainerAndAnchor to locate parent module container and insert Revisionskommentar above 1st card\n4233032 Fix: Replace classList.value with safe className string search to prevent TypeError in processRevisionCommentPosition\n"
       ],
       "timestamp": "2026-07-23T07:36:52.331999Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -278,7 +278,7 @@
         "5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n39fa3c7 Fix: Expand model title DOM selectors and add progressive retries to automatically replace generic fallback titles with real model names\nc3598e8 Refactor: Fix Navigation Trail duplicate entries, level 1 reset detection, and sub-view query parameter tracking\ndffc458 Refactor: Make category collapse 100% position-index based for zero language dependencies across all global languages\n"
       ],
       "timestamp": "2026-07-23T14:40:44.089344Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -288,7 +288,7 @@
         "90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n39fa3c7 Fix: Expand model title DOM selectors and add progressive retries to automatically replace generic fallback titles with real model names\nc3598e8 Refactor: Fix Navigation Trail duplicate entries, level 1 reset detection, and sub-view query parameter tracking\n"
       ],
       "timestamp": "2026-07-23T14:53:08.542310Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -298,7 +298,7 @@
         "d9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n39fa3c7 Fix: Expand model title DOM selectors and add progressive retries to automatically replace generic fallback titles with real model names\n"
       ],
       "timestamp": "2026-07-23T18:32:22.149599Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -308,7 +308,7 @@
         "91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n"
       ],
       "timestamp": "2026-07-29T07:37:17.081190Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -318,7 +318,7 @@
         "2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\n"
       ],
       "timestamp": "2026-07-29T07:39:09.340197Z",
-      "posted": false
+      "posted": true
     },
     {
       "extension_name": "SAP-Signavio-Enhancements",
@@ -328,7 +328,7 @@
         "69cb6e7 Release v1.9.1.3: Enhance accordion summary hover feedback for collapsible setting groups\n2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n"
       ],
       "timestamp": "2026-07-29T07:40:11.553389Z",
-      "posted": false
+      "posted": true
     }
   ]
 }
