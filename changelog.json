@@ -329,6 +329,16 @@
       ],
       "timestamp": "2026-07-29T07:40:11.553389Z",
       "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.4",
+      "commits": [
+        "f86b118 Release v1.9.1.4: Add official Microsoft Edge Add-ons Store link and update IT Deployment Guide\n69cb6e7 Release v1.9.1.3: Enhance accordion summary hover feedback for collapsible setting groups\n2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n"
+      ],
+      "timestamp": "2026-08-05T06:55:54.674231Z",
+      "posted": false
     }
   ]
 }
