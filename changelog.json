@@ -369,6 +369,16 @@
       ],
       "timestamp": "2026-09-03T07:38:03.026553Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.8",
+      "commits": [
+        "d954a7f Publish to Microsoft Edge Add-ons from the release workflow\n6e5b3cd Release v1.9.1.8: Refine Dictionary collapse control, add expand/collapse all\n7fd98a3 Release v1.9.1.5: Make Dictionary top-level categories collapsible\n6618904 Add IT deployment guides, trim the published package, correct the docs\nf86b118 Release v1.9.1.4: Add official Microsoft Edge Add-ons Store link and update IT Deployment Guide\n"
+      ],
+      "timestamp": "2026-09-03T08:01:54.950334Z",
+      "posted": false
     }
   ]
 }
