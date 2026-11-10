@@ -4,13 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | exus541</title>
+    <meta name="description" content="Privacy policy for the browser extensions, Android apps, Meta Quest VR apps (Nestwise, Perspectives) and website by exus541.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="details/details.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .container { max-width: 800px; }
+        .container { max-width: 860px; }
         .main-content { grid-template-columns: 1fr; display: block; }
+        .main-content h2 { scroll-margin-top: 24px; }
+        .main-content h3 { font-size: 1.35rem; margin: 2rem 0 1rem; color: var(--text-color); scroll-margin-top: 24px; }
+        .main-content a { color: var(--accent-color); text-underline-offset: 3px; }
+        .main-content p, .main-content li { font-size: 1.05rem; }
+
+        /* Label / value lists (site default) and plain bullet lists */
+        .main-content ul.bullets { display: block; padding-left: 1.4rem; list-style: disc; }
+        .main-content ul.bullets li { display: list-item; color: var(--text-dim); margin-bottom: 0.6rem; }
+        .main-content ul.bullets li::marker { color: var(--accent-color); }
+        .main-content ul.bullets li strong { display: inline; color: var(--text-color); font-weight: 600; }
+        .main-content ul.bullets li strong::before { content: none; }
+
+        .lede { font-size: 1.2rem; }
+        .updated { color: var(--text-dim); }
+
+        .box { border-radius: 20px; padding: 1.6rem 1.8rem; margin: 0 0 2rem; }
+        .box p:last-child, .box ul:last-child { margin-bottom: 0; }
+        .box h3 { margin-top: 0; }
+
+        .toc { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 2.5rem; }
+        .toc a { text-decoration: none; color: var(--text-dim); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.95rem; border: 1px solid var(--glass-border); background: var(--glass-bg); }
+        .toc a:hover { color: var(--text-color); border-color: var(--accent-color); }
+
+        .table-wrap { overflow-x: auto; margin: 0 0 2rem; border-radius: 16px; border: 1px solid var(--glass-border); }
+        table { width: 100%; border-collapse: collapse; font-size: 0.98rem; min-width: 560px; }
+        th, td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--glass-border); vertical-align: top; color: var(--text-dim); }
+        th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-color); background: var(--glass-bg); }
+        tr:last-child td { border-bottom: none; }
+        td strong { color: var(--text-color); }
+        .yes { color: #ffb86b; font-weight: 600; }
+        .no { color: #5af0a8; font-weight: 600; }
+
+        .tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.6rem; border-radius: 999px; border: 1px solid var(--glass-border); color: var(--text-dim); margin-left: 0.6rem; vertical-align: middle; font-weight: 400; }
+        address { font-style: normal; color: var(--text-dim); line-height: 1.7; margin-bottom: 1.5rem; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1.25rem; }
+            .main-content li { grid-template-columns: 1fr; gap: 0.25rem; }
+            .main-content h2 { font-size: 1.6rem; }
+            .box { padding: 1.3rem; }
+        }
     </style>
 </head>
 <body>
@@ -24,28 +66,152 @@
     <main class="container">
         <div class="detail-header">
             <h1>Privacy Policy</h1>
-            <p>Last Updated: April 30, 2026</p>
+            <p class="updated">Last updated: November 10, 2026</p>
         </div>
 
         <div class="main-content">
-            <h2>Our Commitment</h2>
-            <p>At <strong>exus541</strong>, we believe that your data belongs to you. All our browser extensions are built with a "Privacy by Design" approach. This means we prioritize your privacy from the very first line of code.</p>
+            <p class="lede">This policy covers everything I publish as <strong>exus541</strong>: browser extensions, Android apps, VR apps for Meta Quest, and this website. I build my software so that it works on your device and does not need your data.</p>
 
-            <h2>Data Collection</h2>
-            <p>Our extensions (SiteBlocker, TabMaster, WebNote, YT Filter) <strong>do not collect, store, or transmit</strong> any of your personal data, browsing history, or search queries to any external servers.</p>
-            <ul>
-                <li><strong>Local Storage:</strong> All your settings, blocklists, notes, and rules are stored locally on your device.</li>
-                <li><strong>Sync:</strong> If you use Chrome's built-in synchronization feature, your data is synced via your Google Account using Chrome's secure infrastructure. We do not have access to this data.</li>
+            <div class="toc" role="navigation" aria-label="Sections">
+                <a href="#summary">At a glance</a>
+                <a href="#controller">Who is responsible</a>
+                <a href="#extensions">Browser extensions</a>
+                <a href="#apps">Android apps</a>
+                <a href="#vr">VR apps</a>
+                <a href="#website">This website</a>
+                <a href="#third-parties">Stores &amp; third parties</a>
+                <a href="#rights">Your rights</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <h2 id="summary">At a glance</h2>
+            <div class="table-wrap glass">
+                <table>
+                    <thead>
+                        <tr><th>Product</th><th>Platform</th><th>Personal data sent to me</th><th>More</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Search Filter &amp; Site Blocker, TabMaster, WebNote, YT Filter, Sync Scroll Pro, Kleinanzeigen Plus, SAP Signavio Enhancement Suite</strong></td><td>Chrome extensions</td><td><span class="no">None</span></td><td><a href="#extensions">Details</a></td></tr>
+                        <tr><td><strong>BeFit</strong></td><td>Android app and web app</td><td><span class="yes">Yes</span>, an account is required</td><td><a href="#befit">Details</a></td></tr>
+                        <tr><td><strong>Focus Town</strong></td><td>Android app</td><td><span class="no">None</span> (fully offline)</td><td><a href="#focus-town">Details</a></td></tr>
+                        <tr><td><strong>Nestwise</strong></td><td>Meta Quest (mixed reality)</td><td><span class="no">None</span> (fully offline)</td><td><a href="#nestwise">Details</a></td></tr>
+                        <tr><td><strong>Perspectives</strong></td><td>Meta Quest (VR)</td><td><span class="no">None</span> (fully offline)</td><td><a href="#perspectives">Details</a></td></tr>
+                        <tr><td><strong>This website</strong></td><td>GitHub Pages</td><td>Only what you type into the feedback forms</td><td><a href="#website">Details</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>None of my extensions or VR apps contains analytics, advertising, tracking or accounts. I do not sell data and I do not build profiles. The only product that processes personal data on a server is <strong>BeFit</strong>, and it has its own, more detailed policy.</p>
+
+            <h2 id="controller">Who is responsible</h2>
+            <address>
+                Enes Meletli<br>
+                Kommerzienrat-Zimmermann-Str. 17<br>
+                90513 Zirndorf, Germany<br>
+                <a href="mailto:exus541@gmail.com">exus541@gmail.com</a>
+            </address>
+            <p>I am the controller within the meaning of Art. 4 No. 7 GDPR for the products and the website described here.</p>
+
+            <h2 id="extensions">Browser extensions</h2>
+            <p>My extensions (Search Filter &amp; Site Blocker, TabMaster, WebNote, YT Filter, Sync Scroll Pro, Kleinanzeigen Plus and the SAP Signavio Enhancement Suite) <strong>do not collect, store or transmit your personal data, browsing history or search queries to me or to any server operated by me.</strong> They have no backend. Everything they do happens inside your browser.</p>
+
+            <h3>What they store</h3>
+            <ul class="bullets">
+                <li><strong>On your device:</strong> settings, blocklists, rules, notes, drawings and highlights are kept in the extension's browser storage.</li>
+                <li><strong>Chrome sync:</strong> some extensions keep settings in Chrome's sync storage. If you have turned on Chrome sync, Google copies that data between your devices through your Google Account. I have no access to it. You can turn this off in Chrome.</li>
+                <li><strong>Exports:</strong> where an extension offers a download or export (for example notes, images or an Excel file), the file is created on your device and saved where you choose.</li>
             </ul>
 
-            <h2>Third-Party Services</h2>
-            <p>Our extensions do not use any third-party tracking, analytics, or advertising scripts. Your experience is completely private and ad-free (unless the website you are visiting has its own ads, which our SiteBlocker aims to remove).</p>
+            <h3>What each extension needs, and why</h3>
+            <div class="table-wrap glass">
+                <table>
+                    <thead>
+                        <tr><th>Extension</th><th>Works on</th><th>What it does with that access</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Search Filter &amp; Site Blocker</strong></td><td>Google Search</td><td>Hides blocked sites and ads in the results. The infinite scroll loads the next results page from Google directly in your browser, the same request Google's own "Next" button makes. Nothing goes to me.</td></tr>
+                        <tr><td><strong>TabMaster</strong></td><td>All sites</td><td>Reads tab titles and addresses on your device to apply your renaming rules and icons. Your rules are never sent anywhere.</td></tr>
+                        <tr><td><strong>WebNote</strong></td><td>All sites</td><td>Draws your notes and highlights on the page and saves them locally in your browser.</td></tr>
+                        <tr><td><strong>YT Filter</strong></td><td>youtube.com</td><td>Hides content and channels according to your settings.</td></tr>
+                        <tr><td><strong>Sync Scroll Pro</strong></td><td>All sites</td><td>Passes scroll positions between your own tabs.</td></tr>
+                        <tr><td><strong>Kleinanzeigen Plus</strong></td><td>kleinanzeigen.de</td><td>Filters ads and shows previews. To do this it loads further Kleinanzeigen pages (detail pages, next result page) from your browser, like a normal visit. Nothing goes to me.</td></tr>
+                        <tr><td><strong>SAP Signavio Enhancement Suite</strong></td><td>*.signavio.com</td><td>Adds features to the Signavio pages you are logged into. Its requests go only to your own Signavio system, using your existing session. I never receive process content, user data or any other data from it.</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <h2>Changes to This Policy</h2>
-            <p>We may update this policy from time to time to reflect changes in our tools or legal requirements. Any updates will be posted on this page.</p>
+            <h3>Google Fonts</h3>
+            <p>The pop-up or settings pages of several extensions load the Outfit or Inter font from Google Fonts when you open them. TabMaster does the same when it shows its own dialog on a web page. Because of this, Google receives your IP address and browser details, like on any site that uses Google Fonts. No content from the pages you visit is included. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</p>
 
-            <h2>Contact</h2>
-            <p>If you have any questions about our privacy practices, feel free to reach out via our GitHub or YouTube channels.</p>
+            <h2 id="apps">Android apps</h2>
+
+            <h3 id="befit">BeFit <span class="tag">account required</span></h3>
+            <p>BeFit lets you do short exercise challenges, record them on video and have friends confirm them. That needs an account and servers, so it is the one product of mine that processes personal data. In short:</p>
+            <ul class="bullets">
+                <li><strong>Data:</strong> e-mail address, display name and profile picture, exercise videos and photos, points and training history, group chats, optional weight, and a city name if you opt in to city rankings.</li>
+                <li><strong>Location:</strong> your GPS position is read once, only when you ask for it, turned into a city name and then discarded. Only the city is stored.</li>
+                <li><strong>Where:</strong> data is stored with Supabase in the EU (Paris, France). Videos and photos are deleted automatically after 90 days, chat attachments after 180 days.</li>
+                <li><strong>Advertising:</strong> the Android app shows ads through Google AdMob, personalised only with your consent, which you can change at any time. BeFit Pro and the web version have no ads. No other trackers or analytics.</li>
+                <li><strong>Your control:</strong> you can delete your account and download a copy of your data in the app.</li>
+            </ul>
+            <p>The full BeFit policy, including legal bases, recipients and retention, is the one that applies to BeFit: <a href="https://befitnow.app/privacy" target="_blank" rel="noopener">befitnow.app/privacy</a>.</p>
+
+            <h3 id="focus-town">Focus Town</h3>
+            <p>Focus Town is a single-player focus timer. It works fully offline: it does not request internet access or any other sensitive permission, has no account, no ads and no analytics. Coins, shop items, statistics and streaks are stored only in the app's private storage on your phone and are removed when you uninstall the app.</p>
+
+            <h2 id="vr">VR apps for Meta Quest</h2>
+            <p>My VR apps run entirely on the headset. In both apps:</p>
+            <ul class="bullets">
+                <li><strong>No internet access.</strong> The apps do not request the internet permission and make no network connections.</li>
+                <li><strong>No accounts, ads, analytics or purchases,</strong> and no social features or chat.</li>
+                <li><strong>No microphone, camera images, location, contacts or storage access.</strong> The apps do not use your name, profile or friends list.</li>
+                <li><strong>Local data only.</strong> What the apps save stays in their private storage on the headset and is deleted when you uninstall the app.</li>
+            </ul>
+
+            <h3 id="nestwise">Nestwise <span class="tag">Meta Quest 3 / 3S / Pro</span></h3>
+            <p>Nestwise is a room planner in mixed reality: you place virtual furniture in your real room. This section applies to the native app, version 1.0.0 and later.</p>
+            <ul>
+                <li><strong>Saved on the headset</strong> <span>Your designs (furniture, walls, sizes, colours), up to three saved drafts per room and an automatic last-session save, your settings, prices you edited, and a description of the walls, windows and doors of rooms you imported, so a design can be placed back in the right spot.</span></li>
+                <li><strong>Room scan</strong> <span>When you import your room, or open the app in a room with a saved design, Nestwise asks the Quest system for the room model (walls, windows, doors, floor, ceiling) created with the headset's Room Setup. The system asks for your permission first. The app uses this data only on the headset and never transmits it.</span></li>
+                <li><strong>Passthrough</strong> <span>The real-world view is shown by the system. The app cannot access the camera images.</span></li>
+                <li><strong>Permissions</strong> <span>Spatial data (room model), the spatial-anchor interface that goes with it, and the standard OpenXR permissions. Nothing else.</span></li>
+                <li><strong>Delete</strong> <span>Delete a design in the app (Settings), or uninstall the app, to remove everything.</span></li>
+            </ul>
+
+            <h3 id="perspectives">Perspectives <span class="tag">Meta Quest 3 / 3S</span></h3>
+            <p>Perspectives is an empathy app that simulates, in a simplified way, how people can perceive the world: mental health conditions, sensory conditions, drug effects and a cartoon world.</p>
+            <ul>
+                <li><strong>Saved on the headset</strong> <span>Only your settings: effect strength, session length, switches for motion effects, flashing effects, captions, smooth turning, small tasks and the screen filter, and whether you have read the safety notice.</span></li>
+                <li><strong>Hand tracking</strong> <span>If you play with your hands, the headset reports the position of your hands and fingers so you can point, pinch and grab. The app uses this live, only on the headset, and does not store or transmit it. Controller input is handled the same way.</span></li>
+                <li><strong>Health information</strong> <span>The app does not ask for, record or report any health information. Which experiences you choose is not saved. Voices, sounds and music are generated on the headset; nothing is recorded.</span></li>
+                <li><strong>Not medical</strong> <span>Perspectives is not a medical device and cannot diagnose or treat anything. If something in it affects you, use the pause button at any time and talk to a professional if you need support.</span></li>
+                <li><strong>Age</strong> <span>The app is not meant for children.</span></li>
+            </ul>
+
+            <h2 id="website">This website</h2>
+            <p>This site (exus541.github.io/portfolio) is a static site on GitHub Pages. It has no user accounts, no analytics and no advertising cookies.</p>
+            <ul class="bullets">
+                <li><strong>Hosting:</strong> GitHub, Inc. (USA) hosts the site and, like any web server, processes your IP address and request details in server logs. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub's privacy statement</a>. I do not see these logs.</li>
+                <li><strong>Fonts and icons:</strong> the pages load fonts from Google Fonts and icons from the unpkg CDN. Your browser therefore sends your IP address to these providers when a page loads.</li>
+                <li><strong>Badges:</strong> some pages show status badges loaded from img.shields.io.</li>
+                <li><strong>Feedback forms:</strong> if you send an idea or bug report on the feedback page, what you type (name, optional e-mail, message and technical details) is sent through Formspree (Formspree, Inc., USA) to me. I use it only to answer you and to improve my tools, and I keep it only as long as that takes. Please do not enter sensitive information. Some pages also link to forms on Google Forms.</li>
+                <li><strong>Roadmap votes:</strong> your up/down votes on the roadmap page are stored only in your browser (local storage) and are not sent to me.</li>
+                <li><strong>External links:</strong> links to the Chrome Web Store, GitHub, YouTube, LinkedIn and Patreon lead to services with their own privacy policies. They only receive data once you open them.</li>
+            </ul>
+
+            <h2 id="third-parties">Stores and third parties</h2>
+            <p>My software is distributed through stores such as the Chrome Web Store, Google Play and the Meta Horizon Store. These operators handle your account, downloads, payments and crash or usage statistics under their own policies, and may give me aggregated statistics that do not identify you. I cannot see who installed my apps. The headset itself, your Meta account and the Quest system software are covered by <a href="https://www.meta.com/legal/privacy-policy/" target="_blank" rel="noopener">Meta's privacy policy</a>. The browser, Chrome sync and your Google Account are covered by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</p>
+
+            <h2 id="children">Children</h2>
+            <p>My products are not directed at children. BeFit is intended for people aged 16 and over, and Perspectives is not meant for children. I do not knowingly collect data from children.</p>
+
+            <h2 id="rights">Your rights</h2>
+            <p>Where I process personal data about you (for example through the feedback forms or BeFit), you have the right under the GDPR to access, rectification, erasure, restriction of processing, data portability and objection, and to withdraw a consent at any time. You also have the right to complain to a data protection authority, for example the Bavarian State Office for Data Protection Supervision (BayLDA). For my extensions and VR apps there is nothing for me to look up, delete or hand over, because the data never reaches me. You can remove it yourself by uninstalling the product.</p>
+
+            <h2 id="changes">Changes to this policy</h2>
+            <p>I will update this page when my products or the law change, and I will change the date at the top. If a product ever starts to use the internet or collect data, this page will be updated <strong>before</strong> that version is released.</p>
+
+            <h2 id="contact">Contact</h2>
+            <p>Questions about privacy? Write to <a href="mailto:exus541@gmail.com">exus541@gmail.com</a>, or open an issue on <a href="https://github.com/exUs541" target="_blank" rel="noopener">GitHub</a>.</p>
         </div>
     </main>
 
