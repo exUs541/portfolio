@@ -379,6 +379,16 @@
       ],
       "timestamp": "2026-09-03T08:01:54.950334Z",
       "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.9",
+      "commits": [
+        "0344749 Release v1.9.1.9: Dictionary tools, Process Governance helpers, opt-in \"New\" tags\nd25e1d7 Allow manual releases, and stop doc edits from triggering one\nd954a7f Publish to Microsoft Edge Add-ons from the release workflow\n6e5b3cd Release v1.9.1.8: Refine Dictionary collapse control, add expand/collapse all\n7fd98a3 Release v1.9.1.5: Make Dictionary top-level categories collapsible"
+      ],
+      "timestamp": "2026-11-12T13:49:21.203232Z",
+      "posted": false
     }
   ]
 }
