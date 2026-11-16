@@ -1,0 +1,39 @@
+# Weekly Tech Digest: Elevating Your Workflow with Smarter Extensions! 🚀
+
+At **eXus541**, we're constantly refining our browser extensions to empower you with unparalleled productivity, customization, and a truly seamless digital experience. This week, we're thrilled to unveil a substantial set of updates for our **SAP Signavio Quick Switch** extension, focusing on performance, user experience, and robust new features.
+
+Our commitment to a developer-centric, premium, and local-first approach ensures that every enhancement is designed to make your daily tasks more efficient and enjoyable.
+
+---
+
+### **SAP Signavio Quick Switch** ⚡️
+
+We've rolled out multiple updates, consolidating a host of improvements to make your Signavio experience smoother, faster, and more intuitive than ever before.
+
+*   **🚀 Performance Unleashed:** We've implemented significant performance optimizations, including a debounced MutationObserver and enhanced loading feedback, ensuring a snappier and more responsive interaction.
+*   **🗺️ Dynamic Minimap & Navigation:**
+    *   **Draggable Minimap:** The minimap is now fully **draggable** and anchored to the bottom-right corner by default, giving you flexible control over your workspace.
+    *   **Expand-All Activities:** A powerful new feature allows you to **expand all activities** with granular control over attribute visibility via a dedicated attribute picker, replacing the previous hover-hide mechanism.
+    *   **Navigation Trail:** Enhanced navigation trail features help you maintain context and effortlessly traverse complex processes.
+*   **⚙️ Streamlined User Interface & Settings:**
+    *   **Intuitive Popup Settings:** Popup settings have been thoughtfully reorganized into **collapsible sections**, making them cleaner and easier to navigate. Process Steps settings are also simplified.
+    *   **Quick Switch Toggle:** The 'quick switch' eye icon has been replaced with a more intuitive **toggle switch** for improved usability.
+    *   **Bulk Attribute Management:** Introducing **bulk select/deselect** options for attributes, saving you valuable time when configuring visibility.
+*   **🛡️ Enhanced Reliability & Stability:**
+    *   Addressed and fixed issues with stale attribute lists, silent authentication timing failures, and improved the reliability of the "Expand all" feature across different user environments.
+    *   Minor UI refinements and fixes for user/group counts and language strings ensure a polished experience.
+
+---
+
+We believe these updates will significantly enhance your productivity and interaction within SAP Signavio. We're dedicated to building tools that truly make a difference in your workflow.
+
+**Ready to experience the difference?**
+Update your extension today or give it a try!
+
+📥 **SAP Signavio Quick Switch Chrome Web Store:** [https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae](https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae)
+
+Explore more about our work and support our mission:
+🌐 **Portfolio:** [https://exus541.github.io/portfolio/](https://exus541.github.io/portfolio/)
+☕ **Support:** [https://www.patreon.com/cw/exUs541](https://www.patreon.com/cw/exUs541)
+
+#BrowserExtensions #SAPSignavio #Productivity #UXDesign #TechUpdate #eXus541 #WorkflowOptimization #ChromeExtensions #Innovation

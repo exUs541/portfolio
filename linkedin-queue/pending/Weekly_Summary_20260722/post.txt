@@ -1,0 +1,52 @@
+Here's a professional and engaging LinkedIn weekly update post summarizing the latest improvements to your browser extensions:
+
+---
+
+### Weekly Update: Supercharging Your SAP Signavio Workflow with eXus541 Extensions! ✨🚀
+
+At **eXus541**, we're committed to delivering unparalleled **UX, customization, and productivity** directly to your browser. This week, we've rolled out a significant wave of updates across our SAP Signavio extensions, focusing on enhancing reliability, boosting performance, and introducing powerful new features for a truly premium experience.
+
+We believe in creating robust, local-first solutions that integrate seamlessly with your daily operations. Let's dive into what's new:
+
+---
+
+#### 🛠️ **SAP Signavio Quick Switch** – Version 1.7.5
+
+We've focused on refining stability and user interaction, ensuring your essential switching tasks are smoother than ever:
+
+*   **Enhanced "Expand All" Reliability:** Say goodbye to inconsistencies! We've implemented revision fallbacks, Unicode normalization, and hostname-scoped local storage keys for rock-solid "Expand All" functionality across all environments.
+*   **Streamlined User Management:** Introducing **bulk select/deselect** for more efficient handling of users and groups.
+*   **Improved Loading Feedback:** Clearer visual cues provide a smoother experience while data loads.
+*   **Under-the-Hood Fixes:** Addressed user/group count discrepancies and minor UI language inconsistencies, ensuring a polished interface.
+
+---
+
+#### ⚡ **SAP Signavio Enhancement Suite** – Versions 1.7.6 to 1.8.0
+
+This extension has undergone a major transformation, packed with new features and critical enhancements, including a rebrand to better reflect its expansive capabilities!
+
+*   **Introducing: SAP Signavio Enhancement Suite!** Formerly known by another name, this extension is now officially the **SAP Signavio Enhancement Suite**, reflecting its comprehensive power to elevate your Signavio experience.
+*   **Dynamic Navigation & Hierarchy:** Navigate complex diagrams with ease! We've added a **Dynamic Navigation Trail** and a **Diagrammhierarchie dropdown override** for more intuitive model exploration.
+*   **Advanced Diagram Zooming & Alignment:**
+    *   **Top-Align Zoomed Diagram:** Achieve consistent, predictable diagram views.
+    *   **Anchored Zoom Transform:** Experience predictable zoom behavior, now anchored precisely to the top-left corner.
+    *   **Fit-to-Page Top-Left Alignment:** Ensures your diagrams always fit perfectly and align for optimal viewing from the top-left.
+*   **Universal Multi-Item Attribute Sorting:** Effortlessly organize attributes with our new universal sorting capability, intelligently excluding structured tables like Glossary and Links for relevant results.
+*   **Improved "Expand All" Reliability:** Benefiting from the same robust fixes as Quick Switch, ensuring consistent behavior.
+*   **Enhanced Overlay Translation:** Refinements in language handling provide a more consistent multilingual experience.
+*   **Continuous Integration Enhancements:** Significant internal improvements to our build and release process mean faster, more reliable updates for you.
+
+---
+
+At **eXus541**, our goal is to empower SAP Signavio users with tools that don't just solve problems but actively enhance their daily productivity.
+
+**Ready to experience the difference?**
+Update your extensions today to leverage these powerful new features and enjoy a more seamless, productive workflow!
+
+📥 **SAP Signavio Quick Switch** Chrome Web Store: [https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae](https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae)
+📥 **SAP Signavio Enhancement Suite** Chrome Web Store: [https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae](https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae) *(Please note: The link provided for Enhancement Suite is currently the same as Quick Switch. We recommend searching for "SAP Signavio Enhancement Suite" directly in the Chrome Web Store for the latest version if you encounter any issues.)*
+
+🌐 Explore more of our work: [https://exus541.github.io/portfolio/](https://exus541.github.io/portfolio/)
+☕ Support our development: [https://www.patreon.com/cw/exUs541](https://www.patreon.com/cw/exUs541)
+
+\#SAPSignavio #BrowserExtensions #Productivity #UX #Customization #eXus541 #ChromeExtensions #BusinessProcessManagement #ProcessMining #WeeklyUpdate #TechUpdate

@@ -88,6 +88,306 @@
         "34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states"
       ],
       "timestamp": "2026-07-01T20:50:29.287779Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.0",
+      "commits": [
+        "c567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n5d9db50 Refactor minimap draggable logic, replace quick switch eye icon with toggle switch, and reorganize popup settings into collapsible sections\n37198b0 feat: Make the minimap draggable and anchored to the bottom-right corner by default\nb3518c0 chore: remove ZIP files from repository and add to .gitignore\n"
+      ],
+      "timestamp": "2026-07-01T21:55:07.813104Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.0",
+      "commits": [
+        "4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n5d9db50 Refactor minimap draggable logic, replace quick switch eye icon with toggle switch, and reorganize popup settings into collapsible sections\n37198b0 feat: Make the minimap draggable and anchored to the bottom-right corner by default\n"
+      ],
+      "timestamp": "2026-07-02T05:13:18.038842Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.1",
+      "commits": [
+        "e7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n5d9db50 Refactor minimap draggable logic, replace quick switch eye icon with toggle switch, and reorganize popup settings into collapsible sections\n"
+      ],
+      "timestamp": "2026-07-02T12:16:26.180310Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.3",
+      "commits": [
+        "4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n34779f1 Optimize performance with debounced MutationObserver and move drag handle styling to CSS with hover and grabbing states\n"
+      ],
+      "timestamp": "2026-07-02T14:39:38.674829Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.3.1",
+      "commits": [
+        "a25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\nc567963 Add expand-all activities, overlay translation, and navigation trail features\n"
+      ],
+      "timestamp": "2026-07-02T15:27:37.407202Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.4",
+      "commits": [
+        "6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n4d1c33b Remove overlay translation, add per-attribute hide/show for Expand all\n"
+      ],
+      "timestamp": "2026-07-02T15:46:32.133643Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.4",
+      "commits": [
+        "b730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\ne7a72b3 Replace per-attribute hover-hide with a visible attribute picker (v1.7.1)\n"
+      ],
+      "timestamp": "2026-07-07T14:20:28.352038Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Quick Switch",
+      "version": "1.7.5",
+      "commits": [
+        "7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n4aa6a3e Add loading feedback, simplify Process Steps settings, fix stale attribute list (v1.7.3)\n"
+      ],
+      "timestamp": "2026-07-17T18:01:37.738304Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.6",
+      "commits": [
+        "153546e Bump version to 1.7.6, rename to SAP Signavio Enhancement Suite, remove Eye Care, correct Overlay Translation path prefix and prioritize DOM language checks, fix regex bracket escaping, and optimize fetch CSP bypass\n7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n6c4b40c Hide Sync Data Now outside User Management, fix leftover German string (v1.7.4)\na25cb90 Add bulk select/deselect and fix silent auth-timing failure (v1.7.3.1, testing)\n"
+      ],
+      "timestamp": "2026-07-19T15:28:27.944858Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.7",
+      "commits": [
+        "f18a605 ci: Gracefully handle missing or expired Chrome Web Store API secrets\nae10530 feat: Add Dynamic Navigation Trail and Diagrammhierarchie dropdown override v1.7.7\n153546e Bump version to 1.7.6, rename to SAP Signavio Enhancement Suite, remove Eye Care, correct Overlay Translation path prefix and prioritize DOM language checks, fix regex bracket escaping, and optimize fetch CSP bypass\n7530d94 Release v1.7.5: Fix Expand All reliability (revision fallback, Unicode NFC normalisation, duplicate name sequential mapping, and hostname-scoped local storage keys)\nb730eb6 Fix user/group counts and Expand all reliability on different laptops (v1.7.4.1)\n"
+      ],
+      "timestamp": "2026-07-21T16:53:54.942485Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.7",
+      "commits": [
+        "a084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\nb13b8c3 ci: Update chrome-webstore-upload-cli step to use environment variables\n705ca2d ci: Require valid Chrome Web Store secrets and fail explicitly if token is expired\n"
+      ],
+      "timestamp": "2026-07-21T17:18:55.347841Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.8",
+      "commits": [
+        "0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\nb13b8c3 ci: Update chrome-webstore-upload-cli step to use environment variables\n"
+      ],
+      "timestamp": "2026-07-22T06:54:27.493700Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.7.9",
+      "commits": [
+        "3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n4a78d0f ci: Trigger Chrome Web Store release build with new secrets\n"
+      ],
+      "timestamp": "2026-07-22T06:57:23.880723Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.0",
+      "commits": [
+        "45b1900 v1.8.0: Fit-to-Page top-left diagram alignment and universal multi-item attribute sorting\n3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n158ed1b fix(ci): Pass --extension-id flag to chrome-webstore-upload-cli\n"
+      ],
+      "timestamp": "2026-07-22T08:23:09.494561Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.0",
+      "commits": [
+        "a37f3c6 v1.8.0: Exclude structured tables (Glossary, Links) from A-Z sorting button\n45b1900 v1.8.0: Fit-to-Page top-left diagram alignment and universal multi-item attribute sorting\n3b8c82c fix: Anchor zoom transform to Top-Left corner (X and Y offsets) v1.7.9\n0d642e1 feat: Add Top-Align Zoomed Diagram feature v1.7.8\na084110 ci: Pin working chrome-webstore-upload-cli@3.2.0 flag format\n"
+      ],
+      "timestamp": "2026-07-22T08:24:54.758580Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.0",
+      "commits": [
+        "79ed9be UI: Replace native browser file input with custom styled 100% English Choose File button and No file chosen label\n268bb8d Fix: Add getActiveModalWindow z-index & visibility filtering to ensure exact window closing on row 2 and 3\n7e3dcd3 Fix: Add 1000ms polling for x-window modal opening and force hide fallback in checkAndHandleModal\n91f4e7c Fix: Upgrade modal close triggers (multi-element click, ExtJS cmp close, tool-close fallback) to guarantee Wie? closes on subsequent rows\n20e0826 Fix: Replace endWith check with exact substring prefix in typeString and fix Wer? Tab count\n"
+      ],
+      "timestamp": "2026-07-22T16:27:55.029187Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.0",
+      "commits": [
+        "5ade18a Release v1.9.0: Add Top Revision Comment setting & precision placement\n03e38e9 Fix: Move entire Sections_spacing wrapper div instead of inner element - simple sibling reorder\n7f0c017 Fix: Add findTopContainerAndAnchor to locate parent module container and insert Revisionskommentar above 1st card\n4233032 Fix: Replace classList.value with safe className string search to prevent TypeError in processRevisionCommentPosition\n98cc966 Feat: Add Top Revision Comment setting to display revision comments at top of diagram view\n"
+      ],
+      "timestamp": "2026-07-23T07:28:58.150689Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.1",
+      "commits": [
+        "e417918 Fix: Adjust version numbering to v1.8.1 (+0.0.1 micro-increment step)\n5ade18a Release v1.9.0: Add Top Revision Comment setting & precision placement\n03e38e9 Fix: Move entire Sections_spacing wrapper div instead of inner element - simple sibling reorder\n7f0c017 Fix: Add findTopContainerAndAnchor to locate parent module container and insert Revisionskommentar above 1st card\n4233032 Fix: Replace classList.value with safe className string search to prevent TypeError in processRevisionCommentPosition\n"
+      ],
+      "timestamp": "2026-07-23T07:36:52.331999Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.8.2",
+      "commits": [
+        "5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n39fa3c7 Fix: Expand model title DOM selectors and add progressive retries to automatically replace generic fallback titles with real model names\nc3598e8 Refactor: Fix Navigation Trail duplicate entries, level 1 reset detection, and sub-view query parameter tracking\ndffc458 Refactor: Make category collapse 100% position-index based for zero language dependencies across all global languages\n"
+      ],
+      "timestamp": "2026-07-23T14:40:44.089344Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1",
+      "commits": [
+        "90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n39fa3c7 Fix: Expand model title DOM selectors and add progressive retries to automatically replace generic fallback titles with real model names\nc3598e8 Refactor: Fix Navigation Trail duplicate entries, level 1 reset detection, and sub-view query parameter tracking\n"
+      ],
+      "timestamp": "2026-07-23T14:53:08.542310Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.0",
+      "commits": [
+        "d9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n39fa3c7 Fix: Expand model title DOM selectors and add progressive retries to automatically replace generic fallback titles with real model names\n"
+      ],
+      "timestamp": "2026-07-23T18:32:22.149599Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.1",
+      "commits": [
+        "91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\nfaf915e Fix: Remove leftover searchDeepAndToggle call in applyCategoryCollapse\n"
+      ],
+      "timestamp": "2026-07-29T07:37:17.081190Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.2",
+      "commits": [
+        "2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n5739564 Release v1.8.2: Refactor Navigation Trail & Multi-language position collapse\n"
+      ],
+      "timestamp": "2026-07-29T07:39:09.340197Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.3",
+      "commits": [
+        "69cb6e7 Release v1.9.1.3: Enhance accordion summary hover feedback for collapsible setting groups\n2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n90dcea6 Release v1.9.1: Bump version to 1.9.1 for Chrome Web Store auto-publishing\n"
+      ],
+      "timestamp": "2026-07-29T07:40:11.553389Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.4",
+      "commits": [
+        "f86b118 Release v1.9.1.4: Add official Microsoft Edge Add-ons Store link and update IT Deployment Guide\n69cb6e7 Release v1.9.1.3: Enhance accordion summary hover feedback for collapsible setting groups\n2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n91b3f29 Release v1.9.1.1: Add Enterprise Policy Support (chrome.storage.managed schema.json) for IT admin enforcement & UI locking\nd9a8a92 Release v1.9.1.0: Adopt 4-component micro-versioning (+0.0.0.1 steps)\n"
+      ],
+      "timestamp": "2026-08-05T06:55:54.674231Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.5",
+      "commits": [
+        "7fd98a3 Release v1.9.1.5: Make Dictionary top-level categories collapsible\n6618904 Add IT deployment guides, trim the published package, correct the docs\nf86b118 Release v1.9.1.4: Add official Microsoft Edge Add-ons Store link and update IT Deployment Guide\n69cb6e7 Release v1.9.1.3: Enhance accordion summary hover feedback for collapsible setting groups\n2097eda Release v1.9.1.2: Ensure Quick Switch New Tab and Workspace Stats remain 100% user/admin controlled in managed storage schema\n"
+      ],
+      "timestamp": "2026-08-31T16:41:23.595318Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.8",
+      "commits": [
+        "6e5b3cd Release v1.9.1.8: Refine Dictionary collapse control, add expand/collapse all\n7fd98a3 Release v1.9.1.5: Make Dictionary top-level categories collapsible\n6618904 Add IT deployment guides, trim the published package, correct the docs\nf86b118 Release v1.9.1.4: Add official Microsoft Edge Add-ons Store link and update IT Deployment Guide\n69cb6e7 Release v1.9.1.3: Enhance accordion summary hover feedback for collapsible setting groups\n"
+      ],
+      "timestamp": "2026-09-03T07:35:56.857956Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.8",
+      "commits": [
+        "d954a7f Publish to Microsoft Edge Add-ons from the release workflow\n6e5b3cd Release v1.9.1.8: Refine Dictionary collapse control, add expand/collapse all\n7fd98a3 Release v1.9.1.5: Make Dictionary top-level categories collapsible\n6618904 Add IT deployment guides, trim the published package, correct the docs\nf86b118 Release v1.9.1.4: Add official Microsoft Edge Add-ons Store link and update IT Deployment Guide\n"
+      ],
+      "timestamp": "2026-09-03T07:38:03.026553Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.8",
+      "commits": [
+        "d954a7f Publish to Microsoft Edge Add-ons from the release workflow\n6e5b3cd Release v1.9.1.8: Refine Dictionary collapse control, add expand/collapse all\n7fd98a3 Release v1.9.1.5: Make Dictionary top-level categories collapsible\n6618904 Add IT deployment guides, trim the published package, correct the docs\nf86b118 Release v1.9.1.4: Add official Microsoft Edge Add-ons Store link and update IT Deployment Guide\n"
+      ],
+      "timestamp": "2026-09-03T08:01:54.950334Z",
+      "posted": true
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.9",
+      "commits": [
+        "0344749 Release v1.9.1.9: Dictionary tools, Process Governance helpers, opt-in \"New\" tags\nd25e1d7 Allow manual releases, and stop doc edits from triggering one\nd954a7f Publish to Microsoft Edge Add-ons from the release workflow\n6e5b3cd Release v1.9.1.8: Refine Dictionary collapse control, add expand/collapse all\n7fd98a3 Release v1.9.1.5: Make Dictionary top-level categories collapsible"
+      ],
+      "timestamp": "2026-11-12T13:49:21.203232Z",
       "posted": false
     }
   ]
