@@ -1,226 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exus541 | Premium Browser Extensions & Productivity Tools</title>
-    <meta name="description" content="Discover professional browser utilities by exus541. Lightweight, privacy-focused tools like SiteBlocker, TabMaster, and WebNote to enhance your productivity.">
+    <title data-de="exus541 | Browser-Extensions, VR-Apps &amp; Apps – Stand und Termine" data-en="exus541 | Browser extensions, VR apps &amp; apps – status and dates">exus541 | Browser-Extensions, VR-Apps &amp; Apps – Stand und Termine</title>
+    <meta name="description" content="exus541 entwickelt Browser-Extensions, VR-Apps für Meta Quest und Apps – hobbymäßig neben dem Beruf. Alle Lösungen, aktueller Stand, Fundorte und geplante Termine auf einen Blick. / Browser extensions, VR apps and apps by exus541 – status, availability and planned dates at a glance.">
     <meta name="google-site-verification" content="ENUICEJucibGlxNSVQ_SWEgc6a6xkH4N4cjW5O7rSPQ" />
-    
-    <!-- Open Graph / Facebook -->
+    <link rel="canonical" href="https://exus541.github.io/portfolio/">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://exus541.github.io/portfolio/">
-    <meta property="og:title" content="exus541 | Premium Browser Extensions">
-    <meta property="og:description" content="Elevate your browser experience with privacy-focused productivity tools.">
-    <meta property="og:image" content="https://exus541.github.io/portfolio/assets/siteblocker.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://exus541.github.io/portfolio/">
-    <meta property="twitter:title" content="exus541 | Premium Browser Extensions">
-    <meta property="twitter:description" content="Elevate your browser experience with privacy-focused productivity tools.">
-    <meta property="twitter:image" content="https://exus541.github.io/portfolio/assets/siteblocker.png">
+    <meta property="og:title" content="exus541 – Software, die einfach hilft">
+    <meta property="og:description" content="Browser-Extensions, VR-Apps und Apps: was es schon gibt, woran wir arbeiten und wann es fertig wird.">
+    <meta property="og:image" content="https://exus541.github.io/portfolio/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="exus541 – Software, die einfach hilft">
+    <meta name="twitter:description" content="Browser-Extensions, VR-Apps und Apps: was es schon gibt, woran wir arbeiten und wann es fertig wird.">
+    <meta name="twitter:image" content="https://exus541.github.io/portfolio/assets/og-image.png">
 
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <div class="background-glow"></div>
-    
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">exus<span>541</span></a>
-                                                <div class="nav-links">
-                <a href="extensions.html"><i data-lucide="puzzle"></i> <span>Extensions</span></a>
-                <a href="roadmap.html"><i data-lucide="map"></i> <span>Roadmap</span></a>
-                <a href="index.html#feedback"><i data-lucide="message-square"></i> <span>Feedback</span></a>
-                <a href="index.html#about"><i data-lucide="info"></i> <span>About</span></a>
-                <a href="index.html#socials"><i data-lucide="share-2"></i> <span>Socials</span></a>
-                <a href="https://www.patreon.com/c/exus541" class="btn-primary" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M15.386 0.501c-4.139 0-7.511 3.372-7.511 7.511 0 4.139 3.372 7.511 7.511 7.511s7.511-3.372 7.511-7.511c0-4.139-3.372-7.511-7.511-7.511zM0 0.501v22.998h4.28v-22.998h-4.28z"/></svg> <span>Support on Patreon</span></a>
-            </div>
-        </div>
-    </nav>
+    <a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
 
-    <header class="hero">
-        <div class="container">
-            <h1 class="reveal">Elevate Your <span>Browser</span> Experience.</h1>
-            <p class="reveal-delay">Premium tools designed for productivity, organization, and focus. Discover my collection of high-quality browser extensions.</p>
-            <div class="hero-btns reveal-delay-2">
-                <a href="extensions.html" class="btn-glow">Explore Tools</a>
-                <a href="roadmap.html" class="btn-secondary">View Roadmap</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" aria-label="exus541 – Startseite">exus<span>541</span></a>
+            <nav class="nav" id="nav" aria-label="Hauptnavigation" data-i18n-aria="nav.menu">
+                <a href="index.html#loesungen" data-i18n="nav.solutions">Lösungen</a>
+                <a href="index.html#zeitplan" data-i18n="nav.timeline">Zeitplan</a>
+                <a href="index.html#about" data-i18n="nav.about">Über uns</a>
+                <a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
+                <a href="feedback.html" data-i18n="nav.feedback">Feedback</a>
+                <a href="index.html#support" class="nav-support" data-i18n="nav.support">Unterstützen</a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang" role="group" aria-label="Sprache / Language">
+                    <button type="button" data-lang="de" aria-pressed="true">DE</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <a class="btn btn-warm btn-sm header-cta" href="index.html#support"><span data-icon="heart"></span><span data-i18n="nav.support">Unterstützen</span></a>
+                <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menü" data-i18n-aria="nav.menu"><span data-icon="menu"></span></button>
             </div>
         </div>
     </header>
 
-    <section id="extensions" class="extensions">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Extensions</h2>
-                <p>Innovative solutions for everyday browser challenges.</p>
-            </div>
-
-            <div class="grid">
-                <!-- SiteBlocker -->
-                <div class="card glass">
-                    <div class="card-image">
-                        <img src="assets/siteblocker.png" alt="SiteBlocker Preview">
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <p class="pill" data-i18n="hero.pill">Hobbyprojekt – entwickelt neben dem Beruf</p>
+                    <h1 data-i18n="hero.title">Software, die <em>einfach hilft.</em></h1>
+                    <p class="lead" data-i18n="hero.lead">exus541 baut Browser-Extensions, VR-Apps und Apps für den Alltag. Hier siehst du auf einen Blick, was es schon gibt, woran wir arbeiten und wann es fertig wird.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-dark" href="#loesungen"><span data-i18n="hero.cta1">Lösungen entdecken</span><span data-icon="arrow-right"></span></a>
+                        <a class="btn btn-ghost" href="#zeitplan" data-i18n="hero.cta2">Was kommt wann?</a>
                     </div>
-                    <div class="card-content">
-                        <h3>Search Filter & Site Blocker</h3>
-                        <p>Block sites from search results, hide ads, sponsored posts, videos & more. Infinite scroll for Google Search results.</p>
-                        <div class="tags">
-                            <span>Productivity</span>
-                            <span>Privacy</span>
+                    <ul class="hero-stats" id="hero-stats"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lösungen -->
+        <section class="section" id="loesungen">
+            <div class="container">
+                <div class="section-head">
+                    <h2 data-i18n="sol.title">Unsere Lösungen</h2>
+                    <p data-i18n="sol.sub">Filtere nach Art und Stand. Ein Klick auf eine Karte zeigt alle Details, Fundorte und den geplanten Termin.</p>
+                </div>
+
+                <div class="toolbar">
+                    <div class="filter-row">
+                        <span class="filter-label" data-i18n="sol.type">Art</span>
+                        <div class="fgroup" id="filter-type" role="group" aria-label="Art"></div>
+                    </div>
+                    <div class="filter-row">
+                        <span class="filter-label" data-i18n="sol.status">Stand</span>
+                        <div class="fgroup" id="filter-status" role="group" aria-label="Stand"></div>
+                        <label class="search">
+                            <span data-icon="search"></span>
+                            <input id="search" type="search" autocomplete="off" placeholder="Suchen, z. B. Tabs, Fitness, VR" aria-label="Lösungen durchsuchen" data-i18n-ph="sol.search" data-i18n-aria="sol.searchlabel">
+                        </label>
+                    </div>
+                </div>
+                <div class="results-bar">
+                    <span id="result-count" aria-live="polite"></span>
+                    <button type="button" class="link-btn" id="reset-filters" hidden><span data-icon="rotate"></span><span data-i18n="sol.reset">Filter zurücksetzen</span></button>
+                </div>
+
+                <div id="results">
+                    <noscript>
+                        <div class="empty"><p>Bitte aktiviere JavaScript, um die Projektübersicht zu sehen. Unsere Browser-Extensions findest du im <a class="link" href="https://chromewebstore.google.com/search/exus541">Chrome Web Store</a>.</p></div>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zeitplan -->
+        <section class="section section-alt" id="zeitplan">
+            <div class="container">
+                <div class="section-head">
+                    <h2 data-i18n="tl.title">Was kommt wann?</h2>
+                    <p data-i18n="tl.sub">Unser geplanter Fahrplan auf einen Blick. Termine sind Zielwerte, keine Zusagen – wir entwickeln neben dem Beruf, daher kann sich etwas verschieben.</p>
+                </div>
+                <ol class="timeline" id="timeline" aria-label="Zeitplan"></ol>
+                <div class="tl-foot">
+                    <a class="btn btn-ghost btn-sm" href="#support"><span data-icon="heart"></span><span data-i18n="tl.link">Hilf uns, schneller zu werden</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Über uns -->
+        <section class="section" id="about">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2 data-i18n="about.title">Über uns</h2>
+                    <p class="about-lead" data-i18n="about.lead">Wir entwickeln das alles aktuell hobbymäßig.</p>
+                    <p data-i18n="about.p1">Hinter exus541 stecken Menschen mit ganz normalen Berufen. Alle Projekte hier entstehen in unserer Freizeit – abends, am Wochenende und aus purer Begeisterung dafür, nützliche Dinge zu bauen.</p>
+                    <p data-i18n="about.p2">Weil wir berufstätig sind, können wir uns leider nicht ausschließlich auf die Entwicklung konzentrieren. Deshalb dauert manches länger, als wir es selbst gern hätten – und Termine sind Zielwerte, keine Garantien.</p>
+                    <p data-i18n="about.p3">Unser Wunsch: irgendwann mehr Zeit für Software zu haben. Wenn dich unsere Arbeit überzeugt, kannst du uns genau dabei helfen (siehe unten).</p>
+                </div>
+                <div>
+                    <div class="hobby-card">
+                        <strong><span data-icon="clock"></span><span data-i18n="about.badge.t">Aktuell: Hobby neben dem Beruf</span></strong>
+                        <p data-i18n="about.badge.d">Mit genug Unterstützung: mehr Zeit und schnellere Updates.</p>
+                    </div>
+                    <ul class="values">
+                        <li><span class="vi" data-icon="lock"></span><div><h3 data-i18n="about.v1.t">Lokal &amp; privat</h3><p data-i18n="about.v1.d">Unsere Extensions und VR-Apps laufen auf deinem Gerät – ohne Tracking, ohne Werbung.</p></div></li>
+                        <li><span class="vi" data-icon="check-circle"></span><div><h3 data-i18n="about.v2.t">Mit Sorgfalt gebaut</h3><p data-i18n="about.v2.d">Schlanke, verständliche Werkzeuge, die ein Problem wirklich lösen.</p></div></li>
+                        <li><span class="vi" data-icon="eye"></span><div><h3 data-i18n="about.v3.t">Offen &amp; transparent</h3><p data-i18n="about.v3.d">Öffentliche Roadmap, ehrliche Termine und Quellcode vieler Projekte auf GitHub.</p></div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unterstützen -->
+        <section class="section" id="support" style="padding-top: 0;">
+            <div class="container">
+                <div class="support-card">
+                    <div class="support-text">
+                        <h2 data-i18n="sup.title">Unterstütze unsere Arbeit</h2>
+                        <p data-i18n="sup.text">Wenn dir unsere Tools gefallen, freuen wir uns riesig über deine Unterstützung – zum Beispiel über Patreon oder andere Spendenplattformen. Jeder Beitrag hilft uns, unsere Arbeitszeit im Beruf zu reduzieren oder irgendwann ganz auf die Entwicklung solcher Programme zu setzen.</p>
+                        <p class="benefit" data-i18n="sup.benefit">Für dich heißt das: schnellere Updates, neue Apps und weniger Wartezeit.</p>
+                        <div class="support-actions" id="support-actions">
+                            <a class="btn btn-warm" href="https://www.patreon.com/c/exus541" target="_blank" rel="noopener noreferrer"><span data-icon="patreon"></span><span>Auf Patreon unterstützen</span></a>
                         </div>
-                        <a href="details/siteblocker.html" class="card-link">View Details <i data-lucide="arrow-right"></i></a>
                     </div>
-                </div>
-
-                <!-- TabMaster -->
-                <div class="card glass">
-                    <div class="card-image">
-                        <img src="assets/tabmaster.png" alt="TabMaster Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>TabMaster</h3>
-                        <p>Rename browser tabs & change tab icons automatically with URL rules. Customize tab titles, use emojis, or upload custom images.</p>
-                        <div class="tags">
-                            <span>Organization</span>
-                            <span>UI/UX</span>
+                    <div class="ladder-box">
+                        <h3 data-i18n="sup.ladder">So wirkt deine Unterstützung</h3>
+                        <ol class="ladder">
+                            <li><span class="step">1</span><div><h4 data-i18n="sup.s1.t">Mehr Zeit für Updates</h4><p data-i18n="sup.s1.d">Bugfixes und neue Funktionen kommen schneller.</p></div></li>
+                            <li><span class="step">2</span><div><h4 data-i18n="sup.s2.t">Weniger Stunden im Job</h4><p data-i18n="sup.s2.d">Wir können unsere Arbeitszeit reduzieren und mehr entwickeln.</p></div></li>
+                            <li><span class="step">3</span><div><h4 data-i18n="sup.s3.t">Volle Konzentration</h4><p data-i18n="sup.s3.d">Im besten Fall arbeiten wir ganz an unseren Programmen.</p></div></li>
+                        </ol>
+                        <div class="free-ways">
+                            <h4 data-i18n="sup.free.t">Auch ohne Geld hilfst du</h4>
+                            <ul>
+                                <li><span data-icon="star"></span><span data-i18n="sup.free.1">Bewerte unsere Extensions im Chrome Web Store</span></li>
+                                <li><span data-icon="share"></span><span data-i18n="sup.free.2">Erzähl Freunden und Kollegen davon</span></li>
+                                <li><span data-icon="message"></span><span data-i18n="sup.free.3">Schick uns Ideen und Fehlerberichte</span></li>
+                            </ul>
                         </div>
-                        <a href="details/tabmaster.html" class="card-link">View Details <i data-lucide="arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- WebNote -->
-                <div class="card glass">
-                    <div class="card-image">
-                        <img src="assets/webnote.png" alt="WebNote Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>WebNote</h3>
-                        <p>Annotate websites with sticky notes, text highlights, and freehand drawing tools. Everything is saved locally for your research.</p>
-                        <div class="tags">
-                            <span>Research</span>
-                            <span>Utility</span>
-                        </div>
-                        <a href="details/webnote.html" class="card-link">View Details <i data-lucide="arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="extensions.html" class="btn-secondary">Show More Tools <i data-lucide="plus"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="tech-core">
-        <div class="container">
-            <div class="section-header">
-                <h2>Technical Core</h2>
-                <p>Built for speed, security, and absolute privacy. No fluff, just performance.</p>
-            </div>
-            <div class="tech-grid">
-                <div class="tech-item glass">
-                    <div class="tech-icon"><i data-lucide="shield-check"></i></div>
-                    <h3>Manifest V3</h3>
-                    <p>Compliant with the latest browser standards. Enhanced security through strict permission management and modern API usage.</p>
+        <!-- Feedback -->
+        <section class="section section-alt" id="feedback">
+            <div class="container">
+                <div class="section-head">
+                    <h2 data-i18n="fb.title">Ideen, Wünsche, Fehler?</h2>
+                    <p data-i18n="fb.sub">Deine Rückmeldung bestimmt, was wir als Nächstes bauen.</p>
                 </div>
-                <div class="tech-item glass">
-                    <div class="tech-icon"><i data-lucide="zap"></i></div>
-                    <h3>Performance</h3>
-                    <p>Vanilla JS architecture. Minimal memory footprint and near-instant load times without heavy framework overhead.</p>
-                </div>
-                <div class="tech-item glass">
-                    <div class="tech-icon"><i data-lucide="lock"></i></div>
-                    <h3>Zero Tracking</h3>
-                    <p>No telemetry, no analytics, no external scripts. Your data never leaves your browser. Privacy is not a feature, it's the foundation.</p>
-                </div>
-                <div class="tech-item glass">
-                    <div class="tech-icon"><i data-lucide="hard-drive"></i></div>
-                    <h3>Offline First</h3>
-                    <p>All core functions operate 100% locally. No mandatory cloud dependencies or account requirements to use the tools.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="feedback" class="feedback">
-        <div class="container">
-            <div class="section-header">
-                <h2>Community & Feedback</h2>
-                <p>Help me shape the future of these tools. Your input is invaluable.</p>
-            </div>
-            <div class="feedback-grid">
-                <div class="feedback-card glass">
-                    <i data-lucide="lightbulb"></i>
-                    <h3>Suggest an Idea</h3>
-                    <p>Have a feature request? Share your vision with me.</p>
-                    <a href="feedback.html" class="btn-secondary">Submit Idea</a>
-                </div>
-                <div class="feedback-card glass">
-                    <i data-lucide="bug"></i>
-                    <h3>Report a Bug</h3>
-                    <p>Found an issue? Help me fix it by reporting the bug.</p>
-                    <a href="feedback.html" class="btn-secondary">Report Bug</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-box glass">
-                <div class="about-content">
-                    <h2>About the Creator</h2>
-                    <p>I'm <strong>exus541</strong>, a developer dedicated to building lightweight, privacy-focused browser utilities. My mission is to give users more control over their digital workspace, whether it's through decluttering search results or organizing browser tabs.</p>
-                    <p>Every tool I build is designed with simplicity and efficiency in mind, ensuring that your browser remains fast and your focus remains sharp.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="socials" class="socials">
-        <div class="container">
-            <div class="social-box glass">
-                <h2>Support & Community</h2>
-                <p>If you like my tools, feel free to support me on Patreon or follow me for updates and new releases.</p>
-                <div class="social-links">
-                    <a href="https://github.com/exUs541" class="social-item glass-btn" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        <span>GitHub</span>
+                <div class="fb-grid">
+                    <a class="fb-card" href="feedback.html#idea">
+                        <span class="fi" data-icon="lightbulb"></span>
+                        <h3 data-i18n="fb.idea.t">Idee einreichen</h3>
+                        <p data-i18n="fb.idea.d">Dir fehlt eine Funktion oder du hast ein neues Tool im Kopf? Sag es uns.</p>
+                        <span class="link"><span data-i18n="fb.idea.b">Idee einreichen</span><span data-icon="arrow-right"></span></span>
                     </a>
-                    <a href="https://www.youtube.com/channel/UC09y7qjqBbVcTCWtg1l8j0A" class="social-item glass-btn" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        <span>YouTube</span>
+                    <a class="fb-card" href="feedback.html#bug">
+                        <span class="fi" data-icon="alert"></span>
+                        <h3 data-i18n="fb.bug.t">Fehler melden</h3>
+                        <p data-i18n="fb.bug.d">Etwas funktioniert nicht wie erwartet? Hilf uns, es zu beheben.</p>
+                        <span class="link"><span data-i18n="fb.bug.b">Fehler melden</span><span data-icon="arrow-right"></span></span>
                     </a>
-                    <a href="https://www.linkedin.com/company/exus541/" class="social-item glass-btn" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://www.patreon.com/c/exus541" class="social-item glass-btn" target="_blank">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.386 0.501c-4.139 0-7.511 3.372-7.511 7.511 0 4.139 3.372 7.511 7.511 7.511s7.511-3.372 7.511-7.511c0-4.139-3.372-7.511-7.511-7.511zM0 0.501v22.998h4.28v-22.998h-4.28z"/></svg>
-                        <span>Patreon</span>
+                    <a class="fb-card" href="roadmap.html">
+                        <span class="fi" data-icon="map"></span>
+                        <h3 data-i18n="fb.road.t">Roadmap &amp; Wünsche</h3>
+                        <p data-i18n="fb.road.d">Sieh, was für unsere Extensions geplant ist, und stimme ab.</p>
+                        <span class="link"><span data-i18n="fb.road.b">Roadmap öffnen</span><span data-icon="arrow-right"></span></span>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 exus541. Built with ❤️ for the web community.</p>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="index.html" class="brand" style="margin-right: 8px;">exus<span>541</span></a>
+                    <span data-i18n="foot.rights">© {year} exus541. Mit Hingabe gebaut – in der Freizeit.</span>
+                    <a href="privacy.html" data-i18n="foot.privacy">Datenschutz</a>
+                </div>
+                <ul class="socials" id="socials">
+                    <li><a href="https://github.com/exUs541" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span data-icon="github"></span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UC09y7qjqBbVcTCWtg1l8j0A" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><span data-icon="youtube"></span></a></li>
+                    <li><a href="https://www.linkedin.com/company/exus541/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span data-icon="linkedin"></span></a></li>
+                    <li><a href="https://www.patreon.com/c/exus541" target="_blank" rel="noopener noreferrer" aria-label="Patreon"><span data-icon="patreon"></span></a></li>
+                </ul>
             </div>
+            <p class="marks" data-i18n="foot.marks">Alle genannten Produkt- und Markennamen gehören ihren jeweiligen Inhabern. Unsere Extensions sind unabhängig und nicht mit diesen Unternehmen verbunden.</p>
         </div>
     </footer>
 
+    <dialog id="drawer" class="drawer" aria-labelledby="drawer-title"></dialog>
+
+    <script src="site.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

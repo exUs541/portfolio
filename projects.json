@@ -1,0 +1,492 @@
+{
+  "_hinweis": "Zentrale Datenquelle fuer die Startseite (index.html). Neues Projekt = neuen Eintrag in 'projects' ergaenzen. Texte immer als {de, en}. status: live | beta | dev. type: extension | vr | app. stage: 1 Idee, 2 Entwicklung, 3 Test & Store, 4 Verfuegbar. eta: 'JJJJ-Qn' (z.B. 2027-Q1), 'open' oder weglassen.",
+  "site": {
+    "updated": "2026-11-16",
+    "support": [
+      {
+        "id": "patreon",
+        "label": { "de": "Auf Patreon unterstützen", "en": "Support on Patreon" },
+        "url": "https://www.patreon.com/c/exus541",
+        "icon": "patreon",
+        "primary": true
+      }
+    ],
+    "socials": [
+      { "id": "github", "label": "GitHub", "url": "https://github.com/exUs541", "icon": "github" },
+      { "id": "youtube", "label": "YouTube", "url": "https://www.youtube.com/channel/UC09y7qjqBbVcTCWtg1l8j0A", "icon": "youtube" },
+      { "id": "linkedin", "label": "LinkedIn", "url": "https://www.linkedin.com/company/exus541/", "icon": "linkedin" },
+      { "id": "patreon", "label": "Patreon", "url": "https://www.patreon.com/c/exus541", "icon": "patreon" }
+    ]
+  },
+  "projects": [
+    {
+      "id": "befit",
+      "order": 10,
+      "type": "app",
+      "status": "beta",
+      "stage": 3,
+      "eta": "2027-Q1",
+      "etaWhat": { "de": "Google Play Store", "en": "Google Play Store" },
+      "name": "BeFit",
+      "icon": "assets/projects/befit-icon.webp",
+      "preview": "assets/projects/befit-preview.webp",
+      "previewDe": "assets/projects/befit-preview-de.webp",
+      "tagline": {
+        "de": "Zufällige Fitness-Challenges mit Freunden – Punkte gibt es nur, wenn jemand sie bestätigt.",
+        "en": "Random fitness challenges with friends – you only score once someone confirms it."
+      },
+      "description": {
+        "de": "Zu einem zufälligen Zeitpunkt in deinem Wunschzeitfenster meldet sich BeFit: Du hast 15 Minuten Zeit für eine von drei Übungen. Du nimmst dich beim Training auf, ein Freund bestätigt das Video – erst dann zählen die Punkte. So bleibt der Wettbewerb fair und motiviert.",
+        "en": "At a random moment inside a window you chose, BeFit pings you: you get 15 minutes to do one of three exercises. You record your set, a friend confirms the video – and only then do the points count. Fair, social and motivating."
+      },
+      "features": {
+        "de": [
+          "Zufällige Challenge in deinen freien Zeitfenstern",
+          "15 Minuten, drei Übungen zur Wahl",
+          "Video-Nachweis, bestätigt von Freunden",
+          "Faire Wertung: Punkte vergibt nur der Server",
+          "Bestenlisten für Freunde, Gruppen und (optional) deine Stadt"
+        ],
+        "en": [
+          "A random challenge inside the time windows you chose",
+          "15 minutes, three exercises to pick from",
+          "Video proof, confirmed by friends",
+          "Fair scoring: only the server awards points",
+          "Leaderboards for friends, groups and (optionally) your city"
+        ]
+      },
+      "platforms": { "de": ["Web-App (PWA)", "Android"], "en": ["Web app (PWA)", "Android"] },
+      "stageNote": {
+        "de": "Als Web-App (PWA) schon nutzbar und in der Beta-Phase. Die Android-App für den Google Play Store ist in Vorbereitung.",
+        "en": "Already usable as a web app (PWA) and in beta. The Android app for the Google Play Store is being prepared."
+      },
+      "tags": { "de": ["Fitness", "Soziale App"], "en": ["Fitness", "Social app"] },
+      "availability": [
+        { "kind": "web", "label": { "de": "Web-App öffnen", "en": "Open web app" }, "url": "https://befitnow.app/" },
+        { "kind": "play", "label": { "de": "Google Play Store", "en": "Google Play Store" }, "url": null, "soon": true }
+      ]
+    },
+    {
+      "id": "perspectives",
+      "order": 20,
+      "type": "vr",
+      "status": "dev",
+      "stage": 3,
+      "eta": "2027-Q1",
+      "etaWhat": { "de": "Meta Horizon Store", "en": "Meta Horizon Store" },
+      "name": "Perspectives",
+      "icon": "assets/projects/perspectives-icon.webp",
+      "preview": "assets/projects/perspectives-preview.webp",
+      "tagline": {
+        "de": "Erlebe in der VR, wie andere Menschen die Welt wahrnehmen – Empathie zum Ausprobieren.",
+        "en": "Feel in VR how other people can perceive the world – empathy you can try."
+      },
+      "description": {
+        "de": "Perspectives ist eine Empathie- und Bildungs-App für Meta Quest. In einer ganz normalen Wohnung wählst du, was du erleben möchtest: derselbe Raum, gesehen und gehört mit den Sinnen eines anderen Menschen. Jedes Erlebnis endet mit einer Erklärung und Tipps, wie man andere unterstützen kann.",
+        "en": "Perspectives is an empathy and education app for Meta Quest. In one ordinary apartment you choose what to experience: the same room, seen and heard through someone else's senses. Every experience ends with an explanation and tips for supporting others."
+      },
+      "features": {
+        "de": [
+          "Über 40 Erlebnisse zu Sehen, Hören, psychischer Gesundheit und mehr",
+          "Eine Wohnung, viele Perspektiven: derselbe Raum unter verschiedenen Bedingungen",
+          "Jederzeit stoppen: per Knopf, offener Hand oder Blick nach unten",
+          "Drei Intensitätsstufen, Timer und Schalter für Bewegung und Blitze",
+          "Komplett offline – ohne Konto und ohne Werbung"
+        ],
+        "en": [
+          "40+ experiences covering vision, hearing, mental health and more",
+          "One apartment, many perspectives: the same room under different conditions",
+          "Stop any time: one button, an open palm, or look down",
+          "Three strengths, a timer and switches for motion and flashing",
+          "Fully offline – no account, no ads"
+        ]
+      },
+      "platforms": { "de": ["Meta Quest 3 / 3S"], "en": ["Meta Quest 3 / 3S"] },
+      "stageNote": {
+        "de": "Version 1.0 ist gebaut. Vor der Einreichung beim Meta Horizon Store testen wir Leistung und Bedienung auf der Brille.",
+        "en": "Version 1.0 is built. Before submitting to the Meta Horizon Store we are testing performance and handling on the headset."
+      },
+      "note": {
+        "de": "Ein vereinfachter Eindruck – kein Diagnose- oder Medizinprodukt. Enthält Blitzeffekte und beunruhigende Geräusche; nicht für Kinder und nicht bei Epilepsie oder Panikattacken.",
+        "en": "A simplified impression – not a diagnostic or medical tool. Includes flashing effects and unsettling sounds; not for children, and not for people with epilepsy or panic attacks."
+      },
+      "tags": { "de": ["Bildung", "Empathie"], "en": ["Education", "Empathy"] },
+      "availability": [
+        { "kind": "meta", "label": { "de": "Meta Horizon Store", "en": "Meta Horizon Store" }, "url": null, "soon": true }
+      ]
+    },
+    {
+      "id": "nestwise",
+      "order": 30,
+      "type": "vr",
+      "status": "dev",
+      "stage": 3,
+      "eta": "2027-Q2",
+      "etaWhat": { "de": "Meta Horizon Store", "en": "Meta Horizon Store" },
+      "name": "Nestwise",
+      "icon": "assets/projects/nestwise-icon.webp",
+      "preview": "assets/projects/nestwise-preview.webp",
+      "tagline": {
+        "de": "Plane dein Zuhause in Mixed Reality – Möbel direkt in deinem echten Raum ausprobieren.",
+        "en": "Plan your home in mixed reality – try furniture right in your real room."
+      },
+      "description": {
+        "de": "Nestwise holt virtuelle Möbel per Passthrough in deinen echten Raum. So kannst du ein neues Sofa, ein anderes Layout oder eine ganze Küche ausprobieren, bevor du etwas kaufst oder umräumst – und den Plan direkt mit dem heutigen Zustand vergleichen.",
+        "en": "Nestwise puts virtual furniture into your real room through passthrough. Try a new sofa, a different layout or a whole kitchen before you buy or move anything – and compare the plan with what is there today."
+      },
+      "features": {
+        "de": [
+          "Möbel platzieren, drehen, verschieben und in Zentimetern anpassen",
+          "Wände, Fenster und Türen aus dem Raumscan deiner Brille übernehmen",
+          "Plan und Realität vergleichen: Wände und Möbel durchsichtig schalten",
+          "Farben wählen und Preise im Blick behalten",
+          "Komplett offline – ohne Konto und ohne Werbung"
+        ],
+        "en": [
+          "Place, turn, move and resize furniture in centimetres",
+          "Import walls, windows and doors from your headset's room scan",
+          "Compare plan and reality: make walls and furniture see-through",
+          "Pick colours and keep a running price total",
+          "Fully offline – no account, no ads"
+        ]
+      },
+      "platforms": { "de": ["Meta Quest 3 / 3S / Pro"], "en": ["Meta Quest 3 / 3S / Pro"] },
+      "stageNote": {
+        "de": "Die Quest-App (Version 1.0) ist gebaut und signiert. Jetzt folgen Tests auf der Brille, Store-Bilder und die Einreichung beim Meta Horizon Store.",
+        "en": "The Quest app (version 1.0) is built and signed. Next up: on-headset testing, store visuals and the submission to the Meta Horizon Store."
+      },
+      "note": {
+        "de": "Nicht für Quest 2 – die App braucht Raumscan und Farb-Passthrough.",
+        "en": "Not for Quest 2 – the app needs room scanning and colour passthrough."
+      },
+      "tags": { "de": ["Wohnen", "Mixed Reality"], "en": ["Home", "Mixed reality"] },
+      "availability": [
+        { "kind": "meta", "label": { "de": "Meta Horizon Store", "en": "Meta Horizon Store" }, "url": null, "soon": true },
+        { "kind": "web", "label": { "de": "Web-Vorgänger ausprobieren", "en": "Try the web predecessor" }, "url": "https://home-designer-vr.pages.dev/" }
+      ]
+    },
+    {
+      "id": "focustown",
+      "order": 40,
+      "type": "app",
+      "status": "dev",
+      "stage": 2,
+      "eta": "open",
+      "name": "Focus Town",
+      "icon": null,
+      "preview": null,
+      "tagline": {
+        "de": "Gemütlicher Fokus-Timer mit eigener 3D-Insel zum Entspannen.",
+        "en": "A cosy focus timer with your own 3D island to unwind on."
+      },
+      "description": {
+        "de": "Konzentriere dich, sammle Münzen und richte dein Zimmer ein. Zwischendurch erkundest du eine frei begehbare 3D-Insel: Früchte schütteln, angeln und mit den Dorfbewohnern plaudern.",
+        "en": "Stay focused, earn coins and furnish your room. In between, explore a freely walkable 3D island: shake fruit from trees, go fishing and chat with the villagers."
+      },
+      "features": {
+        "de": [
+          "Fokus-Timer von 10 bis 60 Minuten mit animierter Zimmerszene",
+          "Deep-Focus-Modus: Wer die App verlässt, verliert die Session",
+          "Münzen verdienen und das Zimmer im Shop einrichten",
+          "Statistik mit Fokuszeit und Tages-Streak",
+          "Begehbare 3D-Insel zum Angeln, Sammeln und Entspannen"
+        ],
+        "en": [
+          "Focus timer from 10 to 60 minutes with an animated room scene",
+          "Deep-focus mode: leave the app and you lose the session",
+          "Earn coins and decorate your room in the shop",
+          "Stats with focus time and daily streak",
+          "A walkable 3D island for fishing, collecting and relaxing"
+        ]
+      },
+      "platforms": { "de": ["Android"], "en": ["Android"] },
+      "stageNote": {
+        "de": "Spielbarer Prototyp für Android. Feinschliff und Veröffentlichung sind noch offen.",
+        "en": "Playable Android prototype. Polish and release are still open."
+      },
+      "tags": { "de": ["Fokus", "Spiel"], "en": ["Focus", "Game"] },
+      "availability": [
+        { "kind": "soon", "label": { "de": "Noch nicht veröffentlicht", "en": "Not released yet" }, "url": null, "soon": true }
+      ]
+    },
+    {
+      "id": "siteblocker",
+      "order": 100,
+      "type": "extension",
+      "status": "live",
+      "stage": 4,
+      "name": "Search Filter & Site Blocker",
+      "icon": "assets/projects/siteblocker-icon.webp",
+      "preview": "assets/projects/siteblocker-preview.webp",
+      "tagline": {
+        "de": "Räumt deine Google-Suche auf: Seiten blockieren, Werbung ausblenden, endlos scrollen.",
+        "en": "Cleans up your Google Search: block sites, hide ads, scroll endlessly."
+      },
+      "description": {
+        "de": "Blockiere unerwünschte Domains direkt in den Suchergebnissen, blende Anzeigen und störende Module aus und lade weitere Ergebnisse automatisch nach – ganz ohne Seitenwechsel.",
+        "en": "Block unwanted domains right in the search results, hide ads and distracting modules, and load more results automatically – no page switching."
+      },
+      "features": {
+        "de": [
+          "Domains mit einem Klick aus den Suchergebnissen blockieren",
+          "Anzeigen und gesponserte Beiträge ausblenden",
+          "Module wie „Weitere Fragen“, Videos und Bilder ausblenden",
+          "Endloses Scrollen für Google-Suchergebnisse",
+          "Schnellzugriff auf Suchoperatoren (filetype, site, Datum)"
+        ],
+        "en": [
+          "Block any domain from the results with one click",
+          "Hide ads and sponsored posts",
+          "Hide modules like “People also ask”, videos and images",
+          "Infinite scroll for Google Search results",
+          "Quick access to search operators (filetype, site, date)"
+        ]
+      },
+      "platforms": { "de": ["Chrome & Chromium-Browser"], "en": ["Chrome & Chromium browsers"] },
+      "tags": { "de": ["Produktivität", "Datenschutz"], "en": ["Productivity", "Privacy"] },
+      "detail": "details/siteblocker.html",
+      "availability": [
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/dbmhbnmbodpdkhhifkpckaafanchciej/" }
+      ],
+      "github": "https://github.com/exUs541/Search-Optimizer"
+    },
+    {
+      "id": "tabmaster",
+      "order": 110,
+      "type": "extension",
+      "status": "live",
+      "stage": 4,
+      "name": "TabMaster",
+      "icon": "assets/projects/tabmaster-icon.webp",
+      "preview": "assets/projects/tabmaster-preview.webp",
+      "tagline": {
+        "de": "Benenne Tabs um und gib ihnen eigene Icons – automatisch per URL-Regel.",
+        "en": "Rename tabs and give them custom icons – automatically with URL rules."
+      },
+      "description": {
+        "de": "Gib deinen Tabs eigene Titel, Emojis oder Bilder als Icon. Einmal eine Regel anlegen, und die Seite sieht bei jedem Besuch so aus, wie du es willst – ideal, um Umgebungen oder Projekte auseinanderzuhalten.",
+        "en": "Give your tabs custom titles, emojis or images as icons. Create a rule once and the page looks the way you want on every visit – ideal for telling environments or projects apart."
+      },
+      "features": {
+        "de": [
+          "Tab-Titel automatisch nach URL-Mustern überschreiben",
+          "Emojis oder eigene Bilder als Tab-Icon",
+          "Flexible Regeln: beginnt mit, enthält oder exakt",
+          "Funktioniert auch auf modernen Web-Apps (React, Vue …)",
+          "Übersichtliche Regelverwaltung"
+        ],
+        "en": [
+          "Override tab titles automatically based on URL patterns",
+          "Emojis or your own images as tab icons",
+          "Flexible rules: starts with, contains or exact match",
+          "Works on modern web apps too (React, Vue …)",
+          "A clear dashboard to manage all rules"
+        ]
+      },
+      "platforms": { "de": ["Chrome & Chromium-Browser"], "en": ["Chrome & Chromium browsers"] },
+      "tags": { "de": ["Organisation", "UI/UX"], "en": ["Organization", "UI/UX"] },
+      "detail": "details/tabmaster.html",
+      "availability": [
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/rename-tabs-change-tab-ic/mojpahfolammhpfnfdnghcnnpbaelnko" }
+      ],
+      "github": "https://github.com/exUs541/Rename-Tabs"
+    },
+    {
+      "id": "webnote",
+      "order": 120,
+      "type": "extension",
+      "status": "live",
+      "stage": 4,
+      "name": "WebNote",
+      "icon": "assets/projects/webnote-icon.webp",
+      "preview": "assets/projects/webnote-preview.webp",
+      "tagline": {
+        "de": "Haftnotizen, Markierungen und Zeichnungen direkt auf Webseiten.",
+        "en": "Sticky notes, highlights and drawings right on web pages."
+      },
+      "description": {
+        "de": "Mach aus deinem Browser ein Recherche-Werkzeug: Notizen anheften, Text markieren und frei auf Seiten zeichnen. Alles bleibt lokal gespeichert und ist beim nächsten Besuch wieder da.",
+        "en": "Turn your browser into a research tool: pin notes, highlight text and draw freely on pages. Everything is stored locally and is there again on your next visit."
+      },
+      "features": {
+        "de": [
+          "Schwebende Haftnotizen auf jeder Seite",
+          "Text in verschiedenen Farben markieren",
+          "Kreise, Pfeile und Skizzen direkt auf der Seite zeichnen",
+          "Alles lokal im Browser gespeichert",
+          "Dashboard mit allen Notizen auf einen Blick"
+        ],
+        "en": [
+          "Floating sticky notes on any page",
+          "Highlight text in different colours",
+          "Draw circles, arrows and sketches directly on the page",
+          "Everything stored locally in your browser",
+          "A dashboard with all your notes in one place"
+        ]
+      },
+      "platforms": { "de": ["Chrome & Chromium-Browser"], "en": ["Chrome & Chromium browsers"] },
+      "tags": { "de": ["Recherche", "Werkzeug"], "en": ["Research", "Utility"] },
+      "detail": "details/webnote.html",
+      "availability": [
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni" }
+      ]
+    },
+    {
+      "id": "ytfilter",
+      "order": 130,
+      "type": "extension",
+      "status": "live",
+      "stage": 4,
+      "name": "YouTube Channel Blocker & Video Filter",
+      "icon": "assets/projects/ytfilter-icon.webp",
+      "preview": "assets/projects/ytfilter-preview.webp",
+      "tagline": {
+        "de": "Blende Kanäle, Shorts und Ablenkung auf YouTube aus.",
+        "en": "Hide channels, Shorts and distractions on YouTube."
+      },
+      "description": {
+        "de": "Blockiere Kanäle, die dich nicht interessieren, und filtere Videos nach Stichwörtern oder Dauer. So bleibt dein Feed aufgeräumt und du bei der Sache.",
+        "en": "Block channels you don't care about and filter videos by keywords or duration. Keep your feed clean and stay focused."
+      },
+      "features": {
+        "de": [
+          "Kanäle dauerhaft aus Empfehlungen und Suche ausblenden",
+          "Videos nach Stichwörtern oder Kategorien filtern",
+          "Shorts ausblenden, Startseite und Seitenleiste entrümpeln",
+          "Einstellungen auf allen Geräten synchron halten",
+          "Schlank und schnell"
+        ],
+        "en": [
+          "Permanently hide channels from recommendations and search",
+          "Filter videos by keywords or categories",
+          "Hide Shorts and declutter the homepage and sidebar",
+          "Keep your settings in sync across all devices",
+          "Lightweight and fast"
+        ]
+      },
+      "platforms": { "de": ["Chrome & Chromium-Browser"], "en": ["Chrome & Chromium browsers"] },
+      "tags": { "de": ["Unterhaltung", "Fokus"], "en": ["Entertainment", "Focus"] },
+      "detail": "details/ytfilter.html",
+      "availability": [
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/mbdjpeppmemcbheedochgdejjoenijem/" }
+      ]
+    },
+    {
+      "id": "sapsignavio",
+      "order": 140,
+      "type": "extension",
+      "status": "live",
+      "stage": 4,
+      "name": "SAP Signavio Quick Switch",
+      "icon": "assets/projects/sapsignavio-icon.webp",
+      "preview": "assets/projects/sapsignavio-preview.webp",
+      "tagline": {
+        "de": "Zwischen Collaboration Hub und Process Manager wechseln – im selben Ordner oder Modell.",
+        "en": "Switch between Collaboration Hub and Process Manager – staying in the same folder or model."
+      },
+      "description": {
+        "de": "Ohne die Erweiterung landest du beim Wechsel zwischen den SAP-Signavio-Umgebungen wieder im Stammverzeichnis. Quick Switch behält deinen aktuellen Ordner- oder Modellkontext bei.",
+        "en": "Without the extension, switching between the SAP Signavio environments sends you back to the root directory. Quick Switch keeps your current folder or model context."
+      },
+      "features": {
+        "de": [
+          "Umgebung wechseln, ohne den Pfad zu verlieren",
+          "Zusätzliche Links im App-Launcher (3×3-Menü)",
+          "Keine Einrichtung und keine Tenant-ID nötig"
+        ],
+        "en": [
+          "Switch environments without losing your path",
+          "Extra links in the native app launcher (3×3 menu)",
+          "No setup and no tenant ID required"
+        ]
+      },
+      "platforms": { "de": ["Chrome & Chromium-Browser"], "en": ["Chrome & Chromium browsers"] },
+      "tags": { "de": ["BPMN", "Unternehmen"], "en": ["BPMN", "Enterprise"] },
+      "detail": "details/sapsignavio.html",
+      "availability": [
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae" }
+      ]
+    },
+    {
+      "id": "kleinanzeigen",
+      "order": 150,
+      "type": "extension",
+      "status": "live",
+      "stage": 4,
+      "name": "Kleinanzeigen Plus",
+      "icon": "assets/projects/kleinanzeigen-icon.webp",
+      "preview": "assets/projects/kleinanzeigen-preview.webp",
+      "tagline": {
+        "de": "Das Power-User-Extra für Kleinanzeigen: filtern, Vorschau, Preissuche, Vorlagen.",
+        "en": "The power-user add-on for Kleinanzeigen: filters, previews, price search, templates."
+      },
+      "description": {
+        "de": "Mehr Übersicht auf Kleinanzeigen.de: Blende unerwünschte Anzeigen aus, sieh Bilder direkt in der Liste, suche gezielt nach Preisspannen und antworte mit gespeicherten Vorlagen schneller.",
+        "en": "More clarity on Kleinanzeigen.de: hide unwanted ads, see images right in the list, search by price range and reply faster with saved message templates."
+      },
+      "features": {
+        "de": [
+          "Anzeigen nach Stichwörtern, Kategorien oder Verkäufern ausblenden",
+          "Bildvorschau, ohne die Anzeige zu öffnen",
+          "Preisbereich für gezielte Schnäppchensuche",
+          "Nachrichtenvorlagen für schnellere Anfragen",
+          "Zusätzliche Infos und eine aufgeräumtere Oberfläche"
+        ],
+        "en": [
+          "Hide ads by keyword, category or seller",
+          "Image previews without opening the listing",
+          "Price range filter for precise deal hunting",
+          "Message templates for faster replies",
+          "Extra information and a cleaner interface"
+        ]
+      },
+      "platforms": { "de": ["Chrome & Chromium-Browser"], "en": ["Chrome & Chromium browsers"] },
+      "tags": { "de": ["Shopping", "Produktivität"], "en": ["Shopping", "Productivity"] },
+      "detail": "details/kleinanzeigen.html",
+      "availability": [
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/mnfgejplbhbkedcolciflhihgokpjnnd/" }
+      ]
+    },
+    {
+      "id": "syncscrollpro",
+      "order": 160,
+      "type": "extension",
+      "status": "live",
+      "stage": 4,
+      "name": "Sync Scroll Pro",
+      "icon": "assets/projects/syncscrollpro-icon.webp",
+      "preview": "assets/projects/syncscrollpro-preview.webp",
+      "tagline": {
+        "de": "Scrolle mehrere Tabs synchron – ideal zum Vergleichen.",
+        "en": "Scroll several tabs in sync – ideal for comparing."
+      },
+      "description": {
+        "de": "Halte mehrere Tabs im Gleichschritt: global oder in eigenen Gruppen. Perfekt, um Dokumente, Code oder Webseiten nebeneinander zu vergleichen.",
+        "en": "Keep multiple tabs scrolling in lockstep – globally or in custom groups. Perfect for comparing documents, code or web pages side by side."
+      },
+      "features": {
+        "de": [
+          "Globaler Sync-Modus per Klick",
+          "Eigene Gruppen für unabhängige Tab-Sets",
+          "Proportionales Scrollen bei unterschiedlich langen Seiten",
+          "Leichtgewichtig und schnell",
+          "Einfaches Ein- und Ausschalten"
+        ],
+        "en": [
+          "One-click global sync mode",
+          "Custom groups for independent sets of tabs",
+          "Proportional scrolling for pages of different lengths",
+          "Lightweight and fast",
+          "Easy toggle on and off"
+        ]
+      },
+      "platforms": { "de": ["Chrome & Chromium-Browser"], "en": ["Chrome & Chromium browsers"] },
+      "tags": { "de": ["Produktivität", "Vergleichen"], "en": ["Productivity", "Compare"] },
+      "detail": "details/syncscrollpro.html",
+      "availability": [
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/mmnagcdibimlgbbdlkkdliojojignoda/" }
+      ],
+      "github": "https://github.com/exUs541/SyncScroll"
+    }
+  ]
+}

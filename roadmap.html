@@ -1,200 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmap | exus541</title>
+    <meta name="description" content="Geplante Verbesserungen und Feature-Wünsche für die Browser-Extensions von exus541.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* Roadmap Specific Styles */
-        .timeline-container { padding: 150px 0 80px 0; text-align: center; }
-        .timeline { display: flex; justify-content: space-between; align-items: center; position: relative; max-width: 1100px; margin: 80px auto; padding: 0 40px; }
-        .timeline::before { content: ''; position: absolute; top: 50%; left: 60px; right: 60px; height: 2px; background: linear-gradient(90deg, var(--glass-border) 0%, var(--accent-color) 50%, var(--glass-border) 100%); z-index: 1; }
-        .timeline-node { position: relative; z-index: 2; background: var(--bg-color); border: 2px solid var(--accent-color); width: 24px; height: 24px; border-radius: 50%; box-shadow: 0 0 20px var(--accent-glow); }
-        .node-today { border-color: #fff; box-shadow: 0 0 25px rgba(255,255,255,0.5); width: 28px; height: 28px; }
-        .timeline-content { position: absolute; top: 45px; left: 50%; transform: translateX(-50%); width: 250px; background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border); backdrop-filter: blur(5px); }
-        .timeline-content h4 { font-size: 1.1rem; color: var(--accent-color); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-        .timeline-content ul { list-style: none; padding: 0; margin: 0; text-align: left; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
-        .timeline-content li { margin-bottom: 5px; display: flex; align-items: flex-start; gap: 8px; }
-        .timeline-content li i { color: var(--accent-color); width: 14px; margin-top: 3px; }
-        .timeline-content .date-badge { font-size: 0.7rem; font-weight: 800; background: rgba(0, 242, 255, 0.1); color: var(--accent-color); padding: 1px 6px; border-radius: 4px; margin-right: 5px; }
-
-        .controls-section { margin-bottom: 50px; max-width: 1000px; margin-left: auto; margin-right: auto; background: var(--glass-bg); padding: 2rem; border-radius: 30px; border: 1px solid var(--glass-border); display: flex; flex-direction: column; gap: 1.5rem; }
-        .filter-row { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; justify-content: center; }
-        .filter-group { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
-        .label { font-size: 0.75rem; color: var(--text-dim); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; min-width: 70px; }
-        .filter-btn { padding: 0.4rem 1.2rem; border-radius: 50px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-size: 0.85rem; }
-        .filter-btn.active { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); font-weight: 700; }
-        .custom-select-wrapper { position: relative; user-select: none; width: 180px; }
-        .custom-select { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0.4rem 1.2rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 50px; cursor: pointer; color: var(--text-color); font-size: 0.85rem; transition: all 0.3s ease; }
-        .custom-options { position: absolute; top: calc(100% + 10px); left: 0; right: 0; background: var(--bg-color); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; display: none; z-index: 100; backdrop-filter: blur(20px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .custom-option { padding: 0.8rem 1.2rem; cursor: pointer; transition: all 0.2s ease; color: var(--text-dim); font-size: 0.85rem; }
-        .custom-option:hover { background: rgba(0, 242, 255, 0.1); color: var(--accent-color); }
-        .project-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-        .project-card { display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-radius: 20px; cursor: pointer; transition: transform 0.3s ease, border-color 0.3s ease; }
-        .project-card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
-        .project-info { flex: 1; }
-        .project-info h3 { margin-bottom: 0.5rem; font-size: 1.4rem; }
-        .vote-controls { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-left: 2rem; cursor: default; }
-        .vote-arrow { background: none; border: 1px solid var(--glass-border); color: var(--text-dim); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
-        .vote-arrow.active-up { background: #00ff88; color: #050508; border-color: #00ff88; }
-        .vote-arrow.active-down { background: #ff4444; color: #fff; border-color: #ff4444; }
-        .vote-score { font-weight: 800; font-size: 1.4rem; min-width: 40px; text-align: center; color: var(--text-color); }
-        .tag-row { display: flex; gap: 8px; margin-bottom: 1rem; }
-        .status-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
-        .status-planned { background: rgba(0, 242, 255, 0.1); color: #00f2ff; }
-        .status-progress { background: rgba(255, 170, 0, 0.1); color: #ffaa00; }
-        .status-published { background: rgba(0, 255, 136, 0.1); color: #00ff88; }
-        .status-backlog { background: rgba(255, 255, 255, 0.1); color: #ccc; }
-        .status-cancelled { background: rgba(255, 68, 68, 0.1); color: #ff4444; }
-        .type-tag { padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; background: rgba(112, 0, 255, 0.15); color: #7000ff; border: 1px solid rgba(112, 0, 255, 0.3); }
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); display: none; justify-content: center; align-items: center; z-index: 1000; }
-        .modal-content { background: var(--bg-color); border: 1px solid var(--glass-border); padding: 3rem; border-radius: 30px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
-        .close-modal { position: absolute; top: 20px; right: 20px; cursor: pointer; color: var(--text-dim); }
-        @media (max-width: 992px) { .timeline { flex-direction: column; gap: 200px; margin-bottom: 300px; } .timeline::before { display: none; } .timeline-content { width: 300px; } }
-    </style>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <div class="background-glow"></div>
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">exus<span>541</span></a>
-            <div class="nav-links">
-                <a href="extensions.html"><i data-lucide="puzzle"></i> <span>Extensions</span></a>
-                <a href="roadmap.html" class="active"><i data-lucide="map"></i> <span>Roadmap</span></a>
-                <a href="index.html#feedback"><i data-lucide="message-square"></i> <span>Feedback</span></a>
-                <a href="index.html#about"><i data-lucide="info"></i> <span>About</span></a>
-                <a href="index.html#socials"><i data-lucide="share-2"></i> <span>Socials</span></a>
-                <a href="https://www.patreon.com/c/exus541" class="btn-primary" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M15.386 0.501c-4.139 0-7.511 3.372-7.511 7.511 0 4.139 3.372 7.511 7.511 7.511s7.511-3.372 7.511-7.511c0-4.139-3.372-7.511-7.511-7.511zM0 0.501v22.998h4.28v-22.998h-4.28z"/></svg> <span>Support on Patreon</span></a>
+    <a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" aria-label="exus541 – Startseite">exus<span>541</span></a>
+            <nav class="nav" id="nav" aria-label="Hauptnavigation" data-i18n-aria="nav.menu">
+                <a href="index.html#loesungen" data-i18n="nav.solutions">Lösungen</a>
+                <a href="index.html#zeitplan" data-i18n="nav.timeline">Zeitplan</a>
+                <a href="index.html#about" data-i18n="nav.about">Über uns</a>
+                <a href="roadmap.html" aria-current="page" data-i18n="nav.roadmap">Roadmap</a>
+                <a href="feedback.html" data-i18n="nav.feedback">Feedback</a>
+                <a href="index.html#support" class="nav-support" data-i18n="nav.support">Unterstützen</a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang" role="group" aria-label="Sprache / Language">
+                    <button type="button" data-lang="de" aria-pressed="true">DE</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <a class="btn btn-warm btn-sm header-cta" href="index.html#support"><span data-icon="heart"></span><span data-i18n="nav.support">Unterstützen</span></a>
+                <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menü" data-i18n-aria="nav.menu"><span data-icon="menu"></span></button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="container">
-        <section class="timeline-container">
-            <h1 class="reveal">Project <span>Journey</span></h1>
-            <p>Transparency in development. Follow the evolution of the exus541 tool suite.</p>
-            <div class="timeline" id="roadmapTimeline">
-                <!-- Timeline items will be loaded from JSON -->
-            </div>
-        </section>
+    <main id="main" class="container page-body">
+        <div class="page-head">
+            <a class="back" href="index.html"><span data-icon="arrow-left"></span><span data-i18n="rm.back">Zurück zur Übersicht</span></a>
+            <h1 data-i18n="rm.title">Roadmap &amp; Feature-Wünsche</h1>
+            <p data-i18n="rm.sub">Geplante Verbesserungen für unsere Extensions – direkt aus unserem Backlog. Den großen Zeitplan findest du auf der <a href="index.html#zeitplan">Startseite</a>.</p>
+        </div>
 
-        <section class="projects-section" style="margin-top: 150px;">
-            <div class="controls-section">
-                <!-- Status Filters -->
-                <div class="filter-row">
-                    <span class="label">Status:</span>
-                    <div class="filter-group" id="statusFilters">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="backlog">Backlog</button>
-                        <button class="filter-btn" data-filter="planned">Planned</button>
-                        <button class="filter-btn" data-filter="progress">In Progress</button>
-                        <button class="filter-btn" data-filter="published">Published</button>
-                        <button class="filter-btn" data-filter="cancelled">Cancelled</button>
-                    </div>
-                </div>
-                <!-- Sorting -->
-                <div class="filter-row" style="margin-top: 0.5rem; border-top: 1px solid var(--glass-border); padding-top: 1.5rem;">
-                    <span class="label">Sort By:</span>
-                    <div class="custom-select-wrapper">
-                        <div class="custom-select" id="customSelect"><span id="selectedSort">Top Upvotes</span><i data-lucide="chevron-down"></i></div>
-                        <div class="custom-options" id="customOptions">
-                            <div class="custom-option selected" data-value="votes">Top Upvotes</div>
-                            <div class="custom-option" data-value="az">Name (A-Z)</div>
-                            <div class="custom-option" data-value="status">Status Priority</div>
-                        </div>
-                    </div>
-                </div>
+        <div class="rm-controls">
+            <div class="filter-row">
+                <span class="filter-label" data-i18n="rm.filter">Stand</span>
+                <div class="fgroup" id="rm-filters" role="group" aria-label="Status"></div>
             </div>
-            <div class="project-list" id="projectList">
-                <p style="text-align: center; color: var(--text-dim); margin-top: 2rem;">Loading roadmap projects...</p>
+            <div class="filter-row">
+                <span class="filter-label" data-i18n="rm.sort">Sortieren</span>
+                <label class="select">
+                    <select id="rm-sort" aria-label="Sortieren">
+                        <option value="votes" data-i18n="rm.sort.votes">Meiste Stimmen</option>
+                        <option value="az" data-i18n="rm.sort.az">Name (A–Z)</option>
+                        <option value="status" data-i18n="rm.sort.status">Status-Priorität</option>
+                    </select>
+                    <span data-icon="chevron-down"></span>
+                </label>
             </div>
-        </section>
+        </div>
+
+        <div class="rm-list" id="rm-list" aria-live="polite">
+            <p class="muted" data-i18n="rm.loading">Roadmap wird geladen …</p>
+        </div>
+        <p class="rm-note" data-i18n="rm.note">Stimmen werden vorerst nur in deinem Browser gespeichert.</p>
     </main>
 
-    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"><div class="modal-content glass" onclick="event.stopPropagation()"><div class="close-modal" onclick="closeModal()"><i data-lucide="x"></i></div><div id="modalBody"></div></div></div>
-    <footer style="margin-top: 100px;"><div class="container"><p>&copy; 2026 exus541. Built with ❤️</p></div></footer>
+    <dialog id="rm-modal" class="modal" aria-labelledby="rm-modal-title">
+        <div class="modal-inner" id="rm-modal-body"></div>
+    </dialog>
 
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="index.html" class="brand" style="margin-right: 8px;">exus<span>541</span></a>
+                    <span data-i18n="foot.rights">© {year} exus541. Mit Hingabe gebaut – in der Freizeit.</span>
+                    <a href="privacy.html" data-i18n="foot.privacy">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site.js"></script>
     <script>
-        const dateElement = document.getElementById('currentDate');
-        const now = new Date();
-        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    (function () {
+        'use strict';
+        var X = window.EXUS;
+        var STATUS_ORDER = { progress: 0, planned: 1, backlog: 2, published: 3, cancelled: 4 };
+        var FILTERS = ['all', 'backlog', 'planned', 'progress', 'published', 'cancelled'];
+        var L = {
+            de: { backlog: 'Backlog', planned: 'Geplant', progress: 'In Arbeit', published: 'Veröffentlicht', cancelled: 'Abgebrochen', all: 'Alle', extension: 'Extension', system: 'System', empty: 'Keine Einträge für diesen Filter.', error: 'Die Roadmap konnte nicht geladen werden. Bitte später erneut versuchen.', close: 'Schließen', up: 'Positiv bewerten', down: 'Negativ bewerten' },
+            en: { backlog: 'Backlog', planned: 'Planned', progress: 'In progress', published: 'Published', cancelled: 'Cancelled', all: 'All', extension: 'Extension', system: 'System', empty: 'No items for this filter.', error: 'The roadmap could not be loaded. Please try again later.', close: 'Close', up: 'Upvote', down: 'Downvote' }
+        };
+        var items = [];
+        var active = ['all'];
+        var sort = 'votes';
+        var loaded = false, failed = false;
+        var $ = function (s) { return document.querySelector(s); };
+        var tr = function (k) { return L[X.lang][k] || k; };
+        function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+        function vote(id) { try { return localStorage.getItem('vote_' + id); } catch (e) { return null; } }
 
-        let projects = [];
-        const statusOrder = { "progress": 0, "planned": 1, "backlog": 2, "published": 3, "cancelled": 4 };
-        let currentSort = 'votes';
-        let activeStatuses = ['all'];
-
-        async function loadRoadmapData() {
+        function renderFilters() {
+            $('#rm-filters').innerHTML = FILTERS.map(function (f) {
+                return '<button type="button" class="fchip" data-f="' + f + '" aria-pressed="' + (active.indexOf(f) > -1) + '" style="padding-right:14px">' + esc(tr(f)) + '</button>';
+            }).join('');
+        }
+        function render() {
+            var list = $('#rm-list');
+            if (failed) { list.innerHTML = '<p class="muted">' + esc(tr('error')) + '</p>'; return; }
+            if (!loaded) return;
+            var shown = items.filter(function (p) { return active.indexOf('all') > -1 || active.indexOf(p.status) > -1; });
+            if (!shown.length) { list.innerHTML = '<div class="empty"><p>' + esc(tr('empty')) + '</p></div>'; return; }
+            if (sort === 'votes') shown.sort(function (a, b) { return b.votes - a.votes; });
+            else if (sort === 'az') shown.sort(function (a, b) { return a.title.localeCompare(b.title); });
+            else shown.sort(function (a, b) { return STATUS_ORDER[a.status] - STATUS_ORDER[b.status]; });
+            list.innerHTML = shown.map(function (p) {
+                var v = vote(p.id);
+                return '<div class="rm-card" role="button" tabindex="0" data-open="' + esc(p.id) + '">' +
+                    '<div class="rm-info"><div class="rm-tags"><span class="st st-' + esc(p.status) + '">' + esc(tr(p.status)) + '</span><span class="tag">' + esc(tr(p.type)) + '</span></div>' +
+                    '<h3>' + esc(p.title) + '</h3><p>' + esc(p.desc) + '</p></div>' +
+                    '<div class="vote" data-stop>' +
+                    '<button type="button" class="' + (v === 'up' ? 'on-up' : '') + '" data-vote="up" data-id="' + esc(p.id) + '" aria-label="' + esc(tr('up')) + '">' + X.icon('chevron-up') + '</button>' +
+                    '<b>' + p.votes + '</b>' +
+                    '<button type="button" class="' + (v === 'down' ? 'on-down' : '') + '" data-vote="down" data-id="' + esc(p.id) + '" aria-label="' + esc(tr('down')) + '">' + X.icon('chevron-down') + '</button>' +
+                    '</div></div>';
+            }).join('');
+        }
+        function openModal(id) {
+            var p = items.filter(function (i) { return i.id === id; })[0];
+            if (!p) return;
+            $('#rm-modal-body').innerHTML = '<button type="button" class="icon-btn" data-close aria-label="' + esc(tr('close')) + '">' + X.icon('x') + '</button>' +
+                '<div class="rm-tags"><span class="st st-' + esc(p.status) + '">' + esc(tr(p.status)) + '</span><span class="tag">' + esc(tr(p.type)) + '</span></div>' +
+                '<h2 id="rm-modal-title">' + esc(p.title) + '</h2><p>' + esc(p.fullDesc) + '</p>';
+            $('#rm-modal').showModal();
+        }
+        function applyVote(id, type) {
+            var p = items.filter(function (i) { return i.id === id; })[0];
+            if (!p) return;
+            var cur = vote(id);
             try {
-                const response = await fetch('roadmap-data.json');
-                const data = await response.json();
-                
-                projects = data.projects;
-                renderTimeline(data.timeline);
-                renderProjects();
-            } catch (error) {
-                console.error('Error loading roadmap data:', error);
-                document.getElementById('projectList').innerHTML = '<p style="text-align: center; color: #ff4444;">Failed to load roadmap data. Please try again later.</p>';
+                if (cur === type) { p.votes += (type === 'up' ? -1 : 1); localStorage.removeItem('vote_' + id); }
+                else { if (cur) p.votes += (cur === 'up' ? -1 : 1); p.votes += (type === 'up' ? 1 : -1); localStorage.setItem('vote_' + id, type); }
+            } catch (e) { /* Speicher gesperrt: Stimme nur für diese Sitzung */ }
+            render();
+        }
+
+        document.addEventListener('click', function (e) {
+            var f = e.target.closest('[data-f]');
+            if (f) {
+                var key = f.getAttribute('data-f');
+                if (key === 'all') active = ['all'];
+                else {
+                    active = active.filter(function (a) { return a !== 'all'; });
+                    var i = active.indexOf(key);
+                    if (i > -1) active.splice(i, 1); else active.push(key);
+                    if (!active.length) active = ['all'];
+                }
+                renderFilters(); render(); return;
             }
-        }
-
-        function renderTimeline(timelineData) {
-            const container = document.getElementById('roadmapTimeline');
-            container.innerHTML = `
-                <div class="timeline-node"><div class="timeline-content"><h4>Store Releases</h4><ul>${timelineData.releases.map(r => `<li><i data-lucide="check-circle-2"></i> <span class="date-badge">${r.date}</span> ${r.name}</li>`).join('')}</ul></div></div>
-                <div class="timeline-node node-today"><div class="timeline-content" style="border-color: #fff;"><h4 class="today-label">TODAY</h4><div class="today-date">${new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</div><p style="margin: 10px 0 5px 0; font-size: 0.8rem; color: #fff; font-weight: 600;">ACTIVE WORK ON:</p><ul>${timelineData.activeWork.map(w => `<li><i data-lucide="code-2"></i> ${w}</li>`).join('')}</ul></div></div>
-                <div class="timeline-node"><div class="timeline-content"><h4>Upcoming Focus</h4><ul>${timelineData.upcoming.map(u => `<li><i data-lucide="arrow-right-circle"></i> ${u}</li>`).join('')}</ul></div></div>
-            `;
-            lucide.createIcons();
-        }
-
-        function renderProjects() {
-            const list = document.getElementById('projectList'); 
-            list.innerHTML = '';
-            
-            let filtered = projects.filter(p => activeStatuses.includes('all') || activeStatuses.includes(p.status));
-            
-            if (filtered.length === 0) {
-                list.innerHTML = '<p style="text-align: center; color: var(--text-dim); margin-top: 2rem;">No projects found for the selected filter.</p>';
-                return;
-            }
-
-            if (currentSort === 'votes') filtered.sort((a, b) => b.votes - a.votes);
-            else if (currentSort === 'az') filtered.sort((a, b) => a.title.localeCompare(b.title));
-            else if (currentSort === 'status') filtered.sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
-            
-            filtered.forEach(p => {
-                const userVote = localStorage.getItem(`vote_${p.id}`);
-                const card = document.createElement('div'); card.className = 'project-card glass'; card.onclick = () => openModal(p.id);
-                card.innerHTML = `<div class="project-info"><div class="tag-row"><span class="status-tag status-${p.status}">${p.status}</span><span class="type-tag">${p.type}</span></div><h3>${p.title}</h3><p>${p.desc}</p></div><div class="vote-controls" onclick="event.stopPropagation()"><button class="vote-arrow ${userVote === 'up' ? 'active-up' : ''}" onclick="handleVote(${p.id}, 'up')" title="Upvote"><i data-lucide="chevron-up"></i></button><div class="vote-score">${p.votes}</div><button class="vote-arrow ${userVote === 'down' ? 'active-down' : ''}" onclick="handleVote(${p.id}, 'down')" title="Downvote"><i data-lucide="chevron-down"></i></button></div>`;
-                list.appendChild(card);
-            });
-            lucide.createIcons();
-        }
-
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const filter = this.dataset.filter;
-                if (filter === 'all') { activeStatuses = ['all']; document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); }
-                else { activeStatuses = activeStatuses.filter(f => f !== 'all'); document.querySelector('.filter-btn[data-filter="all"]').classList.remove('active'); if (activeStatuses.includes(filter)) { activeStatuses = activeStatuses.filter(f => f !== filter); this.classList.remove('active'); } else { activeStatuses.push(filter); this.classList.add('active'); } if (activeStatuses.length === 0) { activeStatuses = ['all']; document.querySelector('.filter-btn[data-filter="all"]').classList.add('active'); } }
-                renderProjects();
-            });
+            var v = e.target.closest('[data-vote]');
+            if (v) { applyVote(v.getAttribute('data-id'), v.getAttribute('data-vote')); return; }
+            if (e.target.closest('[data-close]') || e.target === $('#rm-modal')) { $('#rm-modal').close(); return; }
+            var card = e.target.closest('[data-open]');
+            if (card && !e.target.closest('[data-stop]')) openModal(card.getAttribute('data-open'));
         });
+        document.addEventListener('keydown', function (e) {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.rm-card')) { e.preventDefault(); openModal(e.target.getAttribute('data-open')); }
+        });
+        $('#rm-sort').addEventListener('change', function (e) { sort = e.target.value; render(); });
 
-        const customSelect = document.getElementById('customSelect'); const customOptions = document.getElementById('customOptions'); const selectedSortText = document.getElementById('selectedSort');
-        customSelect.addEventListener('click', (e) => { e.stopPropagation(); customSelect.classList.toggle('open'); customOptions.style.display = customSelect.classList.contains('open') ? 'block' : 'none'; });
-        document.querySelectorAll('.custom-option').forEach(option => { option.addEventListener('click', function() { currentSort = this.dataset.value; selectedSortText.innerText = this.innerText; document.querySelector('.custom-option.selected').classList.remove('selected'); this.classList.add('selected'); renderProjects(); customSelect.classList.remove('open'); customOptions.style.display = 'none'; }); });
-        document.addEventListener('click', () => { customSelect.classList.remove('open'); customOptions.style.display = 'none'; });
-        
-        function openModal(id) { const p = projects.find(item => item.id === id); const body = document.getElementById('modalBody'); body.innerHTML = `<div class="modal-header"><div class="tag-row"><span class="status-tag status-${p.status}">${p.status}</span><span class="type-tag">${p.type}</span></div><h2>${p.title}</h2></div><div class="modal-body"><p>${p.fullDesc}</p></div>`; document.getElementById('modalOverlay').style.display = 'flex'; lucide.createIcons(); }
-        function closeModal() { document.getElementById('modalOverlay').style.display = 'none'; }
-        function handleVote(id, type) { const p = projects.find(x => x.id === id); const cur = localStorage.getItem(`vote_${id}`); if (cur === type) { p.votes += (type === 'up' ? -1 : 1); localStorage.removeItem(`vote_${id}`); } else { if (cur) p.votes += (cur === 'up' ? -1 : 1); p.votes += (type === 'up' ? 1 : -1); localStorage.setItem(`vote_${id}`, type); } renderProjects(); }
-        
-        loadRoadmapData();
+        X.onLang(function () { renderFilters(); render(); });
+        fetch('roadmap-data.json', { cache: 'no-cache' })
+            .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(function (d) { items = d.projects || []; loaded = true; render(); })
+            .catch(function () { failed = true; render(); });
+    })();
     </script>
 </body>
 </html>

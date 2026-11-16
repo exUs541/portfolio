@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebNote: Draw, Highlight & Sticky Notes | exus541</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="details.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="background-glow"></div>
-        <nav>
-        <div class="container">
-            <a href="../index.html" class="logo">exus<span>541</span></a>
-            <a href="../index.html" class="back-link"><i data-lucide="arrow-left"></i> <span>Back to Hub</span></a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="brand" aria-label="exus541 – home">exus<span>541</span></a>
+            <div class="header-actions">
+                <a href="../index.html#loesungen" class="btn btn-ghost btn-sm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Back to overview</span></a>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <main class="container">
         <div class="detail-header">
+            <span class="tag">Browser extension</span>
             <h1>WebNote: Draw, Highlight & Sticky Notes</h1>
-            <img src="https://img.shields.io/github/stars/exUs541/webnote?style=for-the-badge&color=00f2ff&labelColor=1a1a1a" alt="GitHub Stars" style="margin-top:1rem;">
             <p>Annotate websites with sticky notes, text highlights, and freehand drawing tools. Everything is saved locally for your research.</p>
         </div>
 
@@ -34,41 +36,39 @@
 
                 <h2>Key Features</h2>
                 <ul>
-                    <li><strong>Sticky Notes</strong> <span><span>Add floating notes to any part of a webpage.</span></span></li>
-                    <li><strong>Text Highlighting</strong> <span><span>Mark important sentences with various colors.</span></span></li>
-                    <li><strong>Drawing Tools</strong> <span><span>Draw circles, arrows, or sketches directly on the site.</span></span></li>
-                    <li><strong>Local Storage</strong> <span><span>Everything is saved in your browser, ensuring privacy and speed.</span></span></li>
-                    <li><strong>Research Dashboard</strong> <span><span>View and manage all your notes in one centralized place.</span></span></li>
+                <li><strong>Sticky Notes</strong> <span><span>Add floating notes to any part of a webpage.</span></span></li>
+                <li><strong>Text Highlighting</strong> <span><span>Mark important sentences with various colors.</span></span></li>
+                <li><strong>Drawing Tools</strong> <span><span>Draw circles, arrows, or sketches directly on the site.</span></span></li>
+                <li><strong>Local Storage</strong> <span><span>Everything is saved in your browser, ensuring privacy and speed.</span></span></li>
+                <li><strong>Research Dashboard</strong> <span><span>View and manage all your notes in one centralized place.</span></span></li>
                 </ul>
 
                 <h2>Perfect for Research</h2>
                 <p>Whether you're a student, developer, or researcher, WebNote helps you keep track of your findings without leaving the browser.</p>
             </div>
 
-            <div class="sidebar">
-                <div class="sidebar-box glass">
+            <aside class="sidebar">
+                <div class="sidebar-box">
                     <h3>Get Extension</h3>
-                    <a href="https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni" class="btn-block btn-primary" style="background: white; color: black; border: 1px solid #ddd;" target="_blank"><i data-lucide="download"></i> Install from Web Store</a>
-                    <a href="https://github.com/exUs541/WebNote" class="btn-block btn-github" target="_blank">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> View on GitHub
-                    </a>
-                    <a href="https://www.youtube.com/channel/UC09y7qjqBbVcTCWtg1l8j0A" class="btn-block glass" style="text-decoration:none; color:white;" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube Channel</a>
-                    <a href="https://www.patreon.com/c/exus541" class="btn-block btn-patreon" target="_blank">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.957 7.21c-.004-3.078-2.584-5.51-5.625-5.51s-5.51 2.432-5.51 5.51c0 3.037 2.473 5.51 5.51 5.51 3.041 0 5.629-2.432 5.625-5.51zM2.091 1.701v20.597h4.182V1.701H2.091z"/></svg> Support on Patreon
-                    </a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-42NVu126udKbEQaypBf1iKwih64SgVnQ3LqeCiuHvpSg_w/viewform?usp=pp_url&entry.1537911196=WebNote:+Draw,+Highlight+%26+Sticky+Notes" class="btn-block glass" style="text-decoration:none; color:var(--accent-color); border: 1px solid var(--accent-color);" target="_blank"><i data-lucide="message-square"></i> Give Feedback</a>
+                    <a href="https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni" class="btn btn-dark btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span>Install from Web Store</span></a>
+                    <a href="https://www.youtube.com/channel/UC09y7qjqBbVcTCWtg1l8j0A" class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg><span>YouTube channel</span></a>
+                    <a href="https://www.patreon.com/c/exus541" class="btn btn-warm btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M22.96 7.21c0-3.08-2.58-5.51-5.63-5.51s-5.51 2.43-5.51 5.51c0 3.04 2.47 5.51 5.51 5.51 3.04 0 5.63-2.43 5.63-5.51ZM2.09 1.7v20.6h4.18V1.7H2.09Z"/></svg><span>Support on Patreon</span></a>
+                    <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSf-42NVu126udKbEQaypBf1iKwih64SgVnQ3LqeCiuHvpSg_w/viewform?usp=pp_url&entry.1537911196=WebNote:+Draw,+Highlight+%26+Sticky+Notes" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>Give feedback</a>
                 </div>
-            </div>
+            </aside>
         </div>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <a href="../index.html" class="logo">exus<span>541</span></a>
-            <p>&copy; 2026 exus541. Built with ❤️</p>
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="../index.html" class="brand" style="margin-right: 8px;">exus<span>541</span></a>
+                    <span>&copy; 2026 exus541. Built with care &ndash; in our spare time.</span>
+                    <a href="../privacy.html">Privacy Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <script>lucide.createIcons();</script>
 </body>
 </html>

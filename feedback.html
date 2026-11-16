@@ -1,163 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Hub | exus541</title>
+    <title>Feedback | exus541</title>
+    <meta name="description" content="Idee oder Fehler? Schick uns dein Feedback zu unseren Browser-Extensions und Apps.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        .feedback-container { padding: 150px 0 80px 0; max-width: 800px; margin: 0 auto; }
-        .tab-switcher { display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; background: var(--glass-bg); padding: 0.5rem; border-radius: 50px; border: 1px solid var(--glass-border); width: fit-content; margin-left: auto; margin-right: auto; }
-        .tab-btn { padding: 0.8rem 2rem; border-radius: 40px; border: none; background: transparent; color: var(--text-dim); cursor: pointer; transition: all 0.3s ease; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 0.8rem; }
-        .tab-btn.active { background: var(--accent-color); color: var(--bg-color); }
-        
-        .form-card { display: none; animation: fadeIn 0.5s ease; }
-        .form-card.active { display: block; }
-        
-        form { display: grid; gap: 1.5rem; }
-        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-        .form-group label { font-size: 0.85rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
-        
-        input, select, textarea { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; padding: 1rem; color: #fff; font-family: inherit; font-size: 1rem; transition: border-color 0.3s ease; appearance: none; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-color); background: rgba(255,255,255,0.08); }
-        
-        select option { background: #1a1a1a; color: #fff; }
-        
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        
-        button[type="submit"] { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
-        button[type="submit"]:hover { transform: translateY(-3px) scale(1.02); filter: brightness(1.1); box-shadow: 0 10px 25px var(--accent-glow); }
-        button[type="submit"]:active { transform: translateY(-1px); }
-        
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } .tab-switcher { width: 100%; flex-direction: column; border-radius: 20px; } }
-    </style>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <div class="background-glow"></div>
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">exus<span>541</span></a>
-            <div class="nav-links">
-                <a href="extensions.html"><i data-lucide="puzzle"></i> <span>Extensions</span></a>
-                <a href="roadmap.html"><i data-lucide="map"></i> <span>Roadmap</span></a>
-                <a href="feedback.html" class="active"><i data-lucide="message-square"></i> <span>Feedback</span></a>
-                <a href="index.html#about"><i data-lucide="info"></i> <span>About</span></a>
-                <a href="https://www.patreon.com/c/exus541" class="btn-primary" target="_blank"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M15.386 0.501c-4.139 0-7.511 3.372-7.511 7.511 0 4.139 3.372 7.511 7.511 7.511s7.511-3.372 7.511-7.511c0-4.139-3.372-7.511-7.511-7.511zM0 0.501v22.998h4.28v-22.998h-4.28z"/></svg> <span>Support</span></a>
+    <a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand" aria-label="exus541 – Startseite">exus<span>541</span></a>
+            <nav class="nav" id="nav" aria-label="Hauptnavigation" data-i18n-aria="nav.menu">
+                <a href="index.html#loesungen" data-i18n="nav.solutions">Lösungen</a>
+                <a href="index.html#zeitplan" data-i18n="nav.timeline">Zeitplan</a>
+                <a href="index.html#about" data-i18n="nav.about">Über uns</a>
+                <a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
+                <a href="feedback.html" aria-current="page" data-i18n="nav.feedback">Feedback</a>
+                <a href="index.html#support" class="nav-support" data-i18n="nav.support">Unterstützen</a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang" role="group" aria-label="Sprache / Language">
+                    <button type="button" data-lang="de" aria-pressed="true">DE</button>
+                    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <a class="btn btn-warm btn-sm header-cta" href="index.html#support"><span data-icon="heart"></span><span data-i18n="nav.support">Unterstützen</span></a>
+                <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menü" data-i18n-aria="nav.menu"><span data-icon="menu"></span></button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main class="container">
-        <div class="feedback-container">
-            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-                <h1>Feedback <span>Hub</span></h1>
-                <p>Have an idea or found a bug? Let's make these tools better together.</p>
-            </div>
+    <main id="main" class="container page-body">
+        <div class="page-head">
+            <a class="back" href="index.html"><span data-icon="arrow-left"></span><span data-i18n="rm.back">Zurück zur Übersicht</span></a>
+            <h1 data-i18n="f.title">Feedback-Zentrale</h1>
+            <p data-i18n="f.sub">Du hast eine Idee oder einen Fehler gefunden? Lass uns diese Tools gemeinsam besser machen.</p>
+        </div>
 
-            <div class="tab-switcher">
-                <button class="tab-btn active" onclick="switchTab('idea')"><i data-lucide="lightbulb"></i> Suggest an Idea</button>
-                <button class="tab-btn" onclick="switchTab('bug')"><i data-lucide="bug"></i> Report a Bug</button>
-            </div>
+        <div class="tabs" role="tablist">
+            <button type="button" class="tab" role="tab" id="tab-idea" aria-controls="idea-form" aria-selected="true" data-tab="idea"><span data-icon="lightbulb"></span><span data-i18n="f.tab.idea">Idee einreichen</span></button>
+            <button type="button" class="tab" role="tab" id="tab-bug" aria-controls="bug-form" aria-selected="false" data-tab="bug"><span data-icon="alert"></span><span data-i18n="f.tab.bug">Fehler melden</span></button>
+        </div>
 
-            <!-- Idea Form -->
-            <div id="idea-form" class="form-card active glass" style="padding: 3rem; border-radius: 30px;">
-                <form action="https://formspree.io/f/mrejndno" method="POST">
-                    <input type="hidden" name="form_type" value="New Idea">
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" name="name" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address (Optional)</label>
-                            <input type="email" name="email" placeholder="john@example.com">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Target Extension</label>
-                        <select name="project" required>
-                            <option value="general">General / New Project</option>
-                            <option value="siteblocker">SiteBlocker</option>
-                            <option value="tabmaster">TabMaster</option>
-                            <option value="webnote">WebNote</option>
-                            <option value="ytfilter">YT Filter</option>
-                            <option value="sapsignavio">SAP Signavio Booster</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>The Idea</label>
-                        <textarea name="message" rows="5" placeholder="Describe your feature request in detail..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem;">Submit Idea <i data-lucide="send"></i></button>
-                </form>
-            </div>
+        <!-- Idee -->
+        <div id="idea-form" class="form-card active" role="tabpanel" aria-labelledby="tab-idea">
+            <form action="https://formspree.io/f/mrejndno" method="POST">
+                <input type="hidden" name="form_type" value="New Idea">
+                <div class="row-2">
+                    <div class="field"><label for="i-name" data-i18n="f.name">Dein Name</label><input id="i-name" type="text" name="name" placeholder="Alex Beispiel" data-i18n-ph="f.name.ph" required></div>
+                    <div class="field"><label for="i-mail" data-i18n="f.email">E-Mail-Adresse (optional)</label><input id="i-mail" type="email" name="email" placeholder="alex@beispiel.de" data-i18n-ph="f.email.ph"></div>
+                </div>
+                <div class="field">
+                    <label for="i-project" data-i18n="f.target">Zu welchem Projekt?</label>
+                    <select id="i-project" name="project" class="project-select" required>
+                        <option value="general" data-i18n="f.general">Allgemein / neues Projekt</option>
+                    </select>
+                </div>
+                <div class="field"><label for="i-msg" data-i18n="f.idea">Deine Idee</label><textarea id="i-msg" name="message" rows="5" placeholder="Beschreibe deinen Wunsch möglichst genau …" data-i18n-ph="f.idea.ph" required></textarea></div>
+                <button type="submit" class="btn btn-dark"><span data-i18n="f.send.idea">Idee absenden</span><span data-icon="send"></span></button>
+            </form>
+        </div>
 
-            <!-- Bug Form -->
-            <div id="bug-form" class="form-card glass" style="padding: 3rem; border-radius: 30px;">
-                <form action="https://formspree.io/f/mdabqjqv" method="POST">
-                    <input type="hidden" name="form_type" value="Bug Report">
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" name="name" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address (Optional)</label>
-                            <input type="email" name="email" placeholder="john@example.com">
-                        </div>
-                    </div>
-                    <div class="grid-2">
-                        <div class="form-group">
-                            <label>Affected Extension</label>
-                            <select name="project" required>
-                                <option value="siteblocker">SiteBlocker</option>
-                                <option value="tabmaster">TabMaster</option>
-                                <option value="webnote">WebNote</option>
-                                <option value="ytfilter">YT Filter</option>
-                                <option value="sapsignavio">SAP Signavio Booster</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Browser / OS</label>
-                            <input type="text" name="environment" placeholder="Chrome on Windows 11" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Steps to Reproduce</label>
-                        <textarea name="steps" rows="4" placeholder="1. Open popup... 2. Click settings..." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Bug Description</label>
-                        <textarea name="message" rows="4" placeholder="What exactly is happening?" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem; background: #ff4444; border-color: #ff4444;">Submit Bug Report <i data-lucide="alert-circle"></i></button>
-                </form>
-            </div>
+        <!-- Fehler -->
+        <div id="bug-form" class="form-card" role="tabpanel" aria-labelledby="tab-bug">
+            <form action="https://formspree.io/f/mdabqjqv" method="POST">
+                <input type="hidden" name="form_type" value="Bug Report">
+                <div class="row-2">
+                    <div class="field"><label for="b-name" data-i18n="f.name">Dein Name</label><input id="b-name" type="text" name="name" placeholder="Alex Beispiel" data-i18n-ph="f.name.ph" required></div>
+                    <div class="field"><label for="b-mail" data-i18n="f.email">E-Mail-Adresse (optional)</label><input id="b-mail" type="email" name="email" placeholder="alex@beispiel.de" data-i18n-ph="f.email.ph"></div>
+                </div>
+                <div class="row-2">
+                    <div class="field"><label for="b-project" data-i18n="f.affected">Betroffenes Projekt</label><select id="b-project" name="project" class="project-select" required></select></div>
+                    <div class="field"><label for="b-env" data-i18n="f.env">Browser / Gerät</label><input id="b-env" type="text" name="environment" placeholder="Chrome unter Windows 11, Meta Quest 3 …" data-i18n-ph="f.env.ph" required></div>
+                </div>
+                <div class="field"><label for="b-steps" data-i18n="f.steps">So kann man den Fehler nachstellen</label><textarea id="b-steps" name="steps" rows="4" placeholder="1. Popup öffnen … 2. Einstellungen anklicken …" data-i18n-ph="f.steps.ph" required></textarea></div>
+                <div class="field"><label for="b-msg" data-i18n="f.desc">Fehlerbeschreibung</label><textarea id="b-msg" name="message" rows="4" placeholder="Was genau passiert?" data-i18n-ph="f.desc.ph" required></textarea></div>
+                <button type="submit" class="btn btn-warm"><span data-i18n="f.send.bug">Fehlerbericht absenden</span><span data-icon="alert"></span></button>
+            </form>
         </div>
     </main>
 
-    <footer style="margin-top: 100px;"><div class="container"><p>&copy; 2026 exus541. All rights reserved.</p></div></footer>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="index.html" class="brand" style="margin-right: 8px;">exus<span>541</span></a>
+                    <span data-i18n="foot.rights">© {year} exus541. Mit Hingabe gebaut – in der Freizeit.</span>
+                    <a href="privacy.html" data-i18n="foot.privacy">Datenschutz</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <script src="site.js"></script>
     <script>
-        function switchTab(type) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.form-card').forEach(card => card.classList.remove('active'));
-            
-            if (type === 'idea') {
-                document.querySelector('.tab-btn:nth-child(1)').classList.add('active');
-                document.getElementById('idea-form').classList.add('active');
-            } else {
-                document.querySelector('.tab-btn:nth-child(2)').classList.add('active');
-                document.getElementById('bug-form').classList.add('active');
-            }
-            lucide.createIcons();
+    (function () {
+        'use strict';
+        var X = window.EXUS;
+
+        /* Tabs (auch per Link-Anker #idea / #bug erreichbar) */
+        function showTab(name) {
+            if (name !== 'idea' && name !== 'bug') name = 'idea';
+            document.querySelectorAll('.tab').forEach(function (t) { t.setAttribute('aria-selected', String(t.dataset.tab === name)); });
+            document.getElementById('idea-form').classList.toggle('active', name === 'idea');
+            document.getElementById('bug-form').classList.toggle('active', name === 'bug');
         }
-        lucide.createIcons();
+        document.querySelectorAll('.tab').forEach(function (t) {
+            t.addEventListener('click', function () { showTab(t.dataset.tab); try { history.replaceState(null, '', '#' + t.dataset.tab); } catch (e) { /* ignorieren */ } });
+        });
+        showTab(location.hash.replace('#', ''));
+        window.addEventListener('hashchange', function () { showTab(location.hash.replace('#', '')); });
+
+        /* Projektliste aus projects.json (bleibt automatisch aktuell) */
+        var preset = new URLSearchParams(location.search).get('projekt');
+        var projects = [];
+        function fillSelects() {
+            document.querySelectorAll('.project-select').forEach(function (sel) {
+                var keep = sel.value;
+                var isIdea = sel.id === 'i-project';
+                var html = isIdea ? '<option value="general">' + (X.lang === 'en' ? 'General / new project' : 'Allgemein / neues Projekt') + '</option>' : '';
+                projects.forEach(function (p) {
+                    html += '<option value="' + p.id + '">' + p.name.replace(/&/g, '&amp;') + '</option>';
+                });
+                sel.innerHTML = html;
+                if (keep && sel.querySelector('option[value="' + keep + '"]')) sel.value = keep;
+                else if (preset && sel.querySelector('option[value="' + preset + '"]')) sel.value = preset;
+            });
+        }
+        X.onLang(fillSelects);
+        fetch('projects.json', { cache: 'no-cache' })
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+                projects = d.projects.slice().sort(function (a, b) { return (a.order || 0) - (b.order || 0); });
+                fillSelects();
+            })
+            .catch(function () {
+                /* Fallback: einfache Standardliste, damit die Formulare immer nutzbar bleiben */
+                projects = [['siteblocker', 'Search Filter & Site Blocker'], ['tabmaster', 'TabMaster'], ['webnote', 'WebNote'], ['ytfilter', 'YouTube Channel Blocker'], ['sapsignavio', 'SAP Signavio Quick Switch']].map(function (a) { return { id: a[0], name: a[1] }; });
+                fillSelects();
+            });
+    })();
     </script>
 </body>
 </html>
