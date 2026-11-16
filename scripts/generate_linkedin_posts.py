@@ -29,6 +29,13 @@ def save_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
+def set_github_output(name, value):
+    """Gibt einen Wert an die folgenden Workflow-Schritte weiter (GITHUB_OUTPUT)."""
+    output_file = os.environ.get("GITHUB_OUTPUT")
+    if output_file:
+        with open(output_file, "a", encoding="utf-8") as f:
+            f.write(f"{name}={value}\n")
+
 def get_gemini_client():
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
@@ -107,12 +114,16 @@ def generate_weekly_summary_post():
             f.write(post_text)
             
         print(f"SUCCESS: Wöchentlicher LinkedIn-Post generiert und gespeichert.")
-        
+
         for upd in changelog["updates"]:
             if not upd.get("posted", False):
                 upd["posted"] = True
         save_json(CHANGELOG_PATH, changelog)
-        
+
+        # Nur dieser in diesem Lauf erzeugte Post darf vom Publish-Schritt als
+        # Wochen-Zusammenfassung veroeffentlicht werden (keine alten Queue-Reste).
+        set_github_output("weekly_post_dir", post_folder.replace(os.sep, "/"))
+
     except Exception as e:
         print(f"Gemini API Fehler: {e}")
 

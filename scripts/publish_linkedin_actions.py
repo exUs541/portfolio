@@ -1,8 +1,19 @@
 """
 LinkedIn Post Publisher - API-basiert (kein Playwright, kein Cookie)
 =====================================================================
-Postet ausstehende Beitraege aus dem linkedin-queue/pending Verzeichnis
-direkt ueber die offizielle LinkedIn UGC Posts API.
+Veroeffentlicht Beitraege direkt ueber die offizielle LinkedIn UGC Posts API.
+
+Was gepostet wird:
+  - Wochen-Zusammenfassung (Weekly_Summary_*): NUR der Post, den
+    generate_linkedin_posts.py in genau diesem Lauf erzeugt hat (Pfad in der
+    Umgebungsvariable WEEKLY_POST_DIR). Gibt es keine neuen Updates, wird kein
+    Post erzeugt und somit auch nichts gepostet. Aeltere Weekly_Summary-Reste
+    in linkedin-queue/pending werden nie gepostet, sondern nach archived/
+    verschoben (Suffix _skipped).
+  - Andere Queue-Eintraege (z.B. New_App_*): wie bisher der aelteste pro Lauf.
+
+Schlaegt das Veroeffentlichen fehl (z.B. abgelaufener Token), endet das Skript
+mit Exit-Code 1, damit der Workflow-Lauf rot wird und nichts committed wird.
 
 Benoetigt GitHub Secrets:
   - LINKEDIN_ACCESS_TOKEN: OAuth Access Token (59 Tage gueltig)
@@ -10,6 +21,7 @@ Benoetigt GitHub Secrets:
 """
 
 import os
+import sys
 import json
 import shutil
 import urllib.request
@@ -19,23 +31,72 @@ from datetime import datetime
 PENDING_DIR = "linkedin-queue/pending"
 ARCHIVE_DIR = "linkedin-queue/archived"
 API_URL = "https://api.linkedin.com/v2/ugcPosts"
+WEEKLY_PREFIX = "Weekly_Summary_"
 
 os.makedirs(PENDING_DIR, exist_ok=True)
 os.makedirs(ARCHIVE_DIR, exist_ok=True)
 
 
-def get_next_post():
-    if not os.path.exists(PENDING_DIR):
-        return None, None
+def read_post(post_dir):
+    text_file = os.path.join(post_dir, "post.txt")
+    if not os.path.exists(text_file):
+        return None
+    with open(text_file, "r", encoding="utf-8") as f:
+        return f.read().strip()
+
+
+def archive_post(post_dir, suffix=""):
+    archive_name = os.path.basename(post_dir) + suffix + "_" + datetime.now().strftime("%Y%m%d_%H%M%S")
+    archived_path = os.path.join(ARCHIVE_DIR, archive_name)
+    shutil.move(post_dir, archived_path)
+    return archived_path
+
+
+def same_path(a, b):
+    return bool(a) and bool(b) and os.path.normpath(a) == os.path.normpath(b)
+
+
+def skip_stale_weekly_posts(current_weekly_dir):
+    """Verschiebt Weekly_Summary-Reste aus frueheren Laeufen nach archived/ (ohne sie zu posten)."""
     for item in sorted(os.listdir(PENDING_DIR)):
         item_path = os.path.join(PENDING_DIR, item)
-        if os.path.isdir(item_path):
-            text_file = os.path.join(item_path, "post.txt")
-            if os.path.exists(text_file):
-                with open(text_file, "r", encoding="utf-8") as f:
-                    text = f.read().strip()
+        if (os.path.isdir(item_path)
+                and item.startswith(WEEKLY_PREFIX)
+                and not same_path(item_path, current_weekly_dir)):
+            archived_path = archive_post(item_path, suffix="_skipped")
+            print(f"Veralteter Wochen-Post wird nicht gepostet, archiviert: {archived_path}")
+
+
+def get_next_queued_post():
+    """Aeltester Queue-Eintrag, der keine Wochen-Zusammenfassung ist (z.B. New_App_*)."""
+    for item in sorted(os.listdir(PENDING_DIR)):
+        item_path = os.path.join(PENDING_DIR, item)
+        if os.path.isdir(item_path) and not item.startswith(WEEKLY_PREFIX):
+            text = read_post(item_path)
+            if text:
                 return item_path, text
     return None, None
+
+
+def collect_posts_to_publish():
+    """Liste aus (post_dir, text), die in diesem Lauf veroeffentlicht werden."""
+    weekly_dir = os.environ.get("WEEKLY_POST_DIR")  # None = nicht vom Workflow gesetzt
+    if weekly_dir is not None:
+        weekly_dir = weekly_dir.strip()
+        skip_stale_weekly_posts(weekly_dir)
+
+    posts = []
+    queued_dir, queued_text = get_next_queued_post()
+    if queued_dir:
+        posts.append((queued_dir, queued_text))
+
+    if weekly_dir:
+        weekly_text = read_post(weekly_dir) if os.path.isdir(weekly_dir) else None
+        if weekly_text:
+            posts.append((weekly_dir, weekly_text))
+        else:
+            print(f"WARNUNG: Wochen-Post {weekly_dir} nicht gefunden oder leer.")
+    return posts
 
 
 def publish_post(text, access_token, member_id):
@@ -93,35 +154,34 @@ def publish_post(text, access_token, member_id):
 
 
 def main():
+    posts = collect_posts_to_publish()
+
+    if not posts:
+        print("Keine neuen Posts (keine neuen Updates, Queue leer). Es wird nichts gepostet.")
+        return 0
+
     access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
     member_id = os.environ.get("LINKEDIN_MEMBER_ID")
 
     if not access_token:
         print("ERROR: LINKEDIN_ACCESS_TOKEN fehlt in den Umgebungsvariablen.")
-        return
+        return 1
     if not member_id:
         print("ERROR: LINKEDIN_MEMBER_ID fehlt in den Umgebungsvariablen.")
-        return
+        return 1
 
-    post_dir, text = get_next_post()
+    for post_dir, text in posts:
+        print(f"Post gefunden: {post_dir}")
+        print(f"Inhalt (erste 100 Zeichen): {text[:100]}...")
 
-    if not post_dir or not text:
-        print("Queue ist leer. Keine ausstehenden Posts.")
-        return
+        if not publish_post(text, access_token, member_id):
+            print("ERROR: Post konnte nicht veroeffentlicht werden. Lauf wird als fehlgeschlagen beendet.")
+            return 1
 
-    print(f"Post gefunden: {post_dir}")
-    print(f"Inhalt (erste 100 Zeichen): {text[:100]}...")
+        print(f"Post archiviert: {archive_post(post_dir)}")
 
-    success = publish_post(text, access_token, member_id)
-
-    if success:
-        archive_name = os.path.basename(post_dir) + "_" + datetime.now().strftime("%Y%m%d_%H%M%S")
-        archived_path = os.path.join(ARCHIVE_DIR, archive_name)
-        shutil.move(post_dir, archived_path)
-        print(f"Post archiviert: {archived_path}")
-    else:
-        print("ERROR: Post konnte nicht veroeffentlicht werden. Bleibt in Queue.")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
