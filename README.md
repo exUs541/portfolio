@@ -1,43 +1,64 @@
-# 🚀 Portfolio / Website
+# exus541 – Portfolio
 
-A premium, modern landing page showcasing a collection of high-quality browser extensions designed to enhance productivity, focus, and browsing experience.
+Helle, minimalistische Übersichtsseite für alle Lösungen von exus541: Browser-Extensions, VR-Apps und Apps –
+mit Stand, Fundorten und geplantem Liefertermin. Läuft als statische Seite auf GitHub Pages
+([exus541.github.io/portfolio](https://exus541.github.io/portfolio/)). Kein Build-Schritt, keine Frameworks.
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen)
-![Tech](https://img.shields.io/badge/Tech-HTML5%20%7C%20CSS3%20%7C%20JS-blue)
+## So pflegst du die Seite
 
-## 📦 Featured Extensions
+**Alle Projekte stehen in [`projects.json`](projects.json).** Die Startseite (Karten, Filter, Zeitplan, Detail-Panel,
+Kennzahlen im Hero) rendert sich komplett daraus. Neues Projekt = neuer Eintrag, Änderung am Stand = Feld ändern.
 
-- **SiteBlocker & Search Filter**: Clean up your search results and block distracting websites.
-- **TabMaster**: Take control of your tabs with automated renaming and custom icons.
-- **WebNote**: Annotate the web with sticky notes, highlights, and drawings.
-- **YT Filter**: Personalize your YouTube experience by filtering channels and content.
+| Feld | Bedeutung |
+| --- | --- |
+| `type` | `extension`, `vr` oder `app` |
+| `status` | `live` (verfügbar), `beta` (nutzbar, noch im Test), `dev` (in Entwicklung) |
+| `stage` | Fortschrittsbalken: `1` Idee · `2` Entwicklung · `3` Test & Store · `4` Verfügbar |
+| `eta` | geplanter Termin als Quartal `"2027-Q1"`, oder `"open"` (Termin offen). Bei `live` weglassen |
+| `etaWhat` | wo es dann erscheint, z. B. „Meta Horizon Store“ |
+| `availability` | Fundorte. `url: null` + `"soon": true` zeigt „… · geplant“ ohne Link. `kind`: `chrome`, `web`, `play`, `meta`, `soon` |
+| `stageNote`, `note` | Satz zum aktuellen Stand bzw. Hinweis (z. B. Geräte-Einschränkung) |
+| `icon`, `preview` | Bilder aus `assets/projects/` (`null` = Platzhalter-Symbol) |
 
-## ✨ Features
+Texte sind immer zweisprachig als `{ "de": "…", "en": "…" }`. Die Seite wählt die Sprache nach Browser-Einstellung,
+der Besucher kann oben mit DE/EN umschalten.
 
-- **Modern UI**: Dark mode with glassmorphism aesthetics and neon accents.
-- **Interactive Background**: Dynamic glow effects that follow mouse movement.
-- **Fully Responsive**: Optimized for all devices (Mobile, Tablet, Desktop).
-- **SEO Optimized**: Built with web standards and search engine best practices in mind.
+**Spendenseiten:** unter `site.support` in `projects.json` weitere Einträge ergänzen (z. B. Ko-fi, PayPal.me,
+GitHub Sponsors). Sie erscheinen automatisch als Buttons im Bereich „Unterstützen“.
 
-## 🛠️ Technology Stack
+**Texte der Startseite** (Hero, „Über uns“, „Unterstützen“) stehen direkt in [`index.html`](index.html) (Deutsch) und
+als englische Übersetzung in [`site.js`](site.js) (Objekt `EN`, gleicher Schlüssel wie das `data-i18n`-Attribut).
 
-- **Core**: Vanilla HTML5, CSS3, JavaScript.
-- **Design**: Modern Flexbox/Grid layouts, CSS Glassmorphism.
-- **Icons**: [Lucide Icons](https://lucide.dev/).
-- **Typography**: [Google Fonts (Outfit)](https://fonts.google.com/specimen/Outfit).
+## Dateien
 
-## 🚀 Deployment
+| Datei | Zweck |
+| --- | --- |
+| `index.html`, `main.js` | Startseite und ihre Logik (Filter, Suche, Detail-Panel, Zeitplan) |
+| `site.js` | gemeinsam: Sprache DE/EN, Icons, Kopfzeile |
+| `style.css` | gesamtes Design (Farben als Variablen ganz oben) |
+| `projects.json` | Daten aller Projekte, Spenden- und Social-Links |
+| `roadmap.html`, `roadmap-data.json` | Feature-Wünsche der Extensions (wird von `roadmap-sync.yml` aus dem GitHub Project befüllt) |
+| `feedback.html` | Formulare für Ideen und Fehler (Formspree) |
+| `details/*.html`, `details/details.css` | Detailseiten der Extensions und Datenschutz |
+| `extensions.html` | leitet auf `index.html?typ=extension` weiter (alte Links bleiben gültig) |
 
-This site is hosted via **GitHub Pages**. You can view the live version at:
-[exus541.github.io](https://exus541.github.io/portfolio/)
+Direktlinks: `index.html?typ=vr`, `?status=dev`, `#projekt-nestwise` (öffnet das Detail-Panel).
 
-## 🤝 Support
+## Automatisierung
 
-If you like my work, consider supporting me on [Patreon](https://patreon.com).
+`extension-release.yml` (in den Extension-Repos) löst per `repository_dispatch` den Workflow `update-portfolio.yml` aus.
+`scripts/update_portfolio_site.py` schreibt dann den Changelog und legt bei neuen Extensions eine Detailseite sowie einen
+Eintrag in `projects.json` an (mit Platzhaltertexten, bitte danach verfeinern).
 
----
-Built with ❤️ by exus541.
-=======
-# portfolio
-🚀 A premium portfolio showcasing modern browser extensions for productivity, focus, and tab management. Built with glassmorphism aesthetics and hosted on GitHub Pages.
->>>>>>> 8ef52cf50c2537b08a07c07870072a5ba796bcef
+## Lokal ansehen
+
+```bash
+python -m http.server 8765
+```
+
+Dann `http://localhost:8765` öffnen (die Seite lädt `projects.json` per `fetch`, ein Doppelklick auf die Datei reicht nicht).
+
+## Technik
+
+Reines HTML, CSS und JavaScript. Schriften: Inter und Outfit (Google Fonts). Icons als eingebettete SVGs, keine
+externen Skripte.

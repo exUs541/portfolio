@@ -6,62 +6,59 @@
     <title>Privacy Policy | exus541</title>
     <meta name="description" content="Privacy policy for the browser extensions, Android apps, Meta Quest VR apps (Nestwise, Perspectives) and website by exus541.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="details/details.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        .container { max-width: 860px; }
-        .main-content { grid-template-columns: 1fr; display: block; }
-        .main-content h2 { scroll-margin-top: 24px; }
-        .main-content h3 { font-size: 1.35rem; margin: 2rem 0 1rem; color: var(--text-color); scroll-margin-top: 24px; }
-        .main-content a { color: var(--accent-color); text-underline-offset: 3px; }
-        .main-content p, .main-content li { font-size: 1.05rem; }
+        main.container { max-width: 800px; }
+        .main-content { display: block; padding-bottom: 96px; }
+        .main-content h2 { scroll-margin-top: calc(var(--header-h) + 16px); }
+        .main-content h3 { font-size: 21px; margin: 32px 0 12px; scroll-margin-top: calc(var(--header-h) + 16px); }
+        .main-content a { color: var(--accent); text-underline-offset: 3px; }
+        .main-content p, .main-content li { font-size: 16.5px; }
 
-        /* Label / value lists (site default) and plain bullet lists */
-        .main-content ul.bullets { display: block; padding-left: 1.4rem; list-style: disc; }
-        .main-content ul.bullets li { display: list-item; color: var(--text-dim); margin-bottom: 0.6rem; }
-        .main-content ul.bullets li::marker { color: var(--accent-color); }
-        .main-content ul.bullets li strong { display: inline; color: var(--text-color); font-weight: 600; }
-        .main-content ul.bullets li strong::before { content: none; }
+        /* einfache Aufzaehlungen (statt der Haken-Karten der Detailseiten) */
+        .main-content ul.bullets { display: block; padding-left: 1.3rem; list-style: disc; margin: 0 0 24px; }
+        .main-content ul.bullets li { display: list-item; padding: 0; background: none; border: 0; border-radius: 0; color: var(--ink-2); margin-bottom: 10px; }
+        .main-content ul.bullets li::before { content: none; }
+        .main-content ul.bullets li::marker { color: var(--accent); }
+        .main-content ul.bullets li strong { display: inline; }
 
-        .lede { font-size: 1.2rem; }
-        .updated { color: var(--text-dim); }
+        .lede { font-size: 19px; }
+        .updated { color: var(--muted); }
 
-        .box { border-radius: 20px; padding: 1.6rem 1.8rem; margin: 0 0 2rem; }
-        .box p:last-child, .box ul:last-child { margin-bottom: 0; }
-        .box h3 { margin-top: 0; }
+        .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 40px; }
+        .toc a { text-decoration: none; color: var(--ink-2); padding: 6px 14px; border-radius: 999px; font-size: 14px; border: 1px solid var(--line); background: var(--surface); }
+        .toc a:hover { color: var(--ink); border-color: var(--accent); }
 
-        .toc { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0 0 2.5rem; }
-        .toc a { text-decoration: none; color: var(--text-dim); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.95rem; border: 1px solid var(--glass-border); background: var(--glass-bg); }
-        .toc a:hover { color: var(--text-color); border-color: var(--accent-color); }
-
-        .table-wrap { overflow-x: auto; margin: 0 0 2rem; border-radius: 16px; border: 1px solid var(--glass-border); }
-        table { width: 100%; border-collapse: collapse; font-size: 0.98rem; min-width: 560px; }
-        th, td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--glass-border); vertical-align: top; color: var(--text-dim); }
-        th { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-color); background: var(--glass-bg); }
+        .table-wrap { overflow-x: auto; margin: 0 0 24px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+        table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 560px; }
+        th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ink-2); }
+        th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink); background: var(--surface-2); }
         tr:last-child td { border-bottom: none; }
-        td strong { color: var(--text-color); }
-        .yes { color: #ffb86b; font-weight: 600; }
-        .no { color: #5af0a8; font-weight: 600; }
+        td strong { color: var(--ink); }
+        .yes { color: var(--amber); font-weight: 600; }
+        .no { color: var(--green); font-weight: 600; }
 
-        .tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.6rem; border-radius: 999px; border: 1px solid var(--glass-border); color: var(--text-dim); margin-left: 0.6rem; vertical-align: middle; font-weight: 400; }
-        address { font-style: normal; color: var(--text-dim); line-height: 1.7; margin-bottom: 1.5rem; }
+        .main-content .tag { display: inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--muted); margin-left: 10px; vertical-align: middle; font-weight: 500; font-family: var(--font-body); }
+        address { font-style: normal; color: var(--ink-2); line-height: 1.7; margin-bottom: 24px; }
 
         @media (max-width: 768px) {
-            .container { padding: 0 1.25rem; }
-            .main-content li { grid-template-columns: 1fr; gap: 0.25rem; }
-            .main-content h2 { font-size: 1.6rem; }
-            .box { padding: 1.3rem; }
+            .main-content h2 { font-size: 24px; }
         }
     </style>
 </head>
 <body>
-    <div class="background-glow"></div>
-    <nav>
-        <div class="container">
-            <a href="index.html" class="back-link"><i data-lucide="arrow-left"></i> Back to Hub</a>
+    <header class="site-header">
+        <div class="container header-inner" style="max-width: 1120px;">
+            <a href="index.html" class="brand" aria-label="exus541 – home">exus<span>541</span></a>
+            <div class="header-actions">
+                <a href="index.html" class="btn btn-ghost btn-sm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Back to overview</span></a>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <main class="container">
         <div class="detail-header">
@@ -194,6 +191,7 @@
                 <li><strong>Fonts and icons:</strong> the pages load fonts from Google Fonts and icons from the unpkg CDN. Your browser therefore sends your IP address to these providers when a page loads.</li>
                 <li><strong>Badges:</strong> some pages show status badges loaded from img.shields.io.</li>
                 <li><strong>Feedback forms:</strong> if you send an idea or bug report on the feedback page, what you type (name, optional e-mail, message and technical details) is sent through Formspree (Formspree, Inc., USA) to me. I use it only to answer you and to improve my tools, and I keep it only as long as that takes. Please do not enter sensitive information. Some pages also link to forms on Google Forms.</li>
+                <li><strong>Language setting:</strong> the language you choose with the DE/EN switch on the main page is stored only in your browser (local storage) and is not sent to me.</li>
                 <li><strong>Roadmap votes:</strong> your up/down votes on the roadmap page are stored only in your browser (local storage) and are not sent to me.</li>
                 <li><strong>External links:</strong> links to the Chrome Web Store, GitHub, YouTube, LinkedIn and Patreon lead to services with their own privacy policies. They only receive data once you open them.</li>
             </ul>
@@ -215,12 +213,15 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 exus541. Built with ❤️</p>
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="index.html" class="brand" style="margin-right: 8px;">exus<span>541</span></a>
+                    <span>&copy; 2026 exus541. Built with care &ndash; in our spare time.</span>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <script>lucide.createIcons();</script>
 </body>
 </html>

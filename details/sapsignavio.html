@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAP Signavio Quick Switch | exus541</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="details.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div class="background-glow"></div>
-    <nav>
-        <div class="container">
-            <a href="../index.html" class="logo">exus<span>541</span></a>
-            <a href="../index.html" class="back-link"><i data-lucide="arrow-left"></i> <span>Back to Hub</span></a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="brand" aria-label="exus541 – home">exus<span>541</span></a>
+            <div class="header-actions">
+                <a href="../index.html#loesungen" class="btn btn-ghost btn-sm"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span>Back to overview</span></a>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <main class="container">
         <div class="detail-header">
+            <span class="tag">Browser extension</span>
             <h1>SAP Signavio Quick Switch</h1>
             <p>Switch between SAP Signavio Collaboration Hub and Process Manager while maintaining the current folder or model context.</p>
         </div>
@@ -33,45 +36,40 @@
 
                 <h2>Key Features</h2>
                 <ul>
-                    <li><strong>Path-Preserving Navigation</strong> <span><span>Switch environments while staying in the exact same folder or model view.</span></span></li>
-                    <li><strong>Seamless Integration</strong> <span><span>Adds "Process Manager (Path)" and "Collaboration Hub (Path)" links into the native 3x3 App Launcher.</span></span></li>
-                    <li><strong>Zero Configuration</strong> <span><span>Works immediately out of the box with no complex setup or Tenant ID requirements.</span></span></li>
-                    <li><strong>Privacy First</strong> <span><span>Processes URLs 100% locally. Does not collect, transmit, or record any of your process content.</span></span></li>
+                <li><strong>Path-Preserving Navigation</strong> <span><span>Switch environments while staying in the exact same folder or model view.</span></span></li>
+                <li><strong>Seamless Integration</strong> <span><span>Adds "Process Manager (Path)" and "Collaboration Hub (Path)" links into the native 3x3 App Launcher.</span></span></li>
+                <li><strong>Zero Configuration</strong> <span><span>Works immediately out of the box with no complex setup or Tenant ID requirements.</span></span></li>
+                <li><strong>Privacy First</strong> <span><span>Processes URLs 100% locally. Does not collect, transmit, or record any of your process content.</span></span></li>
                 </ul>
 
                 <h2>Technical Facts</h2>
                 <ul>
-                    <li><strong>Privacy</strong> <span><span>100% Local. No data is sent to external servers; everything stays within your Signavio session.</span></span></li>
-                    <li><strong>Standard</strong> <span><span>Manifest V3 compliant for maximum security and longevity in modern browsers.</span></span></li>
-                    <li><strong>Performance</strong> <span><span>Zero impact on browser speed. The extension only activates when you are on a Signavio domain.</span></span></li>
+                <li><strong>Privacy</strong> <span><span>100% Local. No data is sent to external servers; everything stays within your Signavio session.</span></span></li>
+                <li><strong>Standard</strong> <span><span>Manifest V3 compliant for maximum security and longevity in modern browsers.</span></span></li>
+                <li><strong>Performance</strong> <span><span>Zero impact on browser speed. The extension only activates when you are on a Signavio domain.</span></span></li>
                 </ul>
             </div>
 
-            <div class="sidebar">
-                <div class="sidebar-box glass">
+            <aside class="sidebar">
+                <div class="sidebar-box">
                     <h3>Get Extension</h3>
-                    <a href="https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae" class="btn-block btn-primary" style="background: white; color: black; border: 1px solid #ddd;" target="_blank">
-                        <i data-lucide="download"></i> Install from Web Store
-                    </a>
-                    <a href="https://github.com/exUs541/SAP-Signavio-Enhancements" class="btn-block btn-github" target="_blank">
-                        <i data-lucide="github"></i> View Source
-                    </a>
-                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-dim); text-align: center;">
-                        Compatible with Chrome, Edge & Brave.
-                    </p>
+                    <a href="https://chromewebstore.google.com/detail/sap-signavio-quick-switch/pffgkgglldjnmiakohgmogkalflfgbae" class="btn btn-dark btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span>Install from Web Store</span></a>
+                    <a href="https://www.patreon.com/c/exus541" class="btn btn-warm btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M22.96 7.21c0-3.08-2.58-5.51-5.63-5.51s-5.51 2.43-5.51 5.51c0 3.04 2.47 5.51 5.51 5.51 3.04 0 5.63-2.43 5.63-5.51ZM2.09 1.7v20.6h4.18V1.7H2.09Z"/></svg><span>Support on Patreon</span></a>
                 </div>
-            </div>
+            </aside>
         </div>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 exus541. All rights reserved.</p>
+            <div class="footer-inner">
+                <div class="footer-links">
+                    <a href="../index.html" class="brand" style="margin-right: 8px;">exus<span>541</span></a>
+                    <span>&copy; 2026 exus541. Built with care &ndash; in our spare time.</span>
+                    <a href="../privacy.html">Privacy Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
