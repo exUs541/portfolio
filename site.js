@@ -1,4 +1,4 @@
-/* exus541 – gemeinsame Helfer: Sprache (DE/EN), Icons, Kopfzeile */
+/* M54 – gemeinsame Helfer: Sprache (DE/EN), Icons, Kopfzeile */
 (function () {
   'use strict';
 
@@ -16,7 +16,7 @@
 
     'hero.pill': 'A passion project – built alongside our day jobs',
     'hero.title': 'Software that <em>simply helps.</em>',
-    'hero.lead': 'exus541 builds browser extensions, VR apps and everyday apps. See at a glance what is available today, what we are working on and when it will be ready.',
+    'hero.lead': 'M54 builds browser extensions, VR apps and everyday apps. See at a glance what is available today, what we are working on and when it will be ready.',
     'hero.cta1': 'Explore solutions',
     'hero.cta2': 'What is coming when?',
 
@@ -34,7 +34,7 @@
 
     'about.title': 'About us',
     'about.lead': 'Right now, we build all of this as a hobby.',
-    'about.p1': 'The people behind exus541 have regular day jobs. Everything you see here is made in our spare time – in the evenings, at weekends and out of pure enthusiasm for building useful things.',
+    'about.p1': 'The people behind M54 have regular day jobs. Everything you see here is made in our spare time – in the evenings, at weekends and out of pure enthusiasm for building useful things.',
     'about.p2': 'Because we work full time, we unfortunately cannot focus on development alone. That is why some things take longer than we would like – and why dates are targets, not guarantees.',
     'about.p3': 'Our wish is to have more time for software one day. If our work convinces you, you can help us get there (see below).',
     'about.badge.t': 'Right now: a hobby next to our jobs',
@@ -73,7 +73,7 @@
     'fb.road.d': 'See what is planned for our extensions and vote.',
     'fb.road.b': 'Open roadmap',
 
-    'foot.rights': '© {year} exus541. Built with care – in our spare time.',
+    'foot.rights': '© {year} M54. Built with care – in our spare time.',
     'foot.privacy': 'Privacy Policy',
     'foot.marks': 'All product and brand names belong to their respective owners. Our extensions are independent and not affiliated with these companies.',
 
@@ -138,6 +138,7 @@
     'external': '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
     'heart': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
     'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+    'languages': '<path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>',
     'phone': '<rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/>',
     'grid': '<rect width="7" height="7" x="3" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="3" rx="1.5"/><rect width="7" height="7" x="14" y="14" rx="1.5"/><rect width="7" height="7" x="3" y="14" rx="1.5"/>',
     'vr': '<path d="M2 9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4.2a2 2 0 0 1-1.6-.8l-.7-1a2 2 0 0 0-1.6-.8h-3.8a2 2 0 0 0-1.6.8l-.7 1a2 2 0 0 1-1.6.8H4a2 2 0 0 1-2-2Z"/>',
@@ -183,10 +184,17 @@
   /* ---------- Sprache ---------- */
   var listeners = [];
   var lang = 'de';
+  /* Weitere Sprachen: hier eintragen (und die Texte in EN/Daten ergänzen). `name` wird in der eigenen Sprache angezeigt. */
+  var LANGS = [
+    { code: 'de', name: 'Deutsch' },
+    { code: 'en', name: 'English' }
+  ];
+  function langCodes() { return LANGS.map(function (l) { return l.code; }); }
+  var LANG_LABEL = { de: 'Sprache wählen', en: 'Choose language' };
   function detectLang() {
     var stored = null;
     try { stored = localStorage.getItem('exus-lang'); } catch (e) { /* privater Modus */ }
-    if (stored === 'de' || stored === 'en') return stored;
+    if (stored && langCodes().indexOf(stored) !== -1) return stored;
     var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'de';
     return /^de/i.test(nav) ? 'de' : 'en';
   }
@@ -212,14 +220,12 @@
         el.setAttribute(pair[1], lang === 'en' && EN[key] != null ? EN[key] : el.dataset[store]);
       });
     });
-    document.querySelectorAll('.lang button').forEach(function (b) {
-      b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
-    });
+    syncLangMenu();
     var titleEl = document.querySelector('title[data-de]');
     if (titleEl) document.title = lang === 'en' ? titleEl.getAttribute('data-en') : titleEl.getAttribute('data-de');
   }
   function setLang(next, silent) {
-    if (next !== 'de' && next !== 'en') return;
+    if (langCodes().indexOf(next) === -1) return;
     lang = next;
     if (!silent) { try { localStorage.setItem('exus-lang', next); } catch (e) { /* ignorieren */ } }
     applyStatic();
@@ -246,9 +252,85 @@
     var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-    document.querySelectorAll('.lang button').forEach(function (b) {
-      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    initLangMenu();
+  }
+
+  /* ---------- Sprachmenü: nur ein Symbol, Klick öffnet die Auswahl ---------- */
+  function syncLangMenu() {
+    document.querySelectorAll('[data-lang-menu]').forEach(function (host) {
+      var label = LANG_LABEL[lang] || LANG_LABEL.en;
+      var btn = host.querySelector('.lang-btn');
+      var menu = host.querySelector('.lang-menu');
+      if (btn) { btn.setAttribute('aria-label', label); btn.setAttribute('title', label); }
+      if (menu) menu.setAttribute('aria-label', label);
+      host.querySelectorAll('[data-lang]').forEach(function (b) {
+        b.setAttribute('aria-checked', b.dataset.lang === lang ? 'true' : 'false');
+      });
     });
+  }
+
+  function initLangMenu() {
+    var hosts = document.querySelectorAll('[data-lang-menu]');
+    if (!hosts.length) return;
+
+    function closeAll(focusBtn) {
+      hosts.forEach(function (host) {
+        var menu = host.querySelector('.lang-menu');
+        var btn = host.querySelector('.lang-btn');
+        if (menu.hidden) return;
+        menu.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        if (focusBtn) btn.focus();
+      });
+    }
+
+    hosts.forEach(function (host, idx) {
+      var uid = 'lang-menu-' + idx;
+      host.innerHTML =
+        '<button type="button" class="icon-btn lang-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="' + uid + '">' + icon('languages') + '</button>' +
+        '<ul class="lang-menu" id="' + uid + '" role="menu" hidden>' +
+        LANGS.map(function (l) {
+          return '<li role="none"><button type="button" role="menuitemradio" data-lang="' + l.code + '" lang="' + l.code + '" aria-checked="false"><span>' + l.name + '</span>' + icon('check') + '</button></li>';
+        }).join('') +
+        '</ul>';
+
+      var btn = host.querySelector('.lang-btn');
+      var menu = host.querySelector('.lang-menu');
+      var items = Array.prototype.slice.call(menu.querySelectorAll('[data-lang]'));
+
+      function open() {
+        closeAll(false);
+        menu.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        var current = menu.querySelector('[aria-checked="true"]') || items[0];
+        if (current) current.focus();
+      }
+
+      btn.addEventListener('click', function () { if (menu.hidden) open(); else closeAll(true); });
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') { e.preventDefault(); if (menu.hidden) open(); }
+      });
+      items.forEach(function (b) {
+        b.addEventListener('click', function () { setLang(b.dataset.lang); closeAll(true); });
+      });
+      menu.addEventListener('keydown', function (e) {
+        var i = items.indexOf(document.activeElement);
+        if (e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+        else if (e.key === 'Home') { e.preventDefault(); items[0].focus(); }
+        else if (e.key === 'End') { e.preventDefault(); items[items.length - 1].focus(); }
+        else if (e.key === 'Escape') { e.preventDefault(); closeAll(true); }
+        else if (e.key === 'Tab') { closeAll(false); }
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-lang-menu]')) closeAll(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAll(true);
+    });
+    syncLangMenu();
   }
 
   function init() {

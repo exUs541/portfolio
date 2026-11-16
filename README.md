@@ -1,6 +1,6 @@
-# exus541 – Portfolio
+# M54 – Portfolio
 
-Helle, minimalistische Übersichtsseite für alle Lösungen von exus541: Browser-Extensions, VR-Apps und Apps –
+Helle, minimalistische Übersichtsseite für alle Lösungen von M54: Browser-Extensions, VR-Apps und Apps –
 mit Stand, Fundorten und geplantem Liefertermin. Läuft als statische Seite auf GitHub Pages
 ([exus541.github.io/portfolio](https://exus541.github.io/portfolio/)). Kein Build-Schritt, keine Frameworks.
 
