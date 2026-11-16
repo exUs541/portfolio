@@ -59,7 +59,7 @@ def create_details_page(extension_name, display_name):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{display_name} | exus541</title>
+    <title>{display_name} | M54</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@ def create_details_page(extension_name, display_name):
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <a href="../index.html" class="brand" aria-label="exus541 – home">exus<span>541</span></a>
+            <a href="../index.html" class="brand" aria-label="M54 – home">M<span>54</span></a>
             <div class="header-actions">
                 <a href="../index.html#loesungen" class="btn btn-ghost btn-sm">{ARROW_ICON}<span>Back to overview</span></a>
             </div>
@@ -80,14 +80,14 @@ def create_details_page(extension_name, display_name):
         <div class="detail-header">
             <span class="tag">Browser extension</span>
             <h1>{display_name}</h1>
-            <p>A brand new browser extension by exus541. Lightweight, powerful, and built to optimize your productivity.</p>
+            <p>A brand new browser extension by M54. Lightweight, powerful, and built to optimize your productivity.</p>
             <img src="https://img.shields.io/github/stars/exUs541/{extension_name}?style=for-the-badge&color=4f5bd5&labelColor=16181d" alt="GitHub Stars">
         </div>
 
         <div class="content-grid">
             <div class="main-content">
                 <h2>Overview</h2>
-                <p>Welcome to {display_name}. This extension is part of the exus541 productivity suite, designed to reclaim and enhance your web browsing experience.</p>
+                <p>Welcome to {display_name}. This extension is part of the M54 productivity suite, designed to reclaim and enhance your web browsing experience.</p>
 
                 <h2>Key Features</h2>
                 <ul>
@@ -112,8 +112,8 @@ def create_details_page(extension_name, display_name):
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-links">
-                    <a href="../index.html" class="brand" style="margin-right: 8px;">exus<span>541</span></a>
-                    <span>&copy; {datetime.now().year} exus541. Built with care &ndash; in our spare time.</span>
+                    <a href="../index.html" class="brand" style="margin-right: 8px;">M<span>54</span></a>
+                    <span>&copy; {datetime.now().year} M54. Built with care &ndash; in our spare time.</span>
                     <a href="../privacy.html">Privacy Policy</a>
                 </div>
             </div>
@@ -156,8 +156,8 @@ def add_project_entry(extension_name, display_name):
         "icon": icon if os.path.exists(icon) else None,
         "preview": preview if os.path.exists(preview) else None,
         "tagline": {
-            "de": "Neue Browser-Extension von exus541.",
-            "en": "A new browser extension by exus541."
+            "de": "Neue Browser-Extension von M54.",
+            "en": "A new browser extension by M54."
         },
         "description": {
             "de": f"{display_name} ist eine schlanke Browser-Extension, die deinen Alltag im Browser erleichtert.",
