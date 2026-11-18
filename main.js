@@ -206,7 +206,7 @@
       '<div class="card-body">' +
         '<div class="card-head">' + projectIcon(p) +
           '<div><h3><button type="button" class="card-open" data-open="' + esc(p.id) + '">' + esc(p.name) + '</button></h3>' +
-          typeMeta(p, true) + '</div></div>' +
+          typeMeta(p, false) + '</div></div>' +
         '<p class="tagline">' + esc(pick(p.tagline)) + '</p>' +
         tagList(p) +
         etaRow + stepper(p) +

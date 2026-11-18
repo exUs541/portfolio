@@ -233,11 +233,10 @@ ul, ol { margin: 0; padding: 0; }
 .group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 20px; }
 .group-head h3 { font-size: 24px; }
 .group-head p { color: var(--muted); font-size: 15px; }
-.grid { display: grid; gap: 20px; }
-.grid-lg { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.grid-sm { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-@media (max-width: 1000px) { .grid-sm { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 700px) { .grid-lg, .grid-sm { grid-template-columns: 1fr; } }
+.grid { display: grid; gap: 18px; }
+.grid-lg, .grid-sm { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 759px) { .grid-lg, .grid-sm { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 519px) { .grid-lg, .grid-sm { grid-template-columns: 1fr; } }
 .empty { text-align: center; padding: 56px 20px; color: var(--ink-2); background: var(--surface); border: 1px dashed var(--line-2); border-radius: var(--radius); }
 .is-updating .card { animation: pop 0.25s ease both; }
 @keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -332,6 +331,27 @@ ul, ol { margin: 0; padding: 0; }
 .card-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 4px; }
 .card-foot .more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--muted); transition: color 0.15s, gap 0.15s; }
 .card:hover .more { color: var(--ink); gap: 9px; }
+
+/* Kompaktere große Kacheln (drei pro Reihe) */
+.card-lg .card-media { aspect-ratio: 16 / 7; }
+.card-lg .card-media img { object-position: 50% 40%; }
+.card-lg .card-body { gap: 10px; padding: 14px 14px 16px; }
+.card-lg .pi { width: 40px; height: 40px; border-radius: 11px; }
+.card-lg h3 { font-size: 17px; }
+.card-lg .tagline { font-size: 14px; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-lg .eta-row { font-size: 13px; padding: 7px 11px; gap: 0 8px; border-radius: 10px; }
+.card-lg .chip { font-size: 12px; padding: 5px 10px; }
+.card-lg .stepper li { font-size: 11px; }
+.card-lg .card-media .badge { top: 10px; left: 10px; font-size: 12px; padding: 3px 10px; }
+.card-lg .type-ico { top: 10px; right: 10px; width: 32px; height: 32px; }
+.card-lg .type-ico .i { width: 17px; height: 17px; }
+.card-lg .card-media .ph .i { width: 56px; height: 56px; }
+.card-lg .meta { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-lg .tags { gap: 5px; }
+.card-lg .tag-btn { font-size: 11.5px; padding: 2px 8px; }
+.card-lg .tag-btn::before { display: none; }
+.card-lg .eta-row span { display: none; }
+.card-lg .chips { gap: 6px; }
 
 /* ---------- Fortschritts-Stepper ---------- */
 .stepper { display: grid; grid-template-columns: repeat(4, 1fr); list-style: none; }
