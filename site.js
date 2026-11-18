@@ -1,4 +1,4 @@
-/* M54 – gemeinsame Helfer: Sprache (DE/EN), Icons, Kopfzeile */
+/* exUs541 – gemeinsame Helfer: Sprache (DE/EN), Icons, Kopfzeile */
 (function () {
   'use strict';
 
@@ -16,7 +16,7 @@
 
     'hero.pill': 'A passion project – built alongside our day jobs',
     'hero.title': 'Software that <em>simply helps.</em>',
-    'hero.lead': 'M54 builds browser extensions, VR apps and everyday apps. See at a glance what is available today, what we are working on and when it will be ready.',
+    'hero.lead': 'exUs541 builds browser extensions, VR apps and everyday apps. See at a glance what is available today, what we are working on and when it will be ready.',
     'hero.cta1': 'Explore solutions',
     'hero.cta2': 'What is coming when?',
 
@@ -34,7 +34,7 @@
 
     'about.title': 'About us',
     'about.lead': 'Right now, we build all of this as a hobby.',
-    'about.p1': 'The people behind M54 have regular day jobs. Everything you see here is made in our spare time – in the evenings, at weekends and out of pure enthusiasm for building useful things.',
+    'about.p1': 'The people behind exUs541 have regular day jobs. Everything you see here is made in our spare time – in the evenings, at weekends and out of pure enthusiasm for building useful things.',
     'about.p2': 'Because we work full time, we unfortunately cannot focus on development alone. That is why some things take longer than we would like – and why dates are targets, not guarantees.',
     'about.p3': 'Our wish is to have more time for software one day. If our work convinces you, you can help us get there (see below).',
     'about.badge.t': 'Right now: a hobby next to our jobs',
@@ -73,7 +73,7 @@
     'fb.road.d': 'See what is planned for our extensions and vote.',
     'fb.road.b': 'Open roadmap',
 
-    'foot.rights': '© {year} M54. Built with care – in our spare time.',
+    'foot.rights': '© {year} exUs541. Built with care – in our spare time.',
     'foot.privacy': 'Privacy Policy',
     'foot.marks': 'All product and brand names belong to their respective owners. Our extensions are independent and not affiliated with these companies.',
 

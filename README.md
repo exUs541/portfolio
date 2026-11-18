@@ -1,8 +1,32 @@
-# M54 – Portfolio
+# exUs541 – Portfolio
 
-Helle, minimalistische Übersichtsseite für alle Lösungen von M54: Browser-Extensions, VR-Apps und Apps –
+Helle, minimalistische Übersichtsseite für alle Lösungen von exUs541: Browser-Extensions, VR-Apps und Apps –
 mit Stand, Fundorten und geplantem Liefertermin. Läuft als statische Seite auf GitHub Pages
 ([exus541.github.io/portfolio](https://exus541.github.io/portfolio/)). Kein Build-Schritt, keine Frameworks.
+
+## Kleine Änderungen selbst machen (ohne zusätzliche Programme)
+
+Stand, Termin oder Store-Link eines Projekts änderst du direkt im Browser auf GitHub – ohne etwas zu installieren:
+
+1. Öffne [`projects.json`](https://github.com/exUs541/portfolio/blob/main/projects.json) auf GitHub (eingeloggt) und klicke oben rechts auf das **Stift-Symbol** („Edit this file“).
+2. Suche das Projekt (Strg+F nach dem Namen, z. B. `"id": "perspectives"`) und ändere die Felder (Beispiel unten).
+3. Klicke auf **„Commit changes…“**, wähle **„Commit directly to the `main` branch“** und bestätige.
+4. Nach etwa 1–2 Minuten ist die Seite aktualisiert (im Browser einmal Strg+F5 drücken).
+
+**Beispiel „App ist jetzt veröffentlicht“** (so wurde Perspectives umgestellt):
+
+- `"status": "dev"` → `"status": "live"`
+- `"stage": 3` → `"stage": 4`
+- die Zeilen `"eta": …` und `"etaWhat": …` löschen (bei `live` gibt es keinen Termin mehr)
+- bei `availability` den Link eintragen: `"url": "https://…"` und `"soon": true` entfernen
+- optional `stageNote` anpassen, z. B. „Version 1.0 ist im Meta Horizon Store veröffentlicht.“
+
+**Worauf achten:** Anführungszeichen und Kommas müssen stimmen (nach jedem Eintrag ein Komma, nur nach dem letzten nicht).
+Ist die Seite danach leer oder fehlen Karten, steckt dort ein Fehler. Dann in GitHub unter **History** die letzte Änderung
+öffnen und mit **„Revert“** zurücknehmen – so geht nie etwas verloren.
+
+Texte der Startseite stehen in `index.html` (Deutsch) und `site.js` (Englisch), siehe unten. Den Namen der Marke
+(„exUs541“) gibt es in allen HTML-Dateien; für eine Umbenennung ist „Suchen und Ersetzen“ über alle Dateien nötig.
 
 ## So pflegst du die Seite
 
@@ -21,7 +45,7 @@ Kennzahlen im Hero) rendert sich komplett daraus. Neues Projekt = neuer Eintrag,
 | `icon`, `preview` | Bilder aus `assets/projects/` (`null` = Platzhalter-Symbol) |
 
 Texte sind immer zweisprachig als `{ "de": "…", "en": "…" }`. Die Seite wählt die Sprache nach Browser-Einstellung,
-der Besucher kann oben mit DE/EN umschalten.
+der Besucher kann oben über das Sprach-Symbol wechseln.
 
 **Spendenseiten:** unter `site.support` in `projects.json` weitere Einträge ergänzen (z. B. Ko-fi, PayPal.me,
 GitHub Sponsors). Sie erscheinen automatisch als Buttons im Bereich „Unterstützen“.

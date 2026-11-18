@@ -70,10 +70,8 @@
       "id": "perspectives",
       "order": 20,
       "type": "vr",
-      "status": "dev",
-      "stage": 3,
-      "eta": "2027-Q1",
-      "etaWhat": { "de": "Meta Horizon Store", "en": "Meta Horizon Store" },
+      "status": "live",
+      "stage": 4,
       "name": "Perspectives",
       "icon": "assets/projects/perspectives-icon.webp",
       "preview": "assets/projects/perspectives-preview.webp",
@@ -103,8 +101,8 @@
       },
       "platforms": { "de": ["Meta Quest 3 / 3S"], "en": ["Meta Quest 3 / 3S"] },
       "stageNote": {
-        "de": "Version 1.0 ist gebaut. Vor der Einreichung beim Meta Horizon Store testen wir Leistung und Bedienung auf der Brille.",
-        "en": "Version 1.0 is built. Before submitting to the Meta Horizon Store we are testing performance and handling on the headset."
+        "de": "Version 1.0 ist im Meta Horizon Store veröffentlicht.",
+        "en": "Version 1.0 is available in the Meta Horizon Store."
       },
       "note": {
         "de": "Ein vereinfachter Eindruck – kein Diagnose- oder Medizinprodukt. Enthält Blitzeffekte und beunruhigende Geräusche; nicht für Kinder und nicht bei Epilepsie oder Panikattacken.",
@@ -112,7 +110,7 @@
       },
       "tags": { "de": ["Bildung", "Empathie"], "en": ["Education", "Empathy"] },
       "availability": [
-        { "kind": "meta", "label": { "de": "Meta Horizon Store", "en": "Meta Horizon Store" }, "url": null, "soon": true }
+        { "kind": "meta", "label": { "de": "Meta Horizon Store", "en": "Meta Horizon Store" }, "url": "https://www.meta.com/en-gb/experiences/perspectives-vr/1419916364544433/" }
       ]
     },
     {
