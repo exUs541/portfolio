@@ -27,12 +27,17 @@
   --blue: #2f4bb8;
   --blue-soft: #e8edfe;
 
+  /* Farben je Art (Karten, Filter, Abschnitte) */
+  --t-vr: #8a3fd1;
+  --t-vr-soft: #f3e9fc;
+  --t-android: #d4561e;
+  --t-android-soft: #ffede4;
+  --t-game: #c42b6f;
+  --t-game-soft: #fde8f1;
+  --t-desktop: #0b8586;
+  --t-desktop-soft: #dcf3f3;
   --t-extension: #4f5bd5;
   --t-extension-soft: #eceefd;
-  --t-vr: #7a45d6;
-  --t-vr-soft: #f2ebff;
-  --t-app: #d4561e;
-  --t-app-soft: #ffede4;
 
   --radius: 22px;
   --radius-sm: 14px;
@@ -202,6 +207,15 @@ ul, ol { margin: 0; padding: 0; }
 .fchip em { font-style: normal; font-size: 12px; color: var(--muted); background: var(--surface-2); padding: 1px 8px; border-radius: 999px; }
 .fchip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
 .fchip[aria-pressed="true"] em { background: rgba(255, 255, 255, 0.18); color: #fff; }
+.fchip .fdot { width: 9px; height: 9px; border-radius: 50%; background: var(--tc); flex: none; margin-right: -2px; }
+.fchip[class*="t-"]:hover { border-color: var(--tc); }
+.fchip[class*="t-"][aria-pressed="true"] { background: var(--tc); border-color: var(--tc); }
+.fchip[class*="t-"][aria-pressed="true"] .fdot { background: #fff; }
+.fchip-tag { padding: 5px 6px 5px 12px; font-size: 13px; }
+.fchip-tag[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); }
+.fchip:disabled { opacity: 0.4; cursor: default; }
+.fchip:disabled:hover { border-color: var(--line-2); }
+.fgroup .link-btn { font-size: 13px; padding: 5px 4px; }
 .search { position: relative; flex: 1; min-width: 220px; }
 .search input {
   width: 100%; padding: 11px 16px 11px 42px; border: 1px solid var(--line-2); border-radius: 999px;
@@ -228,9 +242,28 @@ ul, ol { margin: 0; padding: 0; }
 @keyframes pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
 /* ---------- Typfarben ---------- */
-.t-extension { --tc: var(--t-extension); --tc-soft: var(--t-extension-soft); }
 .t-vr { --tc: var(--t-vr); --tc-soft: var(--t-vr-soft); }
-.t-app { --tc: var(--t-app); --tc-soft: var(--t-app-soft); }
+.t-android, .t-app { --tc: var(--t-android); --tc-soft: var(--t-android-soft); }
+.t-game { --tc: var(--t-game); --tc-soft: var(--t-game-soft); }
+.t-desktop { --tc: var(--t-desktop); --tc-soft: var(--t-desktop-soft); }
+.t-extension { --tc: var(--t-extension); --tc-soft: var(--t-extension-soft); }
+
+/* Farbiger Reiter am oberen Kartenrand + Art in Artfarbe */
+.card[class*="t-"]::before {
+  content: ""; position: absolute; z-index: 3; top: -1px; left: 22px; width: 44px; height: 4px;
+  border-radius: 0 0 4px 4px; background: var(--tc); pointer-events: none;
+}
+.card .tlabel { color: var(--tc); font-weight: 600; }
+.tag.tag-type { background: var(--tc-soft); color: var(--tc); }
+
+/* Abschnitte je Art */
+.subgroup + .subgroup { margin-top: 34px; }
+.subhead { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font: 600 17px var(--font-head); letter-spacing: -0.01em; color: var(--ink); }
+.sdot { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--tc-soft); color: var(--tc); }
+.sdot .i { width: 17px; height: 17px; }
+.subhead em { font: 600 12px var(--font-body); color: var(--tc); background: var(--tc-soft); padding: 2px 10px; border-radius: 999px; }
+.subgroup { padding-left: 14px; border-left: 3px solid var(--tc-soft); }
+@media (max-width: 700px) { .subgroup { padding-left: 10px; } }
 
 /* ---------- Projekt-Icons ---------- */
 .pi { width: 48px; height: 48px; border-radius: 13px; flex: none; object-fit: cover; background: var(--surface-2); box-shadow: 0 0 0 1px rgba(22, 24, 29, 0.06); }
@@ -246,7 +279,15 @@ ul, ol { margin: 0; padding: 0; }
 .badge-dev { background: var(--amber-soft); color: var(--amber); }
 .tag { display: inline-flex; padding: 4px 11px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); font-size: 12.5px; font-weight: 600; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; }
-.tags li { font-size: 12.5px; color: var(--ink-2); padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; }
+.tags li { list-style: none; }
+.tag-btn {
+  position: relative; z-index: 2; font: 500 12.5px var(--font-body); color: var(--ink-2); padding: 3px 10px; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.tag-btn::before { content: "#"; opacity: 0.45; margin-right: 1px; }
+.tag-btn:hover { border-color: var(--tc, var(--accent)); color: var(--tc, var(--accent)); }
+.tag-btn[aria-pressed="true"] { background: var(--tc-soft, var(--accent-soft)); border-color: var(--tc, var(--accent)); color: var(--tc, var(--accent)); font-weight: 600; }
+.d-tags { margin: 0 0 4px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 500; position: relative; z-index: 2; }
 .chip .i { width: 1.05em; height: 1.05em; }
