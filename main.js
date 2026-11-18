@@ -81,7 +81,7 @@
   var projects = [];
   /* Reihenfolge = Reihenfolge der Filter und Abschnitte. Neue Art: hier + Farbe in style.css + Texte oben ergänzen. */
   var TYPES = ['vr', 'android', 'game', 'desktop', 'extension'];
-  var TYPE_ICON = { vr: 'vr', android: 'phone', game: 'gamepad', desktop: 'monitor', extension: 'grid' };
+  var TYPE_ICON = { vr: 'vr', android: 'phone', game: 'gamepad', desktop: 'monitor', extension: 'puzzle' };
   var TAGS_COLLAPSED = 8;
   var IS_EDGE = /\bEdg(e|A|iOS)?\//.test(navigator.userAgent || '');
   var state = { type: 'all', status: 'all', q: '', tags: [], tagsOpen: false };
@@ -181,9 +181,15 @@
     for (var i = 0; i < list.length; i++) if (list[i].url) return list[i];
     return null;
   }
+  /* Symbol der Art oben rechts auf der Karte (Farbe + Form zeigen: VR-App, Android-App, PC-Spiel, ...) */
+  function typeBadge(p) {
+    return '<span class="type-ico" role="img" aria-label="' + esc(typeLabel(p.type)) + '">' + icon(typeIcon(p.type)) + '</span>';
+  }
   function typeMeta(p, all) {
     var plat = pick(p.platforms) || [];
-    return '<p class="meta"><span class="tlabel">' + esc(typeLabel(p.type)) + '</span> · ' + esc(all ? plat.join(' · ') : (plat[0] || '')) + '</p>';
+    /* kleine Karten: bei Browser-Extensions reicht die Art (die Plattform zeigt der Store-Button) */
+    var tail = all ? plat.join(' · ') : (p.type === 'extension' ? '' : (plat[0] || ''));
+    return '<p class="meta"><span class="tlabel">' + esc(typeLabel(p.type)) + '</span>' + (tail ? ' · ' + esc(tail) : '') + '</p>';
   }
 
   function cardLarge(p) {
@@ -195,7 +201,7 @@
       ? '<div class="eta-row">' + icon('calendar') + '<strong>' + esc(eta.kind === 'q' ? s('eta.expected') + ' ' + etaLabel(eta) : s('eta.open')) + '</strong>' +
         (p.etaWhat && eta.kind === 'q' ? '<span>' + esc(pick(p.etaWhat)) + '</span>' : '') + '</div>'
       : '';
-    return '<article class="card card-lg t-' + p.type + '">' +
+    return '<article class="card card-lg t-' + p.type + '">' + typeBadge(p) +
       '<div class="card-media">' + media + badge(p) + '</div>' +
       '<div class="card-body">' +
         '<div class="card-head">' + projectIcon(p) +
@@ -213,7 +219,7 @@
     var action = link
       ? '<a class="btn btn-sm btn-dark" href="' + esc(link.url) + '" target="_blank" rel="noopener noreferrer">' + icon(KIND_ICON[link.kind] || 'globe') + '<span>' + esc(pick(link.label)) + '</span></a>'
       : '';
-    return '<article class="card card-sm t-' + p.type + '">' +
+    return '<article class="card card-sm t-' + p.type + '">' + typeBadge(p) +
       '<div class="card-head">' + projectIcon(p) +
         '<div><h3><button type="button" class="card-open" data-open="' + esc(p.id) + '">' + esc(p.name) + '</button></h3>' +
         typeMeta(p, false) + '</div></div>' +
@@ -258,7 +264,7 @@
     var th = '', sh = '', tg = '';
     types.forEach(function (t) {
       var cls = t === 'all' ? 'fchip' : 'fchip t-' + t;
-      var dot = t === 'all' ? '' : '<i class="fdot"></i>';
+      var dot = t === 'all' ? '' : '<span class="ficon">' + icon(typeIcon(t)) + '</span>';
       th += '<button type="button" class="' + cls + '" data-ftype="' + t + '" aria-pressed="' + (state.type === t) + '">' + dot + esc(t === 'all' ? s('f.all') : typePlural(t)) + '<em>' + count('type', t) + '</em></button>';
     });
     statuses.forEach(function (t) {
@@ -284,16 +290,13 @@
     $('#filter-tags').innerHTML = tg;
   }
 
-  /* Nach Art gruppieren (farbig getrennt), sobald mehrere Arten vorkommen */
-  function byType(list, cardFn, gridCls) {
-    var order = TYPES.concat(list.map(function (p) { return p.type; }).filter(function (t, i, a) { return TYPES.indexOf(t) === -1 && a.indexOf(t) === i; }));
-    var present = order.filter(function (t) { return list.some(function (p) { return p.type === t; }); });
-    if (present.length <= 1) return '<div class="grid ' + gridCls + '">' + list.map(cardFn).join('') + '</div>';
-    return present.map(function (t) {
-      var items = list.filter(function (p) { return p.type === t; });
-      return '<div class="subgroup t-' + t + '"><h4 class="subhead"><span class="sdot">' + icon(typeIcon(t)) + '</span>' + esc(typePlural(t)) + '<em>' + items.length + '</em></h4>' +
-        '<div class="grid ' + gridCls + '">' + items.map(cardFn).join('') + '</div></div>';
-    }).join('');
+  /* Kacheln einer Gruppe in einem Raster: gleiche Arten stehen beieinander (Reihenfolge der Arten, dann Reihenfolge in projects.json) */
+  function gridOf(list, cardFn, gridCls) {
+    var sorted = list.slice().sort(function (a, b) {
+      var ia = TYPES.indexOf(a.type), ib = TYPES.indexOf(b.type);
+      return ((ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib)) || ((a.order || 0) - (b.order || 0));
+    });
+    return '<div class="grid ' + gridCls + '">' + sorted.map(cardFn).join('') + '</div>';
   }
 
   var firstRender = true;
@@ -304,11 +307,11 @@
     var html = '';
     if (works.length) {
       html += '<section class="group" aria-labelledby="g-works"><div class="group-head"><h3 id="g-works">' + esc(s('g.works.t')) + '</h3><p>' + esc(s('g.works.d')) + '</p></div>' +
-        byType(works, cardLarge, 'grid-lg') + '</section>';
+        gridOf(works, cardLarge, 'grid-lg') + '</section>';
     }
     if (live.length) {
       html += '<section class="group" aria-labelledby="g-live"><div class="group-head"><h3 id="g-live">' + esc(s('g.live.t')) + '</h3><p>' + esc(s('g.live.d')) + '</p></div>' +
-        byType(live, cardSmall, 'grid-sm') + '</section>';
+        gridOf(live, cardSmall, 'grid-sm') + '</section>';
     }
     if (!list.length) {
       html = '<div class="empty"><p><strong>' + esc(s('empty.t')) + '</strong></p><p>' + esc(s('empty.d')) + '</p></div>';
