@@ -35,13 +35,14 @@ Kennzahlen im Hero) rendert sich komplett daraus. Neues Projekt = neuer Eintrag,
 
 | Feld | Bedeutung |
 | --- | --- |
-| `type` | `extension`, `vr` oder `app` |
+| `type` | Art, bestimmt Farbe, Filter und Abschnitt: `vr` (VR-App), `android` (Android-App), `game` (PC-Spiel), `desktop` (PC-Anwendung), `extension` (Browser-Extension). Eine Art erscheint auf der Seite, sobald es dazu ein Projekt gibt |
 | `status` | `live` (verfügbar), `beta` (nutzbar, noch im Test), `dev` (in Entwicklung) |
 | `stage` | Fortschrittsbalken: `1` Idee · `2` Entwicklung · `3` Test & Store · `4` Verfügbar |
 | `eta` | geplanter Termin als Quartal `"2027-Q1"`, oder `"open"` (Termin offen). Bei `live` weglassen |
 | `etaWhat` | wo es dann erscheint, z. B. „Meta Horizon Store“ |
-| `availability` | Fundorte. `url: null` + `"soon": true` zeigt „… · geplant“ ohne Link. `kind`: `chrome`, `web`, `play`, `meta`, `soon` |
+| `availability` | Fundorte. `url: null` + `"soon": true` zeigt „… · geplant“ ohne Link. `kind`: `chrome`, `edge`, `web`, `play`, `meta`, `soon`. Wer die Seite im Edge-Browser öffnet, sieht den `edge`-Link zuerst |
 | `stageNote`, `note` | Satz zum aktuellen Stand bzw. Hinweis (z. B. Geräte-Einschränkung) |
+| `tags` | Stichwörter, nach denen man filtern und suchen kann, je Sprache gleich viele und in gleicher Reihenfolge, z. B. `"de": ["Fokus", "Spiel"], "en": ["Focus", "Game"]`. Gleiche Tags bei mehreren Projekten werden automatisch zusammengefasst |
 | `icon`, `preview` | Bilder aus `assets/projects/` (`null` = Platzhalter-Symbol) |
 
 Texte sind immer zweisprachig als `{ "de": "…", "en": "…" }`. Die Seite wählt die Sprache nach Browser-Einstellung,

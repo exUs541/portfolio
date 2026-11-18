@@ -69,7 +69,7 @@
             <div class="container">
                 <div class="section-head">
                     <h2 data-i18n="sol.title">Unsere Lösungen</h2>
-                    <p data-i18n="sol.sub">Filtere nach Art und Stand. Ein Klick auf eine Karte zeigt alle Details, Fundorte und den geplanten Termin.</p>
+                    <p data-i18n="sol.sub">Filtere nach Art, Stand oder Tag. Ein Klick auf eine Karte zeigt alle Details, Fundorte und den geplanten Termin.</p>
                 </div>
 
                 <div class="toolbar">
@@ -82,8 +82,12 @@
                         <div class="fgroup" id="filter-status" role="group" aria-label="Stand"></div>
                         <label class="search">
                             <span data-icon="search"></span>
-                            <input id="search" type="search" autocomplete="off" placeholder="Suchen, z. B. Tabs, Fitness, VR" aria-label="Lösungen durchsuchen" data-i18n-ph="sol.search" data-i18n-aria="sol.searchlabel">
+                            <input id="search" type="search" autocomplete="off" placeholder="Suchen: Name, Funktion, Tag" aria-label="Lösungen durchsuchen" data-i18n-ph="sol.search" data-i18n-aria="sol.searchlabel">
                         </label>
+                    </div>
+                    <div class="filter-row">
+                        <span class="filter-label" data-i18n="sol.tags">Tags</span>
+                        <div class="fgroup" id="filter-tags" role="group" aria-label="Tags"></div>
                     </div>
                 </div>
                 <div class="results-bar">
