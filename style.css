@@ -328,7 +328,13 @@ ul, ol { margin: 0; padding: 0; }
 .card-sm { padding: 20px; gap: 14px; }
 .card-sm .card-head .badge { align-self: flex-start; }
 .card-sm .tagline { flex: 1; }
-.card-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 4px; }
+.card-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.card-foot .stores { display: flex; flex-wrap: wrap; gap: 8px; }
+.card-foot .stores .btn-sm { padding: 9px 14px; }
+.card-foot .more { margin-left: auto; }
+/* Schmale Kachel mit zwei Store-Buttons: nur der Pfeil, damit alles in eine Zeile passt */
+.card-sm { container-type: inline-size; }
+@container (max-width: 295px) { .multi .more-t { display: none; } }
 .card-foot .more { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--muted); transition: color 0.15s, gap 0.15s; }
 .card:hover .more { color: var(--ink); gap: 9px; }
 

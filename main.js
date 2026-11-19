@@ -150,7 +150,10 @@
   function badge(p) {
     return '<span class="badge badge-' + p.status + '"><i class="dot"></i>' + esc(s('status.' + p.status)) + '</span>';
   }
-  var KIND_ICON = { chrome: 'chrome', edge: 'globe', web: 'globe', play: 'play', meta: 'vr', soon: 'clock' };
+  var KIND_ICON = { chrome: 'chrome', edge: 'edge', web: 'globe', play: 'play', meta: 'vr', soon: 'clock' };
+  /* Kurze Namen für die Buttons auf den Kacheln – dass es der jeweilige Store ist, versteht man auch so */
+  var KIND_SHORT = { chrome: 'Chrome', edge: 'Edge' };
+  function shortLabel(a) { return KIND_SHORT[a.kind] || pick(a.label); }
   function chip(a) {
     var label = esc(pick(a.label));
     var ic = icon(KIND_ICON[a.kind] || 'globe');
@@ -175,11 +178,6 @@
       list = edge.concat(list.filter(function (a) { return edge.indexOf(a) === -1; }));
     }
     return list;
-  }
-  function primaryLink(p) {
-    var list = availOrdered(p);
-    for (var i = 0; i < list.length; i++) if (list[i].url) return list[i];
-    return null;
   }
   /* Symbol der Art oben rechts auf der Karte (Farbe + Form zeigen: VR-App, Android-App, PC-Spiel, ...) */
   function typeBadge(p) {
@@ -215,17 +213,21 @@
   }
 
   function cardSmall(p) {
-    var link = primaryLink(p);
-    var action = link
-      ? '<a class="btn btn-sm btn-dark" href="' + esc(link.url) + '" target="_blank" rel="noopener noreferrer">' + icon(KIND_ICON[link.kind] || 'globe') + '<span>' + esc(pick(link.label)) + '</span></a>'
+    var links = availOrdered(p).filter(function (a) { return a.url; });
+    var action = links.length
+      ? '<div class="stores">' + links.map(function (a, i) {
+          var full = esc(pick(a.label));
+          return '<a class="btn btn-sm ' + (i === 0 ? 'btn-dark' : 'btn-ghost') + '" href="' + esc(a.url) + '" target="_blank" rel="noopener noreferrer" title="' + full + '" aria-label="' + full + '">' +
+            icon(KIND_ICON[a.kind] || 'globe') + '<span>' + esc(shortLabel(a)) + '</span></a>';
+        }).join('') + '</div>'
       : '';
-    return '<article class="card card-sm t-' + p.type + '">' + typeBadge(p) +
+    return '<article class="card card-sm t-' + p.type + (links.length > 1 ? ' multi' : '') + '">' + typeBadge(p) +
       '<div class="card-head">' + projectIcon(p) +
         '<div><h3><button type="button" class="card-open" data-open="' + esc(p.id) + '">' + esc(p.name) + '</button></h3>' +
         typeMeta(p, false) + '</div></div>' +
       '<p class="tagline">' + esc(pick(p.tagline)) + '</p>' +
       tagList(p) +
-      '<div class="card-foot">' + action + '<span class="more">' + esc(s('details')) + icon('arrow-right') + '</span></div>' +
+      '<div class="card-foot">' + action + '<span class="more"><span class="more-t">' + esc(s('details')) + '</span>' + icon('arrow-right') + '</span></div>' +
     '</article>';
   }
 
