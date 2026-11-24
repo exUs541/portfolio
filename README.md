@@ -62,7 +62,7 @@ als englische Übersetzung in [`site.js`](site.js) (Objekt `EN`, gleicher Schlü
 | `site.js` | gemeinsam: Sprache DE/EN, Icons, Kopfzeile |
 | `style.css` | gesamtes Design (Farben als Variablen ganz oben) |
 | `projects.json` | Daten aller Projekte, Spenden- und Social-Links |
-| `roadmap.html`, `roadmap-data.json` | Feature-Wünsche der Extensions (wird von `roadmap-sync.yml` aus dem GitHub Project befüllt) |
+| `roadmap.html`, `roadmap-data.json` | Feature-Wünsche der Extensions (wird von Hand gepflegt) |
 | `feedback.html` | Formulare für Ideen und Fehler (Formspree) |
 | `details/*.html`, `details/details.css` | Detailseiten der Extensions und Datenschutz |
 | `extensions.html` | leitet auf `index.html?typ=extension` weiter (alte Links bleiben gültig) |
