@@ -71,7 +71,7 @@ Direktlinks: `index.html?typ=vr`, `?status=dev`, `#projekt-nestwise` (öffnet da
 
 ## Automatisierung
 
-`extension-release.yml` (in den Extension-Repos) löst per `repository_dispatch` den Workflow `update-portfolio.yml` aus.
+`release.yml` (in den Extension-Repos) löst per `repository_dispatch` den Workflow `update-portfolio.yml` aus.
 `scripts/update_portfolio_site.py` schreibt dann den Changelog und legt bei neuen Extensions eine Detailseite sowie einen
 Eintrag in `projects.json` an (mit Platzhaltertexten, bitte danach verfeinern).
 
