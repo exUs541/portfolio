@@ -366,7 +366,8 @@
       "tags": { "de": ["Unterhaltung", "Fokus"], "en": ["Entertainment", "Focus"] },
       "detail": "details/ytfilter.html",
       "availability": [
-        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/mbdjpeppmemcbheedochgdejjoenijem/" }
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/mbdjpeppmemcbheedochgdejjoenijem/" },
+        { "kind": "edge", "label": { "de": "Edge Add-ons", "en": "Edge Add-ons" }, "url": "https://microsoftedge.microsoft.com/addons/detail/youtube-channel-blocker-/kmbjgkefechegpkpfinkpodpdlkabnhd" }
       ]
     },
     {
