@@ -389,6 +389,16 @@
       ],
       "timestamp": "2026-11-12T13:49:21.203232Z",
       "posted": false
+    },
+    {
+      "extension_name": "Kleinanzeigen",
+      "display_name": "Kleinanzeigen Plus",
+      "version": "1.1.1",
+      "commits": [
+        "0b82789 ci: weekly check of the store credentials (#1)\nb2494c7 fix(layout): stop hiding the page grid columns and the consent dialog\n3a61110 feat(ui): minimal popup with system light/dark theme\n912a454 ci: release to Chrome and Edge only when the version changes\n1e74d89 chore: remove ZIP files from repository and add to .gitignore"
+      ],
+      "timestamp": "2026-11-24T21:14:39.645112Z",
+      "posted": false
     }
   ]
 }
