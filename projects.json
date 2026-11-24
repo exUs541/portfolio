@@ -244,7 +244,8 @@
       "tags": { "de": ["Produktivität", "Datenschutz"], "en": ["Productivity", "Privacy"] },
       "detail": "details/siteblocker.html",
       "availability": [
-        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/dbmhbnmbodpdkhhifkpckaafanchciej/" }
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/dbmhbnmbodpdkhhifkpckaafanchciej/" },
+        { "kind": "edge", "label": { "de": "Edge Add-ons", "en": "Edge Add-ons" }, "url": "https://microsoftedge.microsoft.com/addons/detail/search-filter-site-bloc/plonjcofdcfonocbhjlgljniadkidnig" }
       ],
       "github": "https://github.com/exUs541/Search-Optimizer"
     },
@@ -327,7 +328,8 @@
       "tags": { "de": ["Recherche", "Werkzeug"], "en": ["Research", "Utility"] },
       "detail": "details/webnote.html",
       "availability": [
-        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni" }
+        { "kind": "chrome", "label": { "de": "Chrome Web Store", "en": "Chrome Web Store" }, "url": "https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni" },
+        { "kind": "edge", "label": { "de": "Edge Add-ons", "en": "Edge Add-ons" }, "url": "https://microsoftedge.microsoft.com/addons/detail/webnote-draw-highlight-/lkmoaolmckolcikghcafiilfgnohibce" }
       ]
     },
     {

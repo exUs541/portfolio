@@ -50,7 +50,8 @@
             <aside class="sidebar">
                 <div class="sidebar-box">
                     <h3>Get Extension</h3>
-                    <a href="https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni" class="btn btn-dark btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span>Install from Web Store</span></a>
+                    <a id="store-chrome" href="https://chromewebstore.google.com/detail/webnote-draw-highlight-st/iackibmejkkglddhagppoeifbfgchlni" class="btn btn-dark btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg><span>Install from Web Store</span></a>
+                    <a id="store-edge" href="https://microsoftedge.microsoft.com/addons/detail/webnote-draw-highlight-/lkmoaolmckolcikghcafiilfgnohibce" class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14a7 7 0 1 0-2 5"/></svg><span>Install from Edge Add-ons</span></a>
                     <a href="https://www.youtube.com/channel/UC09y7qjqBbVcTCWtg1l8j0A" class="btn btn-ghost btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg><span>YouTube channel</span></a>
                     <a href="https://www.patreon.com/c/exus541" class="btn btn-warm btn-block" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M22.96 7.21c0-3.08-2.58-5.51-5.63-5.51s-5.51 2.43-5.51 5.51c0 3.04 2.47 5.51 5.51 5.51 3.04 0 5.63-2.43 5.63-5.51ZM2.09 1.7v20.6h4.18V1.7H2.09Z"/></svg><span>Support on Patreon</span></a>
                     <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSf-42NVu126udKbEQaypBf1iKwih64SgVnQ3LqeCiuHvpSg_w/viewform?usp=pp_url&entry.1537911196=WebNote:+Draw,+Highlight+%26+Sticky+Notes" target="_blank" rel="noopener noreferrer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>Give feedback</a>
@@ -70,5 +71,12 @@
             </div>
         </div>
     </footer>
+    <script>
+        /* Im Edge-Browser steht der Edge-Link vorn */
+        if (/Edg(e|A|iOS)?\//.test(navigator.userAgent)) {
+            var e = document.getElementById("store-edge"), c = document.getElementById("store-chrome");
+            if (e && c) { c.parentNode.insertBefore(e, c); e.className = e.className.replace("btn-ghost", "btn-dark"); c.className = c.className.replace("btn-dark", "btn-ghost"); }
+        }
+    </script>
 </body>
 </html>
