@@ -399,6 +399,16 @@
       ],
       "timestamp": "2026-11-24T21:14:39.645112Z",
       "posted": false
+    },
+    {
+      "extension_name": "Kleinanzeigen",
+      "display_name": "Kleinanzeigen Plus",
+      "version": "1.2.0",
+      "commits": [
+        "382a689 Add a master switch to turn Kleinanzeigen Plus on and off (#3)\n0b82789 ci: weekly check of the store credentials (#1)\nb2494c7 fix(layout): stop hiding the page grid columns and the consent dialog\n3a61110 feat(ui): minimal popup with system light/dark theme\n912a454 ci: release to Chrome and Edge only when the version changes"
+      ],
+      "timestamp": "2026-11-25T21:43:16.500026Z",
+      "posted": false
     }
   ]
 }
