@@ -419,6 +419,16 @@
       ],
       "timestamp": "2026-11-25T22:10:15.056910Z",
       "posted": false
+    },
+    {
+      "extension_name": "Website-Notes",
+      "display_name": "WebNote: Draw, Highlight & Sticky Notes",
+      "version": "2.2.0",
+      "commits": [
+        "16d2575 Release WebNote 2.2.0 (#6)\n75ee8b7 WebNote 2.2.0: master switch, English/German language switch, new icons and description (#5)\nbeeade7 ci: weekly check of the store credentials (#3)\nc7af44d feat(ui): minimal popup and dashboard; fix URL-rule removal and unsafe rendering\n60f64dd ci: release to Chrome and Edge only when the version changes"
+      ],
+      "timestamp": "2026-11-25T22:10:40.229706Z",
+      "posted": false
     }
   ]
 }
