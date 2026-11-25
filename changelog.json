@@ -409,6 +409,16 @@
       ],
       "timestamp": "2026-11-25T21:43:16.500026Z",
       "posted": false
+    },
+    {
+      "extension_name": "Search-Optimizer",
+      "display_name": "Search Filter & Site Blocker - Clean Search Results",
+      "version": "2.6.0",
+      "commits": [
+        "082053f Release Search Optimizer 2.6.0 (#6)\n72f4114 Search Optimizer 2.6.0: master switch, Block Keywords fix, new icons and description (#5)\n4150f4c ci: weekly check of the store credentials (#3)\n033adf0 feat(ui): minimal popup with system light/dark theme; safer config import\n6a60c6f ci: release to Chrome and Edge only when the version changes"
+      ],
+      "timestamp": "2026-11-25T22:10:15.056910Z",
+      "posted": false
     }
   ]
 }
