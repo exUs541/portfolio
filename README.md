@@ -40,7 +40,7 @@ Kennzahlen im Hero) rendert sich komplett daraus. Neues Projekt = neuer Eintrag,
 | `stage` | Fortschrittsbalken: `1` Idee · `2` Entwicklung · `3` Test & Store · `4` Verfügbar |
 | `eta` | geplanter Termin als Quartal `"2027-Q1"`, oder `"open"` (Termin offen). Bei `live` weglassen |
 | `etaWhat` | wo es dann erscheint, z. B. „Meta Horizon Store“ |
-| `availability` | Fundorte. `url: null` + `"soon": true` zeigt „… · geplant“ ohne Link. `kind`: `chrome`, `edge`, `web`, `play`, `meta`, `soon`. Wer die Seite im Edge-Browser öffnet, sieht den `edge`-Link zuerst. Auf den Kacheln zeigen `chrome` und `edge` nur kurze Buttons („Chrome“, „Edge“), der volle `label` steht im Tooltip und im Detailfenster |
+| `availability` | Fundorte. `url: null` + `"soon": true` zeigt „… · geplant“ ohne Link. `kind`: `chrome`, `edge`, `github`, `web`, `play`, `meta`, `soon`. Wer die Seite im Edge-Browser öffnet, sieht den `edge`-Link zuerst. Auf den Kacheln zeigen `chrome` und `edge` nur kurze Buttons („Chrome“, „Edge“), der volle `label` steht im Tooltip und im Detailfenster |
 | `stageNote`, `note` | Satz zum aktuellen Stand bzw. Hinweis (z. B. Geräte-Einschränkung) |
 | `tags` | Stichwörter, nach denen man filtern und suchen kann, je Sprache gleich viele und in gleicher Reihenfolge, z. B. `"de": ["Fokus", "Spiel"], "en": ["Focus", "Game"]`. Gleiche Tags bei mehreren Projekten werden automatisch zusammengefasst |
 | `icon`, `preview` | Bilder aus `assets/projects/` (`null` = Platzhalter-Symbol) |
