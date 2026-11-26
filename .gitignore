@@ -1,4 +1,0 @@
-# Browser-Profil der frueheren Playwright-Anbindung (LinkedIn-Cookies, Local Storage,
-# IndexedDB, Caches). Dort liegen Sitzungsdaten. Niemals ins Repo einchecken.
-# Die Pipeline postet seit d913029 ueber die LinkedIn-REST-API und braucht diesen Ordner nicht.
-linkedin-queue/session_data/
