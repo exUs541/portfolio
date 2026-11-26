@@ -244,8 +244,8 @@
       },
       "platforms": { "de": ["Windows 10/11"], "en": ["Windows 10/11"] },
       "stageNote": {
-        "de": "Auf GitHub veröffentlicht: Quellcode und Demo-Daten zum Ausprobieren.",
-        "en": "Published on GitHub: source code and demo data to try it out."
+        "de": "Version 3.0 ist auf GitHub veröffentlicht: Installer für Windows, dazu Quellcode und Demo-Daten.",
+        "en": "Version 3.0 is published on GitHub: installer for Windows, plus source code and demo data."
       },
       "note": {
         "de": "Das Dashboard ist auf Deutsch.",
@@ -253,7 +253,7 @@
       },
       "tags": { "de": ["Speicherplatz", "Open Source", "Offline"], "en": ["Disk space", "Open source", "Offline"] },
       "availability": [
-        { "kind": "github", "label": { "de": "Download auf GitHub", "en": "Download on GitHub" }, "url": "https://github.com/exUs541/PC-Analyzer" }
+        { "kind": "github", "label": { "de": "Download auf GitHub", "en": "Download on GitHub" }, "url": "https://github.com/exUs541/PC-Analyzer/releases/latest" }
       ]
     },
     {
