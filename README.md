@@ -32,16 +32,16 @@ Die Seite zeigt auf einen Blick, was es schon gibt, woran gearbeitet wird und wa
 ## Aufbau
 
 ```text
-index.html, main.js     Startseite und ihre Logik (Filter, Suche, Detailfenster, Zeitplan)
+index.html, main.js     Startseite und Logik (Filter, Suche, Detailfenster)
 site.js                 gemeinsam: Sprache DE/EN, Icons, Kopfzeile
-style.css               gesamtes Design (Farben als Variablen ganz oben)
+style.css               Design (Farben als Variablen ganz oben)
 projects.json           Daten aller Projekte, Spenden- und Social-Links
-changelog.json          Versionsverlauf der Extensions (wird automatisch gepflegt)
-details/                Detailseiten der Extensions (details.css = gemeinsames Design)
-roadmap.html            Feature-Wünsche der Extensions (Daten: roadmap-data.json, von Hand gepflegt)
+changelog.json          Versionsverlauf der Extensions (automatisch)
+details/                Detailseiten der Extensions
+roadmap.html            Feature-Wünsche (Daten: roadmap-data.json)
 feedback.html           Formulare für Ideen und Fehler (Formspree)
 privacy.html            Datenschutzerklärung
-extensions.html         Weiterleitung auf index.html?typ=extension (alte Links bleiben gültig)
+extensions.html         Weiterleitung für alte Links
 assets/                 Logos, Vorschaubilder und Store-Screenshots
 scripts/                Skripte der Automatisierung
 .github/workflows/      GitHub Actions
