@@ -439,6 +439,16 @@
       ],
       "timestamp": "2026-11-26T13:55:09.596237Z",
       "posted": false
+    },
+    {
+      "extension_name": "YouTube-Extension",
+      "display_name": "YT Filter – Channel Blocker & Hide Shorts for YouTube™",
+      "version": "4.5.1",
+      "commits": [
+        "83fb078 YT Filter 4.5.1: feed keeps loading, \"Show more\" stays on the page, new store name (#5)\nac9ff98 YT Filter 4.5.0: new popup, icons, store name and description (#4)\n3389e43 ci: weekly check of the store credentials (#2)\nb6cfad6 Merge pull request #1 from exUs541/refresh/minimal-ui-and-store-ci\n2bf4b7c feat: show subscription count next to the sidebar \"Subscriptions\" title"
+      ],
+      "timestamp": "2026-11-26T20:47:45.876394Z",
+      "posted": false
     }
   ]
 }
