@@ -211,9 +211,8 @@
       "id": "pcanalyzer",
       "order": 50,
       "type": "desktop",
-      "status": "dev",
-      "stage": 3,
-      "eta": "open",
+      "status": "live",
+      "stage": 4,
       "name": "PC-Analyzer",
       "icon": "assets/projects/pcanalyzer-icon.webp",
       "preview": "assets/projects/pcanalyzer-preview.webp",
@@ -245,8 +244,8 @@
       },
       "platforms": { "de": ["Windows 10/11"], "en": ["Windows 10/11"] },
       "stageNote": {
-        "de": "Der Quellcode (Version 3.0) ist öffentlich auf GitHub. Den fertigen Installer gibt es, sobald das erste Release veröffentlicht ist.",
-        "en": "The source code (version 3.0) is public on GitHub. The ready-made installer follows as soon as the first release is published."
+        "de": "Auf GitHub veröffentlicht: Quellcode und Demo-Daten zum Ausprobieren.",
+        "en": "Published on GitHub: source code and demo data to try it out."
       },
       "note": {
         "de": "Das Dashboard ist auf Deutsch.",
@@ -254,8 +253,7 @@
       },
       "tags": { "de": ["Speicherplatz", "Open Source", "Offline"], "en": ["Disk space", "Open source", "Offline"] },
       "availability": [
-        { "kind": "github", "label": { "de": "Quellcode auf GitHub", "en": "Source on GitHub" }, "url": "https://github.com/exUs541/PC-Analyzer" },
-        { "kind": "soon", "label": { "de": "Installer (GitHub-Release)", "en": "Installer (GitHub release)" }, "url": null, "soon": true }
+        { "kind": "github", "label": { "de": "Download auf GitHub", "en": "Download on GitHub" }, "url": "https://github.com/exUs541/PC-Analyzer" }
       ]
     },
     {
