@@ -208,6 +208,57 @@
       ]
     },
     {
+      "id": "pcanalyzer",
+      "order": 50,
+      "type": "desktop",
+      "status": "dev",
+      "stage": 3,
+      "eta": "open",
+      "name": "PC-Analyzer",
+      "icon": "assets/projects/pcanalyzer-icon.webp",
+      "preview": "assets/projects/pcanalyzer-preview.webp",
+      "tagline": {
+        "de": "Zeigt, wo dein Speicherplatz geblieben ist und was du am PC sicher aufräumen kannst.",
+        "en": "See where your disk space went and what you can safely clean up on your PC."
+      },
+      "description": {
+        "de": "PC-Analyzer ist ein lokales Dashboard für Windows. Es rechnet den Speicherplatz deines Laufwerks auf das letzte Byte zusammen, erklärt jeden großen Ordner und sagt dir, ob er weg kann und wie. Dazu zeigt es Hardware, Windows-Support, Sicherheit und Autostart auf einen Blick. Alles läuft lokal, deine Daten verlassen den PC nicht. Die App selbst heißt LaptopCheck.",
+        "en": "PC-Analyzer is a local dashboard for Windows. It adds up the space on your drive to the last byte, explains every large folder and tells you whether it can go and how. It also shows hardware, Windows support dates, security and startup items at a glance. Everything runs locally and your data never leaves the PC. The app itself is called LaptopCheck."
+      },
+      "features": {
+        "de": [
+          "Speicheranalyse des ganzen Laufwerks: jede Zeile ist die Summe der Zeilen darunter, nichts wird doppelt gezählt",
+          "Gesundheits-Score mit Erklärung jedes Abzugs, dazu Hardware, Windows-Support und Autostart",
+          "Hausregeln und Sparplan: alte Ordner in die Cloud, Installer und Kopien in den Papierkorb, mit einem Klick",
+          "Erkennt Google Drive, OneDrive und Dropbox und gleicht Spiegelordner Datei für Datei ab",
+          "Zwei Ordner vergleichen: Ergebnis in einem Satz, Ordnerbaum der Unterschiede, CSV-Export",
+          "Sicher gebaut: Scans lesen nur, Löschen geht in den Papierkorb und braucht eine Bestätigung"
+        ],
+        "en": [
+          "Storage analysis of the whole drive: every row is the sum of the rows below it, nothing is counted twice",
+          "Health score that explains every deduction, plus hardware, Windows support dates and startup items",
+          "House rules and saving plan: old folders to the cloud, installers and copies to the Recycle Bin, in one click",
+          "Detects Google Drive, OneDrive and Dropbox and compares mirror folders file by file",
+          "Compare two folders: verdict in one sentence, folder tree of the differences, CSV export",
+          "Safe by design: scans only read, removal goes to the Recycle Bin after a confirmation"
+        ]
+      },
+      "platforms": { "de": ["Windows 10/11"], "en": ["Windows 10/11"] },
+      "stageNote": {
+        "de": "Der Quellcode (Version 3.0) ist öffentlich auf GitHub. Den fertigen Installer gibt es, sobald das erste Release veröffentlicht ist.",
+        "en": "The source code (version 3.0) is public on GitHub. The ready-made installer follows as soon as the first release is published."
+      },
+      "note": {
+        "de": "Das Dashboard ist auf Deutsch.",
+        "en": "The dashboard is in German."
+      },
+      "tags": { "de": ["Speicherplatz", "Open Source", "Offline"], "en": ["Disk space", "Open source", "Offline"] },
+      "availability": [
+        { "kind": "github", "label": { "de": "Quellcode auf GitHub", "en": "Source on GitHub" }, "url": "https://github.com/exUs541/PC-Analyzer" },
+        { "kind": "soon", "label": { "de": "Installer (GitHub-Release)", "en": "Installer (GitHub release)" }, "url": null, "soon": true }
+      ]
+    },
+    {
       "id": "siteblocker",
       "order": 100,
       "type": "extension",

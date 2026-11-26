@@ -150,7 +150,7 @@
   function badge(p) {
     return '<span class="badge badge-' + p.status + '"><i class="dot"></i>' + esc(s('status.' + p.status)) + '</span>';
   }
-  var KIND_ICON = { chrome: 'chrome', edge: 'edge', web: 'globe', play: 'play', meta: 'vr', soon: 'clock' };
+  var KIND_ICON = { chrome: 'chrome', edge: 'edge', web: 'globe', github: 'github', play: 'play', meta: 'vr', soon: 'clock' };
   /* Kurze Namen für die Buttons auf den Kacheln – dass es der jeweilige Store ist, versteht man auch so */
   var KIND_SHORT = { chrome: 'Chrome', edge: 'Edge' };
   function shortLabel(a) { return KIND_SHORT[a.kind] || pick(a.label); }
