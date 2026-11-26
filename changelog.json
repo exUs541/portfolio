@@ -429,6 +429,16 @@
       ],
       "timestamp": "2026-11-25T22:10:40.229706Z",
       "posted": false
+    },
+    {
+      "extension_name": "SAP-Signavio-Enhancements",
+      "display_name": "SAP Signavio Enhancement Suite",
+      "version": "1.9.1.10",
+      "commits": [
+        "bb7bda4 Describe all feature areas in the store summary\n327e5c9 Store assets: fictional data in screenshots 03 and 04, drop old images folder\n367726b Add store listing assets (screenshots and promo tiles)\n8182439 Release v1.9.1.10: Keep Attribute Search\n4187597 ci: weekly check of the store credentials (#2)"
+      ],
+      "timestamp": "2026-11-26T13:55:09.596237Z",
+      "posted": false
     }
   ]
 }
