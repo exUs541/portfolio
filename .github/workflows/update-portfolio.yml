@@ -1,4 +1,4 @@
-name: Update Portfolio & Queue LinkedIn
+name: Update Portfolio
 
 on:
   repository_dispatch:
@@ -19,10 +19,6 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          pip install google-generativeai requests
-
       - name: Run Portfolio Website Updater
         env:
           PAYLOAD_EXTENSION_NAME: ${{ github.event.client_payload.extension_name }}
@@ -32,18 +28,6 @@ jobs:
           PAYLOAD_IS_NEW: ${{ github.event.client_payload.is_new }}
         run: |
           python scripts/update_portfolio_site.py
-
-      - name: Generate LinkedIn Post if New App
-        if: ${{ github.event.client_payload.is_new == true }}
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          PAYLOAD_EXTENSION_NAME: ${{ github.event.client_payload.extension_name }}
-          PAYLOAD_DISPLAY_NAME: ${{ github.event.client_payload.display_name }}
-          PAYLOAD_VERSION: ${{ github.event.client_payload.version }}
-          PAYLOAD_COMMITS: ${{ toJson(github.event.client_payload.commits) }}
-          PAYLOAD_IS_NEW: true
-        run: |
-          python scripts/generate_linkedin_posts.py
 
       - name: Commit and Push Changes
         run: |
