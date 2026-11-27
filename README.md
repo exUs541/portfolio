@@ -94,6 +94,7 @@ Neues Projekt = neuer Eintrag in `projects`, Änderung am Stand = Feld ändern.
 | `tags` | Stichwörter, nach denen man filtern und suchen kann, je Sprache gleich viele und in gleicher Reihenfolge, z. B. `"de": ["Fokus", "Spiel"], "en": ["Focus", "Game"]`. Gleiche Tags bei mehreren Projekten werden automatisch zusammengefasst |
 | `icon`, `preview` | Bilder aus `assets/projects/` (`null` = Platzhalter-Symbol) |
 | `detail` | Pfad zur Detailseite (nur Extensions), z. B. `details/webnote.html` |
+| `basedOn` | Optional bei Weiterentwicklungen fremder Projekte: `{ "name": "…", "url": "…" }` zeigt im Detailfenster den Link „Basiert auf …“ zum Original |
 
 Texte sind immer zweisprachig als `{ "de": "…", "en": "…" }`.
 
