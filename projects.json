@@ -1,7 +1,7 @@
 {
   "_hinweis": "Zentrale Datenquelle fuer die Startseite (index.html). Neues Projekt = neuen Eintrag in 'projects' ergaenzen. Texte immer als {de, en}. status: live | beta | dev. type: extension | vr | app. stage: 1 Idee, 2 Entwicklung, 3 Test & Store, 4 Verfuegbar. eta: 'JJJJ-Qn' (z.B. 2027-Q1), 'open' oder weglassen.",
   "site": {
-    "updated": "2026-11-16",
+    "updated": "2026-11-27",
     "support": [
       {
         "id": "patreon",
@@ -255,6 +255,56 @@
       "availability": [
         { "kind": "github", "label": { "de": "Download auf GitHub", "en": "Download on GitHub" }, "url": "https://github.com/exUs541/PC-Analyzer/releases/latest" }
       ]
+    },
+    {
+      "id": "sammodern",
+      "order": 60,
+      "type": "desktop",
+      "status": "live",
+      "stage": 4,
+      "name": "Steam Achievement Manager Modern",
+      "icon": "assets/projects/sammodern-icon.webp",
+      "preview": "assets/projects/sammodern-preview.webp",
+      "tagline": {
+        "de": "Deine Steam-Erfolge im Blick – eine weiterentwickelte Version von gibbeds Original.",
+        "en": "Keep track of your Steam achievements – a reworked version of gibbed's original."
+      },
+      "description": {
+        "de": "Eine modernisierte, veränderte Version des Steam Achievement Manager von gibbed. Die Steam-Anbindung stammt aus dem Original und wurde angepasst, Oberfläche und Zusatzfunktionen sind neu. Du siehst den Fortschritt deiner Bibliothek, erkennst, welche Erfolge ein fehlendes DLC brauchen oder nur im Spiel freigeschaltet werden können, und schaltest Erfolge gezielt frei oder sperrst sie wieder.",
+        "en": "A modernised, modified version of gibbed's Steam Achievement Manager. The Steam integration comes from the original and has been adapted; the interface and the additional features are new. See the progress of your library, spot which achievements need a DLC you don't own or can only be unlocked in the game, and unlock or lock exactly the achievements you choose."
+      },
+      "features": {
+        "de": [
+          "Neue Oberfläche mit Suche, Filtern, Sortierung und gespeicherten Ansichten, als Karten oder Liste, hell oder dunkel",
+          "Fortschritt aller Spiele auf einen Blick: 100-%-Spiele hervorgehoben, neue Erfolge markiert",
+          "Zeigt, was nicht geht und warum, etwa bei fehlendem DLC oder Erfolgen, die nur das Spiel vergibt",
+          "Auto-Unlock nur nach Bestätigung, jederzeit stoppbar; die freigeschalteten Erfolge eines Laufs lassen sich wieder sperren",
+          "Steam-Konto aus der App heraus wechseln (Steam wird dafür neu gestartet)",
+          "Vergleich mit Freunden nur auf Wunsch, standardmäßig ausgeschaltet"
+        ],
+        "en": [
+          "New interface with search, filters, sorting and saved views, as cards or list, light or dark",
+          "Progress of all games at a glance: 100% games highlighted, new achievements marked",
+          "Shows what cannot be changed and why, such as a missing DLC or achievements only the game awards",
+          "Auto-unlock only after confirmation, stop any time; what a run unlocked can be locked again",
+          "Switch the Steam account from inside the app (Steam restarts for this)",
+          "Friends comparison only if you want it, switched off by default"
+        ]
+      },
+      "platforms": { "de": ["Windows 10/11 (64-Bit)"], "en": ["Windows 10/11 (64-bit)"] },
+      "stageNote": {
+        "de": "Der Quellcode ist auf GitHub veröffentlicht. Eine fertige Download-Datei gibt es noch nicht: Die App wird mit dem .NET 10 SDK selbst gebaut.",
+        "en": "The source code is published on GitHub. There is no ready-made download yet: you build the app yourself with the .NET 10 SDK."
+      },
+      "note": {
+        "de": "Nicht das Original: eine veränderte Version, weder vom Originalautor unterstützt noch mit Valve verbunden. Erfolge zu ändern kann bei manchen Spielen oder Communitys als Cheaten gelten – Nutzung auf eigene Gefahr. Steam muss laufen, die Oberfläche ist auf Englisch.",
+        "en": "Not the original: a modified version, neither endorsed by the original author nor affiliated with Valve. Some games or communities may consider changing achievements cheating – use at your own risk. Steam must be running, the interface is in English."
+      },
+      "tags": { "de": ["Spiel", "Steam", "Open Source"], "en": ["Game", "Steam", "Open source"] },
+      "availability": [
+        { "kind": "github", "label": { "de": "Quellcode auf GitHub", "en": "Source on GitHub" }, "url": "https://github.com/enmel541/SteamAchievementManager/tree/modern/SAM.Modern" }
+      ],
+      "basedOn": { "name": "gibbed/SteamAchievementManager", "url": "https://github.com/gibbed/SteamAchievementManager" }
     },
     {
       "id": "siteblocker",

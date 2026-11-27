@@ -52,6 +52,7 @@
     'd.platform': { de: 'Plattform', en: 'Platform' },
     'd.more': { de: 'Mehr Details', en: 'More details' },
     'd.github': { de: 'Quellcode auf GitHub', en: 'Source on GitHub' },
+    'd.basedOn': { de: 'Basiert auf {name}', en: 'Based on {name}' },
     'd.feedback': { de: 'Feedback geben', en: 'Give feedback' },
     'd.disclaimer': { de: 'Termine sind Zielwerte, keine Zusagen – wir entwickeln neben dem Beruf.', en: 'Dates are targets, not promises – we build this alongside our jobs.' },
     'd.liveNote': { de: 'Veröffentlicht und sofort nutzbar.', en: 'Released and ready to use.' },
@@ -456,6 +457,7 @@
     var links = '';
     if (p.detail) links += '<a class="link" href="' + esc(p.detail) + '">' + icon('arrow-right') + esc(s('d.more')) + '</a>';
     if (p.github) links += '<a class="link" href="' + esc(p.github) + '" target="_blank" rel="noopener noreferrer">' + icon('github') + esc(s('d.github')) + '</a>';
+    if (p.basedOn) links += '<a class="link" href="' + esc(p.basedOn.url) + '" target="_blank" rel="noopener noreferrer">' + icon('github') + esc(s('d.basedOn', { name: p.basedOn.name })) + '</a>';
     links += '<a class="link" href="feedback.html?projekt=' + encodeURIComponent(p.id) + '">' + icon('message') + esc(s('d.feedback')) + '</a>';
     h += '<div class="d-links">' + links + '</div>';
 
