@@ -449,6 +449,16 @@
       ],
       "timestamp": "2026-11-26T20:47:45.876394Z",
       "posted": false
+    },
+    {
+      "extension_name": "Website-Notes",
+      "display_name": "WebNote: Draw, Highlight & Sticky Notes",
+      "version": "2.3.0",
+      "commits": [
+        "acb67fd Release WebNote 2.3.0 (#8)\na04c9b8 docs: complete the privacy policy and link the settings to the website\n6ccf4d9 chore: bump version to 2.3.0\n2847e1b feat: settings page, working URL rules and data sync between tabs\n8ec46d4 chore: bump version to 2.2.1"
+      ],
+      "timestamp": "2026-11-27T07:49:02.522286Z",
+      "posted": false
     }
   ]
 }
