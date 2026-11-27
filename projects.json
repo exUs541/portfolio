@@ -293,17 +293,18 @@
       },
       "platforms": { "de": ["Windows 10/11 (64-Bit)"], "en": ["Windows 10/11 (64-bit)"] },
       "stageNote": {
-        "de": "Der Quellcode ist auf GitHub veröffentlicht. Eine fertige Download-Datei gibt es noch nicht: Die App wird mit dem .NET 10 SDK selbst gebaut.",
-        "en": "The source code is published on GitHub. There is no ready-made download yet: you build the app yourself with the .NET 10 SDK."
+        "de": "Version 8.0.0 ist auf GitHub veröffentlicht: eine ZIP-Datei für Windows zum Entpacken und Starten, ohne .NET-Installation, dazu der Quellcode.",
+        "en": "Version 8.0.0 is published on GitHub: a ZIP for Windows to unzip and run, no .NET installation needed, plus the source code."
       },
       "note": {
-        "de": "Nicht das Original: eine veränderte Version, weder vom Originalautor unterstützt noch mit Valve verbunden. Erfolge zu ändern kann bei manchen Spielen oder Communitys als Cheaten gelten – Nutzung auf eigene Gefahr. Steam muss laufen, die Oberfläche ist auf Englisch.",
-        "en": "Not the original: a modified version, neither endorsed by the original author nor affiliated with Valve. Some games or communities may consider changing achievements cheating – use at your own risk. Steam must be running, the interface is in English."
+        "de": "Nicht das Original: eine veränderte Version, weder vom Originalautor unterstützt noch mit Valve verbunden. Erfolge zu ändern kann bei manchen Spielen oder Communitys als Cheaten gelten – Nutzung auf eigene Gefahr. Steam muss laufen, die Oberfläche ist auf Englisch. Die App ist nicht signiert, daher kann Windows SmartScreen warnen.",
+        "en": "Not the original: a modified version, neither endorsed by the original author nor affiliated with Valve. Some games or communities may consider changing achievements cheating – use at your own risk. Steam must be running, the interface is in English. The app is not code-signed, so Windows SmartScreen may warn."
       },
       "tags": { "de": ["Spiel", "Steam", "Open Source"], "en": ["Game", "Steam", "Open source"] },
       "availability": [
-        { "kind": "github", "label": { "de": "Quellcode auf GitHub", "en": "Source on GitHub" }, "url": "https://github.com/enmel541/SteamAchievementManager/tree/modern/SAM.Modern" }
+        { "kind": "github", "label": { "de": "Download auf GitHub", "en": "Download on GitHub" }, "url": "https://github.com/enmel541/SteamAchievementManager/releases/latest" }
       ],
+      "github": "https://github.com/enmel541/SteamAchievementManager/tree/modern/SAM.Modern",
       "basedOn": { "name": "gibbed/SteamAchievementManager", "url": "https://github.com/gibbed/SteamAchievementManager" }
     },
     {
