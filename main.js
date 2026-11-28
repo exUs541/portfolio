@@ -33,6 +33,8 @@
     'g.works.d': { de: 'Apps, die gerade entstehen – mit aktuellem Stand und geplantem Termin.', en: 'Apps taking shape right now – with current status and planned date.' },
     'g.live.t': { de: 'Heute verfügbar', en: 'Available today' },
     'g.live.d': { de: 'Fertige Lösungen, die du sofort nutzen kannst.', en: 'Finished solutions you can use right away.' },
+    'live.more': { de: 'Mehr anzeigen', en: 'Show more' },
+    'live.less': { de: 'Weniger anzeigen', en: 'Show less' },
     'count.one': { de: '{n} Lösung', en: '{n} solution' },
     'count.many': { de: '{n} Lösungen', en: '{n} solutions' },
     'details': { de: 'Details', en: 'Details' },
@@ -84,8 +86,9 @@
   var TYPES = ['vr', 'android', 'game', 'desktop', 'extension'];
   var TYPE_ICON = { vr: 'vr', android: 'phone', game: 'gamepad', desktop: 'monitor', extension: 'puzzle' };
   var TAGS_COLLAPSED = 8;
+  var LIVE_COLLAPSED = 8; /* so viele Kacheln zeigt „Heute verfügbar“ vor „Mehr anzeigen“ */
   var IS_EDGE = /\bEdg(e|A|iOS)?\//.test(navigator.userAgent || '');
-  var state = { type: 'all', status: 'all', q: '', tags: [], tagsOpen: false };
+  var state = { type: 'all', status: 'all', q: '', tags: [], tagsOpen: false, liveOpen: false };
   var tagMap = {};
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var drawer = null;
@@ -302,6 +305,24 @@
     return '<div class="grid ' + gridCls + '">' + sorted.map(cardFn).join('') + '</div>';
   }
 
+  /* „Heute verfügbar“: zugeklappt nur die ersten Kacheln. Blendet nur ein und aus (kein neues Rendern), damit der Fokus auf dem Button bleibt. */
+  function syncLiveLimit() {
+    var btn = $('[data-live-toggle]');
+    if (!btn) return;
+    document.querySelectorAll('#results .grid-sm > .card').forEach(function (card, i) {
+      card.hidden = !state.liveOpen && i >= LIVE_COLLAPSED;
+    });
+    btn.setAttribute('aria-expanded', state.liveOpen);
+    btn.innerHTML = '<span>' + esc(s(state.liveOpen ? 'live.less' : 'live.more')) + '</span>' + icon(state.liveOpen ? 'chevron-up' : 'chevron-down');
+  }
+  function toggleLive(btn) {
+    var before = btn.getBoundingClientRect().top;
+    state.liveOpen = !state.liveOpen;
+    syncLiveLimit();
+    /* Beim Zuklappen rutscht die Seite nach oben: Button an derselben Stelle halten */
+    if (!state.liveOpen) window.scrollBy({ top: btn.getBoundingClientRect().top - before, behavior: 'instant' });
+  }
+
   var firstRender = true;
   function renderGrid() {
     var list = projects.filter(function (p) { return matches(p); });
@@ -314,13 +335,16 @@
     }
     if (live.length) {
       html += '<section class="group" aria-labelledby="g-live"><div class="group-head"><h3 id="g-live">' + esc(s('g.live.t')) + '</h3><p>' + esc(s('g.live.d')) + '</p></div>' +
-        gridOf(live, cardSmall, 'grid-sm') + '</section>';
+        gridOf(live, cardSmall, 'grid-sm') +
+        (live.length > LIVE_COLLAPSED ? '<div class="show-more"><button type="button" class="btn btn-ghost" data-live-toggle></button></div>' : '') +
+        '</section>';
     }
     if (!list.length) {
       html = '<div class="empty"><p><strong>' + esc(s('empty.t')) + '</strong></p><p>' + esc(s('empty.d')) + '</p></div>';
     }
     var box = $('#results');
     box.innerHTML = html;
+    syncLiveLimit();
     box.classList.toggle('is-updating', !firstRender);
     firstRender = false;
     var n = list.length;
@@ -534,6 +558,8 @@
       if (ftag) { toggleTag(ftag.getAttribute('data-ftag')); update(); return; }
       var tgl = e.target.closest('[data-tags-toggle]');
       if (tgl) { state.tagsOpen = !state.tagsOpen; renderFilters(); return; }
+      var lt = e.target.closest('[data-live-toggle]');
+      if (lt) { toggleLive(lt); return; }
       var tag = e.target.closest('[data-tag]');
       if (tag) {
         toggleTag(tag.getAttribute('data-tag'));
